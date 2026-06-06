@@ -1,0 +1,279 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "grafana-x",
+    "homepage": "https://github.com/yesoreyeram/grafana-x",
+    "items": [
+        {
+            "name": "ds-repo-sync",
+            "type": "registry:item",
+            "title": "Datasources repo basic setup & sync",
+            "description": "Datasources repo basic setup & sync",
+            "registryDependencies": [
+                "yesoreyeram/grafana-x/ds-setup-packagemanager",
+                "yesoreyeram/grafana-x/ds-add-core-tools",
+                "yesoreyeram/grafana-x/ds-add-build-tools",
+                "yesoreyeram/grafana-x/ds-add-lint-tools",
+                "yesoreyeram/grafana-x/ds-add-test-tools",
+                "yesoreyeram/grafana-x/ds-add-typescript-tools",
+                "yesoreyeram/grafana-x/ds-add-e2e-tools",
+                "yesoreyeram/grafana-x/ds-add-agent-tools"
+            ]
+        },
+        {
+            "name": "ds-setup-packagemanager",
+            "type": "registry:item",
+            "title": "Datasources package manager setup",
+            "description": "Setting up .nvmrc .npmrc .yarnrc.yml files",
+            "files": [
+                {
+                    "path": "packages/plugin-tools/templates/.nvmrc",
+                    "type": "registry:file",
+                    "target": "~/.nvmrc"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/.npmrc",
+                    "type": "registry:file",
+                    "target": "~/.npmrc"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/.yarnrc.yml",
+                    "type": "registry:file",
+                    "target": "~/.yarnrc.yml"
+                }
+            ]
+        },
+        {
+            "name": "ds-add-core-tools",
+            "type": "registry:item",
+            "title": "Datasources core dependencies",
+            "description": "Installing core dependencies including @grafana/{data,ui,runtime,schema,plugin-ui}, react and others",
+            "dependencies": [
+                "react@18.3.1",
+                "react-dom@18.3.1",
+                "rxjs@7.8.2",
+                "@grafana/data@12.4.3",
+                "@grafana/runtime@12.4.3",
+                "@grafana/schema@12.4.3",
+                "@grafana/ui@12.4.3",
+                "@grafana/plugin-ui@0.14.0"
+            ],
+            "devDependencies": [
+                "@changesets/cli@2.31.0",
+                "@grafana/sign-plugin@3.3.0",
+                "cspell@10.0.1"
+            ]
+        },
+        {
+            "name": "ds-add-build-tools",
+            "type": "registry:item",
+            "title": "Datasources build dependencies",
+            "description": "Installing build dependencies",
+            "devDependencies": [
+                "@babel/core@7.29.7",
+                "@grafana/tsconfig@2.2.0",
+                "@openfeature/core@1.10.0",
+                "@openfeature/web-sdk@1.8.0",
+                "@swc/core@1.15.40",
+                "@swc/helpers@0.5.23",
+                "@types/babel__core@7.20.5",
+                "@types/identity-obj-proxy@3.0.0",
+                "@types/jest@30.0.0",
+                "@types/node@25.9.1",
+                "@types/react-dom@18.3.7",
+                "@types/react@18.3.1",
+                "copy-webpack-plugin@14.0.0",
+                "css-loader@7.1.4",
+                "eslint-webpack-plugin@6.0.0",
+                "fork-ts-checker-webpack-plugin@9.1.0",
+                "glob@13.0.6",
+                "imports-loader@5.0.0",
+                "replace-in-file-webpack-plugin@1.0.6",
+                "sass-loader@17.0.0",
+                "style-loader@4.0.0",
+                "swc-loader@0.2.7",
+                "terser-webpack-plugin@5.6.1",
+                "ts-node@10.9.2",
+                "tslib@2.8.1",
+                "typescript@6.0.3",
+                "webpack-cli@7.0.3",
+                "webpack-livereload-plugin@3.0.2",
+                "webpack-subresource-integrity@5.2.0-rc.1",
+                "webpack-virtual-modules@0.6.2",
+                "webpack@5.107.2"
+            ]
+        },
+        {
+            "name": "ds-add-lint-tools",
+            "type": "registry:item",
+            "title": "Datasources lint dependencies",
+            "description": "Installing lint dependencies",
+            "files": [
+                {
+                    "path": "packages/plugin-tools/templates/.config/eslint.config.mjs",
+                    "type": "registry:file",
+                    "target": "~/.config/eslint.config.mjs"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/.config/tsconfig.tmpl.json",
+                    "type": "registry:file",
+                    "target": "~/.config/tsconfig.json"
+                }
+            ],
+            "devDependencies": [
+                "@grafana/eslint-config@9.0.0",
+                "@grafana/tsconfig@2.2.0",
+                "@stylistic/eslint-plugin-ts@4.4.1",
+                "@typescript-eslint/eslint-plugin@8.60.1",
+                "@typescript-eslint/parser@8.60.1",
+                "eslint-config-prettier@10.1.8",
+                "eslint-plugin-jsdoc@63.0.1",
+                "eslint-plugin-prettier@5.5.6",
+                "eslint-plugin-react-hooks@7.1.1",
+                "eslint-plugin-react@7.37.5",
+                "eslint@9.39.4",
+                "prettier@3.8.3"
+            ]
+        },
+        {
+            "name": "ds-add-test-tools",
+            "type": "registry:item",
+            "title": "Datasources test dependencies",
+            "description": "Installing test dependencies",
+            "files": [
+                {
+                    "path": "packages/plugin-tools/templates/.config/jest-setup.js",
+                    "type": "registry:file",
+                    "target": "~/.config/jest-setup.js"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/.config/jest.config.js",
+                    "type": "registry:file",
+                    "target": "~/.config/jest.config.js"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/.config/jest/utils.js",
+                    "type": "registry:file",
+                    "target": "~/.config/jest/utils.js"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/.config/jest/mocks/react-inlinesvg.tsx",
+                    "type": "registry:file",
+                    "target": "~/.config/jest/mocks/react-inlinesvg.tsx"
+                }
+            ],
+            "dependencies": [
+                "react@18.3.1"
+            ],
+            "devDependencies": [
+                "@swc/core@1.15.40",
+                "@swc/helpers@0.5.23",
+                "@swc/jest@0.2.39",
+                "@testing-library/dom@10.4.1",
+                "@testing-library/jest-dom@6.9.1",
+                "@testing-library/react@16.3.2",
+                "@testing-library/user-event@14.6.1",
+                "@types/identity-obj-proxy@3.0.2",
+                "@types/jest@30.0.0",
+                "identity-obj-proxy@3.0.0",
+                "jest-environment-jsdom@30.4.1",
+                "jest@30.4.2"
+            ]
+        },
+        {
+            "name": "ds-add-typescript-tools",
+            "type": "registry:item",
+            "title": "Datasources typecheck dependencies",
+            "description": "Installing typecheck dependencies",
+            "files": [
+                {
+                    "path": "packages/plugin-tools/templates/.config/tsconfig.json",
+                    "type": "registry:file",
+                    "target": "~/.config/tsconfig.json"
+                }
+            ],
+            "devDependencies": [
+                "@grafana/tsconfig@2.2.0",
+                "@types/identity-obj-proxy@3.0.2",
+                "@types/jest@30.0.0",
+                "@types/node@25.9.1",
+                "@types/react@18.3.1",
+                "typescript@6.0.3"
+            ]
+        },
+        {
+            "name": "ds-add-e2e-tools",
+            "type": "registry:item",
+            "title": "Datasources e2e dependencies",
+            "description": "Installing e2e dependencies",
+            "devDependencies": [
+                "@grafana/e2e-selectors@12.4.3",
+                "@grafana/plugin-e2e@3.9.0",
+                "@playwright/test@1.60.0",
+                "playwright@1.60.0"
+            ]
+        },
+        {
+            "name": "ds-add-agent-tools",
+            "type": "registry:item",
+            "title": "Datasources agent specific instructions",
+            "description": "Agent specific instructions",
+            "files": [
+                {
+                    "path": "packages/plugin-tools/templates/.config/AGENTS-templates/skills-templates/build-plugin.md",
+                    "type": "registry:file",
+                    "target": "~/.config/AGENTS/skills/build-plugin.md"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/.config/AGENTS-templates/skills-templates/validate-plugin.md",
+                    "type": "registry:file",
+                    "target": "~/.config/AGENTS/skills/validate-plugin.md"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/.config/AGENTS-templates/e2e-testing.md",
+                    "type": "registry:file",
+                    "target": "~/.config/AGENTS/e2e-testing.md"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/.config/AGENTS-templates/instructions.md",
+                    "type": "registry:file",
+                    "target": "~/.config/AGENTS/instructions.md"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/.claude/skills-templates/build-plugin/SKILL.tmpl.md",
+                    "type": "registry:file",
+                    "target": "~/.claude/skills/build-plugin/SKILL.md"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/.claude/skills-templates/validate-plugin/SKILL.tmpl.md",
+                    "type": "registry:file",
+                    "target": "~/.claude/skills/validate-plugin/SKILL.md"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/.codex/skills-templates/build-plugin/SKILL.tmpl.md",
+                    "type": "registry:file",
+                    "target": "~/.codex/skills/build-plugin/SKILL.md"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/.codex/skills-templates/validate-plugin/SKILL.tmpl.md",
+                    "type": "registry:file",
+                    "target": "~/.codex/skills/validate-plugin/SKILL.md"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/AGENTS.md",
+                    "type": "registry:file",
+                    "target": "~/AGENTS.md"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/CLAUDE.md",
+                    "type": "registry:file",
+                    "target": "~/CLAUDE.md"
+                },
+                {
+                    "path": "packages/plugin-tools/templates/GEMINI.md",
+                    "type": "registry:file",
+                    "target": "~/GEMINI.md"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "declaration": false,
+    "rootDir": "../src",
+    "paths": {
+      "*": ["../src/*"]
+    },
+    "typeRoots": ["../node_modules/@types"],
+    "resolveJsonModule": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "nodenext",
+      "moduleResolution": "nodenext",
+      "target": "es2022",
+      "esModuleInterop": true
+    },
+    "transpileOnly": true
+  },
+  "include": ["../src", "./types"],
+  "extends": "@grafana/tsconfig"
+}

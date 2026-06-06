@@ -1,0 +1,40 @@
+{
+  "name": "@yesoreyeram/grafana-x",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Collection of grafana plugins, datasources, panels, tools, components, libraries, utils, etc",
+  "keywords": [
+    "grafana"
+  ],
+  "author": {
+    "name": "Sriramajeyam Sugumaran",
+    "url": "https://x.com/yesoreyeram"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/yesoreyeram/grafana-x#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yesoreyeram/grafana-x.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yesoreyeram/grafana-x/issues"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "spellcheck": "cspell -c cspell.config.json \"**/*.{ts,tsx,js,go,md,mdx,yml,yaml,json,scss,css}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cspell": "10.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "25.9.1",
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": ">=24.16.0",
+    "yarn": ">=4.16.0"
+  },
+  "packageManager": "yarn@4.16.0"
+}
