@@ -22,14 +22,11 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "spellcheck": "cspell -c cspell.config.json \"**/*.{ts,tsx,js,go,md,mdx,yml,yaml,json,scss,css}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "cspell": "10.0.1"
+    "spellcheck": "cspell -c cspell.config.json \"**/*.{ts,tsx,js,go,md,mdx,yml,yaml,json,scss,css}\""
   },
   "devDependencies": {
     "@types/node": "25.9.1",
+    "cspell": "10.0.1",
     "typescript": "6.0.3"
   },
   "engines": {

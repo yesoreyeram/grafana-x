@@ -1,6 +1,8 @@
 {
     "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/refs/heads/main/cspell.schema.json",
-    "ignorePaths": [],
+    "ignorePaths": [
+        "registry.json"
+    ],
     "words": [
         "yesoreyeram",
         "sriramajeyam",
