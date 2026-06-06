@@ -186,7 +186,7 @@
             "description": "Installing typecheck dependencies",
             "files": [
                 {
-                    "path": "packages/plugin-tools/templates/.config/tsconfig.json",
+                    "path": "packages/plugin-tools/templates/.config/tsconfig.tmpl.json",
                     "type": "registry:file",
                     "target": "~/.config/tsconfig.json"
                 }
