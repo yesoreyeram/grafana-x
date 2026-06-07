@@ -1,10 +1,15 @@
 {
-  "name": "@yesoreyeram/grafana-x",
+  "name": "@yesoreyeram/grafana-utils",
   "version": "0.0.1",
-  "private": true,
-  "description": "Collection of grafana plugins, datasources, panels, tools, components, libraries, utils, etc",
+  "description": "CLI tool for grafana dev and management utils",
+  "main": "dist/index.js",
+  "bin": "dist/cli.js",
+  "type": "module",
   "keywords": [
-    "grafana"
+    "grafana",
+    "datasource",
+    "cli",
+    "utility"
   ],
   "author": {
     "name": "Sriramajeyam Sugumaran",
@@ -19,18 +24,20 @@
   "bugs": {
     "url": "https://github.com/yesoreyeram/grafana-x/issues"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "spellcheck": "cspell -c cspell.config.json \"**/*.{ts,tsx,js,go,md,mdx,yml,yaml,json,scss,css}\""
+    "build": "tsc",
+    "dev": "tsx src/cli.ts"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
   },
   "devDependencies": {
-    "cspell": "10.0.1"
+    "@types/node": "25.9.1",
+    "tsx": "^4.19.0",
+    "typescript": "6.0.3"
   },
   "engines": {
-    "node": ">=24.16.0",
-    "yarn": ">=4.16.0"
+    "node": ">=18.0.0"
   },
   "packageManager": "yarn@4.16.0"
 }
