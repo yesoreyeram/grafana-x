@@ -19,7 +19,7 @@ grafana-utils --help          # Show help
 grafana-utils --version       # Show version
 ```
 
-### Commandd
+### Commands
 
 #### setup-yarn
 

@@ -1,6 +1,10 @@
 {
     "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/refs/heads/main/cspell.schema.json",
     "ignorePaths": [
+        "node_modules",
+        "dist",
+        ".yarn",
+        ".github",
         "registry.json"
     ],
     "words": [
