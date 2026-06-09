@@ -156,6 +156,11 @@
                     "path": "packages/plugin-tools/templates/.config/tsconfig.tmpl.json",
                     "type": "registry:file",
                     "target": "~/.config/tsconfig.json"
+                },
+                {
+                    "path": "packages/plugin-tools/local/eslint.config.mjs",
+                    "type": "registry:file",
+                    "target": "~/eslint.config.mjs"
                 }
             ],
             "devDependencies": [
