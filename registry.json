@@ -9,18 +9,19 @@
             "title": "Datasources repo basic setup & sync",
             "description": "Datasources repo basic setup & sync",
             "registryDependencies": [
-                "yesoreyeram/grafana-x/ds-setup-packagemanager",
-                "yesoreyeram/grafana-x/ds-add-core-tools",
-                "yesoreyeram/grafana-x/ds-add-build-tools",
-                "yesoreyeram/grafana-x/ds-add-lint-tools",
-                "yesoreyeram/grafana-x/ds-add-test-tools",
-                "yesoreyeram/grafana-x/ds-add-typescript-tools",
-                "yesoreyeram/grafana-x/ds-add-e2e-tools",
-                "yesoreyeram/grafana-x/ds-add-agent-tools"
+                "yesoreyeram/grafana-x/ds-setup-package-manager-tools",
+                "yesoreyeram/grafana-x/ds-setup-core-tools",
+                "yesoreyeram/grafana-x/ds-setup-build-tools",
+                "yesoreyeram/grafana-x/ds-setup-lint-tools",
+                "yesoreyeram/grafana-x/ds-setup-test-tools",
+                "yesoreyeram/grafana-x/ds-setup-typescript-tools",
+                "yesoreyeram/grafana-x/ds-setup-e2e-tools",
+                "yesoreyeram/grafana-x/ds-setup-agent-tools",
+                "yesoreyeram/grafana-x/ds-setup-local-tools"
             ]
         },
         {
-            "name": "ds-setup-packagemanager",
+            "name": "ds-setup-package-manager-tools",
             "type": "registry:item",
             "title": "Datasources package manager setup",
             "description": "Setting up .nvmrc .npmrc .yarnrc.yml files",
@@ -43,7 +44,7 @@
             ]
         },
         {
-            "name": "ds-add-core-tools",
+            "name": "ds-setup-core-tools",
             "type": "registry:item",
             "title": "Datasources core dependencies",
             "description": "Installing core dependencies including @grafana/{data,ui,runtime,schema,plugin-ui}, react and others",
@@ -52,10 +53,10 @@
                 "react@18.3.1",
                 "react-dom@18.3.1",
                 "rxjs@7.8.2",
-                "@grafana/data@12.4.3",
-                "@grafana/runtime@12.4.3",
-                "@grafana/schema@12.4.3",
-                "@grafana/ui@12.4.3",
+                "@grafana/data@13.1.0-25893932881",
+                "@grafana/runtime@13.1.0-25893932881",
+                "@grafana/schema@13.1.0-25893932881",
+                "@grafana/ui@113.1.0-25893932881",
                 "@grafana/plugin-ui@0.14.0"
             ],
             "devDependencies": [
@@ -65,7 +66,7 @@
             ]
         },
         {
-            "name": "ds-add-build-tools",
+            "name": "ds-setup-build-tools",
             "type": "registry:item",
             "title": "Datasources build dependencies",
             "description": "Installing build dependencies",
@@ -104,7 +105,7 @@
             ]
         },
         {
-            "name": "ds-add-lint-tools",
+            "name": "ds-setup-lint-tools",
             "type": "registry:item",
             "title": "Datasources lint dependencies",
             "description": "Installing lint dependencies",
@@ -136,7 +137,7 @@
             ]
         },
         {
-            "name": "ds-add-test-tools",
+            "name": "ds-setup-test-tools",
             "type": "registry:item",
             "title": "Datasources test dependencies",
             "description": "Installing test dependencies",
@@ -181,7 +182,7 @@
             ]
         },
         {
-            "name": "ds-add-typescript-tools",
+            "name": "ds-setup-typescript-tools",
             "type": "registry:item",
             "title": "Datasources typecheck dependencies",
             "description": "Installing typecheck dependencies",
@@ -202,7 +203,7 @@
             ]
         },
         {
-            "name": "ds-add-e2e-tools",
+            "name": "ds-setup-e2e-tools",
             "type": "registry:item",
             "title": "Datasources e2e dependencies",
             "description": "Installing e2e dependencies",
@@ -211,10 +212,17 @@
                 "@grafana/plugin-e2e",
                 "@playwright/test@1.60.0",
                 "playwright@1.60.0"
+            ],
+            "files": [
+                {
+                    "path": "packages/plugin-tools/local/playwright.config.ts.tmpl",
+                    "type": "registry:file",
+                    "target": "~/playwright.config.ts"
+                }
             ]
         },
         {
-            "name": "ds-add-agent-tools",
+            "name": "ds-setup-agent-tools",
             "type": "registry:item",
             "title": "Datasources agent specific instructions",
             "description": "Agent specific instructions",
@@ -273,6 +281,49 @@
                     "path": "packages/plugin-tools/templates/GEMINI.md",
                     "type": "registry:file",
                     "target": "~/GEMINI.md"
+                }
+            ]
+        },
+        {
+            "name": "ds-setup-local-tools",
+            "type": "registry:item",
+            "title": "Datasources agent specific instructions",
+            "description": "Agent specific instructions",
+            "files": [
+                {
+                    "path": "packages/plugin-tools/local/.trufflehogignore",
+                    "type": "registry:file",
+                    "target": "~/.trufflehogignore"
+                },
+                {
+                    "path": "packages/plugin-tools/local/renovate.json",
+                    "type": "registry:file",
+                    "target": "~/renovate.json"
+                },
+                {
+                    "path": "packages/plugin-tools/local/.github/CODEOWNERS",
+                    "type": "registry:file",
+                    "target": "~/.github/CODEOWNERS"
+                },
+                {
+                    "path": "packages/plugin-tools/local/.github/workflows/push.yaml",
+                    "type": "registry:file",
+                    "target": "~/.github/workflows/push.yaml"
+                },
+                {
+                    "path": "packages/plugin-tools/local/.github/workflows/publish.yaml",
+                    "type": "registry:file",
+                    "target": "~/.github/workflows/publish.yaml"
+                },
+                {
+                    "path": "packages/plugin-tools/local/.github/workflows/add-to-project.yaml",
+                    "type": "registry:file",
+                    "target": "~/.github/workflows/add-to-project.yaml"
+                },
+                {
+                    "path": "packages/plugin-tools/local/.github/workflows/update-create-plugin.yaml",
+                    "type": "registry:file",
+                    "target": "~/.github/workflows/update-create-plugin.yaml"
                 }
             ]
         }
