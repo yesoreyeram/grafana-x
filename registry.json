@@ -94,7 +94,7 @@
                 "@grafana/data@13.1.0-25893932881",
                 "@grafana/runtime@13.1.0-25893932881",
                 "@grafana/schema@13.1.0-25893932881",
-                "@grafana/ui@113.1.0-25893932881",
+                "@grafana/ui@13.1.0-25893932881",
                 "@grafana/plugin-ui@0.14.0"
             ],
             "devDependencies": [
