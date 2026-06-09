@@ -12,13 +12,16 @@
                 "yesoreyeram/grafana-x/ds-setup-package-manager-tools",
                 "yesoreyeram/grafana-x/ds-setup-core-tools",
                 "yesoreyeram/grafana-x/ds-setup-spellcheck-tools",
+                "yesoreyeram/grafana-x/ds-setup-renovate-tools",
+                "yesoreyeram/grafana-x/ds-setup-trufflehog-tools",
                 "yesoreyeram/grafana-x/ds-setup-build-tools",
                 "yesoreyeram/grafana-x/ds-setup-lint-tools",
                 "yesoreyeram/grafana-x/ds-setup-test-tools",
                 "yesoreyeram/grafana-x/ds-setup-typescript-tools",
                 "yesoreyeram/grafana-x/ds-setup-e2e-tools",
                 "yesoreyeram/grafana-x/ds-setup-agent-tools",
-                "yesoreyeram/grafana-x/ds-setup-local-tools"
+                "yesoreyeram/grafana-x/ds-setup-github-workflows",
+                "yesoreyeram/grafana-x/ds-setup-github-configuration"
             ]
         },
         {
@@ -63,6 +66,19 @@
             ],
             "devDependencies": [
                 "cspell@10.0.1"
+            ]
+        },
+        {
+            "name": "ds-setup-renovate-tools",
+            "type": "registry:item",
+            "title": "renovate tools and depdencies",
+            "description": "Installing renovate tools and dependencies",
+            "files": [
+                {
+                    "path": "packages/plugin-tools/local/renovate.json",
+                    "type": "registry:file",
+                    "target": "~/renovate.json"
+                }
             ]
         },
         {
@@ -306,26 +322,11 @@
             ]
         },
         {
-            "name": "ds-setup-local-tools",
+            "name": "ds-setup-github-workflows",
             "type": "registry:item",
-            "title": "Datasources agent specific instructions",
-            "description": "Agent specific instructions",
+            "title": "Github workflows setup",
+            "description": "Github workflows setup",
             "files": [
-                {
-                    "path": "packages/plugin-tools/local/.trufflehogignore",
-                    "type": "registry:file",
-                    "target": "~/.trufflehogignore"
-                },
-                {
-                    "path": "packages/plugin-tools/local/renovate.json",
-                    "type": "registry:file",
-                    "target": "~/renovate.json"
-                },
-                {
-                    "path": "packages/plugin-tools/local/.github/CODEOWNERS",
-                    "type": "registry:file",
-                    "target": "~/.github/CODEOWNERS"
-                },
                 {
                     "path": "packages/plugin-tools/local/.github/workflows/push.yaml",
                     "type": "registry:file",
@@ -345,6 +346,32 @@
                     "path": "packages/plugin-tools/local/.github/workflows/update-create-plugin.yaml",
                     "type": "registry:file",
                     "target": "~/.github/workflows/update-create-plugin.yaml"
+                }
+            ]
+        },
+        {
+            "name": "ds-setup-trufflehog-tools",
+            "type": "registry:item",
+            "title": "trufflehog tools setup",
+            "description": "trufflehog tools setup",
+            "files": [
+                {
+                    "path": "packages/plugin-tools/local/.trufflehogignore",
+                    "type": "registry:file",
+                    "target": "~/.trufflehogignore"
+                }
+            ]
+        },
+        {
+            "name": "ds-setup-github-configuration",
+            "type": "registry:item",
+            "title": "github related configuration",
+            "description": "github related configuration setup",
+            "files": [
+                {
+                    "path": "packages/plugin-tools/local/.github/CODEOWNERS",
+                    "type": "registry:file",
+                    "target": "~/.github/CODEOWNERS"
                 }
             ]
         }
