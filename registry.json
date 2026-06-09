@@ -11,6 +11,7 @@
             "registryDependencies": [
                 "yesoreyeram/grafana-x/ds-setup-package-manager-tools",
                 "yesoreyeram/grafana-x/ds-setup-core-tools",
+                "yesoreyeram/grafana-x/ds-setup-spellcheck-tools",
                 "yesoreyeram/grafana-x/ds-setup-build-tools",
                 "yesoreyeram/grafana-x/ds-setup-lint-tools",
                 "yesoreyeram/grafana-x/ds-setup-test-tools",
@@ -44,6 +45,27 @@
             ]
         },
         {
+            "name": "ds-setup-spellcheck-tools",
+            "type": "registry:item",
+            "title": "spell check tools and depdencies",
+            "description": "Installing spell check tools and depdencies",
+            "files": [
+                {
+                    "path": "packages/plugin-tools/local/cspell/cspell.config.json",
+                    "type": "registry:file",
+                    "target": "~/cspell.config.json"
+                },
+                {
+                    "path": "packages/plugin-tools/local/cspell/grafana.txt",
+                    "type": "registry:file",
+                    "target": "~/.cspell/grafana.txt"
+                }
+            ],
+            "devDependencies": [
+                "cspell@10.0.1"
+            ]
+        },
+        {
             "name": "ds-setup-core-tools",
             "type": "registry:item",
             "title": "Datasources core dependencies",
@@ -61,8 +83,7 @@
             ],
             "devDependencies": [
                 "@changesets/cli@2.31.0",
-                "@grafana/sign-plugin@3.3.0",
-                "cspell@10.0.1"
+                "@grafana/sign-plugin@3.3.0"
             ]
         },
         {
