@@ -37,6 +37,7 @@ services:
       - ./plugins/grafana-nocodb-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-nocodb-datasource
       - ./plugins/grafana-notion-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-notion-datasource
       - ./plugins/grafana-baserow-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-baserow-datasource
+      - ./plugins/grafana-linear-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-linear-datasource
       # Static provisioning shared by the stack (this repo's provisioning/ dir).
       # The NocoDB seed job also drops a generated datasource (with a fresh
       # token) into provisioning/datasources, alongside the static Notion one.

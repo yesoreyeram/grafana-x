@@ -1,0 +1,156 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 9 Fields by 2 Rows
+//  +-------------------------------+-----------------+------------------+------------------+-----------------+------------------+-----------------+-----------------+-----------------+
+//  | Name: createdAt               | Name: assignee  | Name: estimate   | Name: identifier | Name: labels    | Name: priority   | Name: state     | Name: team      | Name: title     |
+//  | Labels:                       | Labels:         | Labels:          | Labels:          | Labels:         | Labels:          | Labels:         | Labels:         | Labels:         |
+//  | Type: []*time.Time            | Type: []*string | Type: []*float64 | Type: []*string  | Type: []*string | Type: []*float64 | Type: []*string | Type: []*string | Type: []*string |
+//  +-------------------------------+-----------------+------------------+------------------+-----------------+------------------+-----------------+-----------------+-----------------+
+//  | 2024-01-15 10:00:00 +0000 UTC | Alice           | 3                | ENG-1            | bug, p1         | 2                | In Progress     | Engineering     | Fix login       |
+//  | 2024-01-14 09:00:00 +0000 UTC | Bob             | 5                | ENG-2            | feature         | 1                | Todo            | Engineering     | Add SSO         |
+//  +-------------------------------+-----------------+------------------+------------------+-----------------+------------------+-----------------+-----------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "createdAt",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "assignee",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "estimate",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "identifier",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "labels",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "priority",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "state",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "team",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705312800000,
+            1705222800000
+          ],
+          [
+            "Alice",
+            "Bob"
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            "ENG-1",
+            "ENG-2"
+          ],
+          [
+            "bug, p1",
+            "feature"
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            "In Progress",
+            "Todo"
+          ],
+          [
+            "Engineering",
+            "Engineering"
+          ],
+          [
+            "Fix login",
+            "Add SSO"
+          ]
+        ]
+      }
+    }
+  ]
+}

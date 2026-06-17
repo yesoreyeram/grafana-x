@@ -1,0 +1,12 @@
+apiVersion: 1
+
+datasources:
+  - name: Linear
+    type: yesoreyeram-linear-datasource
+    access: proxy
+    jsonData:
+      baseURL: https://api.linear.app/graphql
+      authMethod: apiKey
+    secureJsonData:
+      apiKey: ${LINEAR_API_KEY}
+    editable: true

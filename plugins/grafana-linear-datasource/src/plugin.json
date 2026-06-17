@@ -1,0 +1,43 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "Linear",
+  "id": "yesoreyeram-linear-datasource",
+  "metrics": true,
+  "backend": true,
+  "executable": "gpx_linear",
+  "info": {
+    "description": "Query issues, projects, teams, users and cycles from Linear in Grafana",
+    "author": {
+      "name": "yesoreyeram"
+    },
+    "keywords": [
+      "linear",
+      "issues",
+      "project management",
+      "graphql",
+      "tickets"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/yesoreyeram/grafana-x"
+      },
+      {
+        "name": "Linear",
+        "url": "https://linear.app"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.4.0",
+    "plugins": []
+  }
+}
