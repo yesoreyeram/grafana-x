@@ -20,7 +20,8 @@
     "url": "https://github.com/yesoreyeram/grafana-x/issues"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "plugins/*"
   ],
   "scripts": {
     "build": "yarn workspaces foreach -A --topological-dev run build",

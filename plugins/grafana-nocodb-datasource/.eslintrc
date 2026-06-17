@@ -1,0 +1,10 @@
+{
+  "extends": ["@grafana/eslint-config"],
+  "root": true,
+  "rules": {},
+  "overrides": [
+    {
+      "files": ["src/**/*.{ts,tsx}"]
+    }
+  ]
+}

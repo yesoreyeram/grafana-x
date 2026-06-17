@@ -1,0 +1,13 @@
+apiVersion: 1
+
+datasources:
+  - name: NocoDB
+    type: yesoreyeram-nocodb-datasource
+    access: proxy
+    # When running the bundled docker-compose, NocoDB is reachable at this host.
+    jsonData:
+      baseURL: http://nocodb:8080
+      # baseId: p_xxxxxxxxxxxx
+    secureJsonData:
+      apiToken: ${NOCODB_API_TOKEN}
+    editable: true
