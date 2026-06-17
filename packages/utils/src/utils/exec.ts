@@ -28,7 +28,8 @@ export function exec(
 }
 
 /**
- * Execute multiple commands in sequence
+ * Execute multiple commands in sequence. If a command fails, the thrown error
+ * is annotated with the failing command so callers can report it precisely.
  * @param commands - Array of [command, args] tuples
  * @param options - Execution options
  */
@@ -37,6 +38,13 @@ export function execSequence(
     options: ExecOptions = {}
 ): void {
     for (const [command, args] of commands) {
-        exec(command, args, options);
+        try {
+            exec(command, args, options);
+        } catch (err) {
+            const original = err instanceof Error ? err.message : String(err);
+            throw new Error(
+                `Command failed: ${command} ${args.join(' ')}\n  ${original}`
+            );
+        }
     }
 }

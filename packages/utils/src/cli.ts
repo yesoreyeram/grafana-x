@@ -1,14 +1,23 @@
 #!/usr/bin/env node
 
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { Command } from 'commander';
 import { setupYarnCommand } from './commands/setup-yarn/index.js';
+
+const pkg = JSON.parse(
+    readFileSync(
+        fileURLToPath(new URL('../package.json', import.meta.url)),
+        'utf8'
+    )
+) as { version: string };
 
 const program = new Command();
 
 program
     .name('grafana-utils')
     .description('CLI tool for managing Grafana datasources and utilities')
-    .version('0.0.1');
+    .version(pkg.version);
 
 // Register commands
 program.addCommand(setupYarnCommand);

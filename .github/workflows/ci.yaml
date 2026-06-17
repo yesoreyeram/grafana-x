@@ -18,7 +18,17 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: "yarn"
-      - name: Install depencencies
+      - name: Install dependencies
         run: yarn install --immutable
       - name: Spell check
         run: yarn spellcheck
+      - name: Lint
+        run: yarn lint
+      - name: Format check
+        run: yarn format:check
+      - name: Type check
+        run: yarn typecheck
+      - name: Build
+        run: yarn build
+      - name: Test
+        run: yarn test

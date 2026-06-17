@@ -5,7 +5,8 @@
         "dist",
         ".yarn",
         ".github",
-        "registry.json"
+        "registry.json",
+        "packages/plugin-tools/**"
     ],
     "words": [
         "yesoreyeram",

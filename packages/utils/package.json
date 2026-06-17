@@ -3,8 +3,17 @@
   "version": "0.0.1",
   "description": "CLI tool for grafana dev and management utils",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": "dist/cli.js",
   "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "grafana",
     "datasource",
@@ -25,8 +34,12 @@
     "url": "https://github.com/yesoreyeram/grafana-x/issues"
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsx src/cli.ts"
+    "clean": "node --eval \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "yarn clean && tsc --project tsconfig.build.json",
+    "dev": "tsx src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test \"src/**/*.test.ts\"",
+    "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "commander": "^12.1.0"
@@ -37,7 +50,7 @@
     "typescript": "6.0.3"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=24.16.0"
   },
   "packageManager": "yarn@4.16.0"
 }

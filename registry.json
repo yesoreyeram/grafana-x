@@ -50,8 +50,8 @@
         {
             "name": "ds-setup-spellcheck-tools",
             "type": "registry:item",
-            "title": "spell check tools and depdencies",
-            "description": "Installing spell check tools and depdencies",
+            "title": "spell check tools and dependencies",
+            "description": "Installing spell check tools and dependencies",
             "files": [
                 {
                     "path": "packages/plugin-tools/local/cspell/cspell.config.json",
@@ -71,7 +71,7 @@
         {
             "name": "ds-setup-renovate-tools",
             "type": "registry:item",
-            "title": "renovate tools and depdencies",
+            "title": "renovate tools and dependencies",
             "description": "Installing renovate tools and dependencies",
             "files": [
                 {
