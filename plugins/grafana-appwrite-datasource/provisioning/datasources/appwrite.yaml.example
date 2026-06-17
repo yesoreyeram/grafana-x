@@ -1,0 +1,22 @@
+apiVersion: 1
+
+datasources:
+  - name: Appwrite
+    type: yesoreyeram-appwrite-datasource
+    access: proxy
+    jsonData:
+      # Appwrite API endpoint including the /v1 suffix. For Appwrite Cloud use
+      # https://cloud.appwrite.io/v1 (or a regional endpoint like
+      # https://nyc.cloud.appwrite.io/v1). For self-hosted, https://<host>/v1.
+      endpoint: https://cloud.appwrite.io/v1
+      # Appwrite project id (X-Appwrite-Project header).
+      projectId: <YOUR_PROJECT_ID>
+      # Optional default database id. When set, the query editor lists this
+      # database's collections directly. Otherwise pick a database in the editor.
+      databaseId: <YOUR_DATABASE_ID>
+    secureJsonData:
+      # Appwrite API key (X-Appwrite-Key header). Create one in the Appwrite
+      # console with the scopes:
+      #   databases.read, collections.read, attributes.read, documents.read
+      apiKey: ${APPWRITE_API_KEY}
+    editable: true
