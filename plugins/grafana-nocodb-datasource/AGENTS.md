@@ -50,15 +50,16 @@ single `yarn install` at the monorepo root — there is no per-plugin install.
 | Task                | Command |
 | ------------------- | ------- |
 | Install deps        | `yarn install` (run at monorepo root) |
-| Frontend build      | `yarn build` |
+| Build (front+back)  | `yarn build` (frontend + `mage buildAll`) |
+| Frontend only       | `yarn build:frontend` |
+| Backend only        | `yarn build:backend` (alias for `mage buildAll`) |
 | Frontend watch      | `yarn dev` |
 | Typecheck           | `yarn typecheck` |
 | Lint                | `yarn lint` (`yarn lint:fix` to fix) |
 | Frontend tests      | `yarn test` |
 | Backend tests       | `go test ./pkg/...` |
 | Backend build (1)   | `mage -v build:linuxARM64` (or `build:linux`, `build:darwinARM64`, …) |
-| Backend build (all) | `mage -v buildAll` |
-| Local full stack    | `docker compose up` (build `dist/` first) |
+| Local full stack    | `docker compose up` (run `yarn build` first) |
 
 Before declaring work done, run: `yarn typecheck && yarn lint && yarn test && go test ./pkg/...`.
 

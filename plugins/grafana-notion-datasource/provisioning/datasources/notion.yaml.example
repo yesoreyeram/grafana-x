@@ -1,0 +1,15 @@
+apiVersion: 1
+
+datasources:
+  - name: Notion
+    type: yesoreyeram-notion-datasource
+    access: proxy
+    jsonData:
+      baseURL: https://api.notion.com
+      notionVersion: "2022-06-28"
+      # Optional default database id used to prefill the query editor.
+      # databaseId: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    secureJsonData:
+      # Notion internal integration token, sent as Authorization: Bearer.
+      apiToken: ${NOTION_API_TOKEN}
+    editable: true

@@ -1,0 +1,102 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 5 Fields by 1 Rows
+//  +---------------+------------------+-----------------+-----------------+-----------------+
+//  | Name: Active  | Name: MRR        | Name: Name      | Name: Tags      | Name: id        |
+//  | Labels:       | Labels:          | Labels:         | Labels:         | Labels:         |
+//  | Type: []*bool | Type: []*float64 | Type: []*string | Type: []*string | Type: []*string |
+//  +---------------+------------------+-----------------+-----------------+-----------------+
+//  | true          | 49.5             | Alice           | vip, beta       | p1              |
+//  +---------------+------------------+-----------------+-----------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "Active",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "MRR",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Tags",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            true
+          ],
+          [
+            49.5
+          ],
+          [
+            "Alice"
+          ],
+          [
+            "vip, beta"
+          ],
+          [
+            "p1"
+          ]
+        ]
+      }
+    }
+  ]
+}

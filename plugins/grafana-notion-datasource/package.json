@@ -1,7 +1,7 @@
 {
-  "name": "yesoreyeram-nocodb-datasource",
+  "name": "yesoreyeram-notion-datasource",
   "version": "0.1.0",
-  "description": "Grafana data source plugin for NocoDB",
+  "description": "Grafana data source plugin for Notion",
   "scripts": {
     "build": "yarn build:frontend && yarn build:backend",
     "build:frontend": "webpack -c ./webpack.config.ts --env production",

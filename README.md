@@ -28,6 +28,7 @@ This is a [Yarn 4](https://yarnpkg.com) workspaces monorepo.
 | Plugin | Description |
 | --- | --- |
 | [`yesoreyeram-nocodb-datasource`](./plugins/grafana-nocodb-datasource) | Grafana data source plugin for [NocoDB](https://nocodb.com) (TypeScript frontend + Go backend). |
+| [`yesoreyeram-notion-datasource`](./plugins/grafana-notion-datasource) | Grafana data source plugin for [Notion](https://www.notion.so) (TypeScript frontend + Go backend). |
 
 ## Registry
 
@@ -50,6 +51,28 @@ yarn typecheck
 yarn build
 yarn test
 ```
+
+### Local stack (all plugins)
+
+The root [`docker-compose.yaml`](./docker-compose.yaml) runs a single Grafana
+with **every plugin** in this monorepo mounted, plus the backing services they
+need. Grafana starts with anonymous admin at http://localhost:3000.
+
+Build each plugin's `dist/` (frontend + backend) first, then start the stack.
+`yarn build` builds both the frontend and the Go backend (all platforms) for
+every plugin, so it requires Go and [Mage](https://magefile.org) on your PATH.
+
+```bash
+# Build every plugin's frontend + backend (-> dist/, incl. linux binaries)
+yarn build
+
+# Start Grafana + all plugins (+ backing services)
+NOTION_API_TOKEN=secret_... docker compose up
+```
+
+The NocoDB datasource is seeded and auto-provisioned; the Notion datasource is
+auto-provisioned from `NOTION_API_TOKEN` (omit it to skip Notion). Each plugin
+also keeps its own `docker-compose.yaml` for running that plugin in isolation.
 
 ### Releasing
 

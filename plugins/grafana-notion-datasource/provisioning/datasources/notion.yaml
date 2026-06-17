@@ -1,0 +1,13 @@
+apiVersion: 1
+
+datasources:
+  - name: Notion
+    type: yesoreyeram-notion-datasource
+    access: proxy
+    jsonData:
+      baseURL: https://api.notion.com
+      notionVersion: "2022-06-28"
+      # databaseId: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    secureJsonData:
+      apiToken: ${NOTION_API_TOKEN}
+    editable: true

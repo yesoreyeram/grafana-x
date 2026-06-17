@@ -81,27 +81,23 @@ NocoDB ids are visible in the app URL and context menus:
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for the full setup, architecture and
 workflow. Quick reference:
 
-Frontend:
+Build (frontend + backend):
 
 ```bash
-npm install
-npm run dev        # watch build
-npm run build      # production build
-npm run test       # unit tests
-npm run lint       # lint
-npm run typecheck  # type check
+yarn install                # at the monorepo root
+yarn build                  # frontend + backend (all platforms) -> dist/
+yarn build:frontend         # frontend only -> dist/module.js
+yarn build:backend          # backend only -> dist/gpx_nocodb_* (mage buildAll)
+yarn dev                    # frontend watch
+yarn test                   # frontend unit tests
+yarn lint                   # lint
+yarn typecheck              # type check
+go test ./...               # backend unit tests
 ```
 
-Backend (Go + Mage):
-
-```bash
-go test ./...              # unit tests
-mage -v build:linux        # build a single platform (e.g. build:linuxARM64)
-mage -v buildAll           # build all platforms into dist/
-```
-
-Build artifacts are written to `dist/`. Point Grafana's
-`plugins` path at this repo (or symlink `dist/`) and set
+`yarn build` requires Go and [Mage](https://magefile.org) on your PATH. Build
+artifacts are written to `dist/`. Point Grafana's `plugins` path at this repo
+(or symlink `dist/`) and set
 `allow_loading_unsigned_plugins = yesoreyeram-nocodb-datasource` for local
 testing.
 
@@ -110,8 +106,7 @@ testing.
 A ready-to-use stack is included. Build the plugin first, then start it:
 
 ```bash
-mage -v build:linuxARM64   # or build:linux on amd64; produces dist/
-npm run build
+yarn build   # produce dist/ (frontend + backend)
 docker compose up
 ```
 
