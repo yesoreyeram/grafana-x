@@ -1,0 +1,30 @@
+apiVersion: 1
+
+datasources:
+  # Option A: database token auth (scoped to a single database).
+  - name: Baserow
+    type: yesoreyeram-baserow-datasource
+    access: proxy
+    # When running the bundled docker-compose, Baserow is reachable at this host.
+    jsonData:
+      baseURL: http://baserow
+      authMode: token
+      # Baserow database (application) id; database tokens are scoped to it.
+      databaseId: "1"
+    secureJsonData:
+      apiToken: ${BASEROW_API_TOKEN}
+    editable: true
+
+  # Option B: email & password auth (JWT). Can list every accessible database;
+  # databaseId is optional (pick the database in the query editor).
+  # - name: Baserow (password)
+  #   type: yesoreyeram-baserow-datasource
+  #   access: proxy
+  #   jsonData:
+  #     baseURL: http://baserow
+  #     authMode: password
+  #     email: ${BASEROW_EMAIL}
+  #     # databaseId: "1"   # optional default
+  #   secureJsonData:
+  #     password: ${BASEROW_PASSWORD}
+  #   editable: true

@@ -1,0 +1,77 @@
+# Local Baserow + Grafana stack (no sample-data seeding).
+#
+# 1. Build the plugin first:  yarn build  (and `mage -v build:<arch>` for the backend)
+# 2. Start the stack:         docker compose up
+# 3. Open Baserow at http://localhost:8980, create an account, a database and a
+#    table, then create a database token (Settings -> Database tokens) OR use your
+#    account email/password.
+# 4. Provision the datasource automatically by exporting credentials before start:
+#
+#      # database token auth
+#      BASEROW_API_TOKEN=... BASEROW_DATABASE_ID=1 docker compose up
+#
+#      # OR email & password auth
+#      BASEROW_AUTH_MODE=password BASEROW_EMAIL=you@example.com BASEROW_PASSWORD=... docker compose up
+#
+#    (Omit them to skip auto-provisioning and add the datasource manually in the UI.)
+#
+# Grafana runs with anonymous admin at http://localhost:3000 (no login).
+
+services:
+  grafana:
+    image: grafana/grafana:${GRAFANA_VERSION:-11.3.0}
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - ./dist:/var/lib/grafana/plugins/yesoreyeram-baserow-datasource
+      - ./provisioning:/etc/grafana/provisioning
+    environment:
+      - GF_DEFAULT_APP_MODE=development
+      - GF_LOG_LEVEL=debug
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-baserow-datasource
+      # Anonymous access with admin role so no login is required locally.
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_ANONYMOUS_ORG_NAME=Main Org.
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+      - GF_AUTH_BASIC_ENABLED=false
+      - GF_USERS_DEFAULT_THEME=dark
+      # Datasource provisioning reads these (all optional). See the header above.
+      - GRAFANA_INTERNAL_BASEROW_URL=${GRAFANA_INTERNAL_BASEROW_URL:-http://baserow}
+      - BASEROW_AUTH_MODE=${BASEROW_AUTH_MODE:-token}
+      - BASEROW_DATABASE_ID=${BASEROW_DATABASE_ID:-}
+      - BASEROW_API_TOKEN=${BASEROW_API_TOKEN:-}
+      - BASEROW_EMAIL=${BASEROW_EMAIL:-}
+      - BASEROW_PASSWORD=${BASEROW_PASSWORD:-}
+    depends_on:
+      baserow:
+        condition: service_healthy
+
+  baserow:
+    image: baserow/baserow:1.34.5
+    ports:
+      - "8980:80/tcp"
+    environment:
+      - BASEROW_PUBLIC_URL=http://localhost:8980
+      # Grafana (server-side proxy) reaches Baserow at the internal host
+      # `http://baserow`. The all-in-one image's Caddy only routes /api/* to the
+      # backend for hosts it recognises as Baserow URLs; any other host is
+      # treated as a published application-builder domain and returns a
+      # "Site not found" HTML 404. Registering the internal host here makes
+      # /api/* resolve to the backend for Grafana's requests.
+      - BASEROW_EXTRA_PUBLIC_URLS=http://baserow
+      # Baserow imports ~120 example templates on first migration, which can add
+      # several minutes to the initial boot. Disable it for a fast local start.
+      - BASEROW_TRIGGER_SYNC_TEMPLATES_AFTER_MIGRATION=false
+      # Skip the periodic background template sync as well.
+      - BASEROW_SYNC_TEMPLATES_ON_STARTUP=false
+    volumes:
+      - baserow_data:/baserow/data
+    healthcheck:
+      test: ["CMD", "curl", "-fSs", "http://localhost/api/_health/"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+
+volumes:
+  baserow_data:

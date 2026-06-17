@@ -1,0 +1,20 @@
+apiVersion: 1
+
+# Auto-provisioned Baserow datasource for the local docker-compose stack.
+# Credentials come from environment variables (see docker-compose.yaml header).
+# If the relevant variables are empty, configure the datasource in the UI instead.
+datasources:
+  - name: Baserow
+    type: yesoreyeram-baserow-datasource
+    access: proxy
+    isDefault: true
+    jsonData:
+      platform: selfhosted
+      baseURL: $GRAFANA_INTERNAL_BASEROW_URL
+      authMode: $BASEROW_AUTH_MODE
+      databaseId: $BASEROW_DATABASE_ID
+      email: $BASEROW_EMAIL
+    secureJsonData:
+      apiToken: $BASEROW_API_TOKEN
+      password: $BASEROW_PASSWORD
+    editable: true

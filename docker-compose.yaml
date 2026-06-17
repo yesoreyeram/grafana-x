@@ -11,14 +11,21 @@
 #   yarn workspace yesoreyeram-notion-datasource build
 #   (cd plugins/grafana-notion-datasource && mage -v build:linux)   # or your arch
 #
+#   # Baserow plugin
+#   yarn workspace yesoreyeram-baserow-datasource build
+#   (cd plugins/grafana-baserow-datasource && mage -v build:linux)  # or your arch
+#
 # Then start everything:
 #
-#   NOTION_API_TOKEN=secret_... docker compose up
+#   NOTION_API_TOKEN=secret_... BASEROW_API_TOKEN=... BASEROW_DATABASE_ID=1 docker compose up
 #
 # Grafana runs with anonymous admin at http://localhost:3000 (no login).
 # NocoDB runs at http://localhost:8080 (seeded with sample data).
-# The NocoDB datasource is auto-provisioned by the seed job; the Notion
-# datasource is auto-provisioned from NOTION_API_TOKEN (omit it to skip Notion).
+# Baserow runs at http://localhost:8980 (empty; create your own database/table/token in the UI).
+# The NocoDB datasource is auto-provisioned by its seed job; the Notion and
+# Baserow datasources are auto-provisioned from env vars (omit them to skip).
+# Baserow auth (all optional): token mode -> BASEROW_API_TOKEN + BASEROW_DATABASE_ID;
+# password mode -> BASEROW_AUTH_MODE=password BASEROW_EMAIL=... BASEROW_PASSWORD=...
 
 services:
   grafana:
@@ -29,6 +36,7 @@ services:
       # Each plugin's built dist/ is mounted under Grafana's plugins directory.
       - ./plugins/grafana-nocodb-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-nocodb-datasource
       - ./plugins/grafana-notion-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-notion-datasource
+      - ./plugins/grafana-baserow-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-baserow-datasource
       # Static provisioning shared by the stack (this repo's provisioning/ dir).
       # The NocoDB seed job also drops a generated datasource (with a fresh
       # token) into provisioning/datasources, alongside the static Notion one.
@@ -37,7 +45,7 @@ services:
       - GF_DEFAULT_APP_MODE=development
       - GF_LOG_LEVEL=debug
       # Allow every unsigned plugin in this monorepo.
-      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-nocodb-datasource,yesoreyeram-notion-datasource
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-nocodb-datasource,yesoreyeram-notion-datasource,yesoreyeram-baserow-datasource
       # Anonymous access with admin role so no login is required locally.
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
@@ -50,9 +58,19 @@ services:
       # share a database with it, then run:
       #   NOTION_API_TOKEN=secret_... docker compose up
       - NOTION_API_TOKEN=${NOTION_API_TOKEN:-}
+      # Baserow datasource provisioning (all optional). Create a database/table
+      # and a database token in the Baserow UI at http://localhost:8980 first.
+      - GRAFANA_INTERNAL_BASEROW_URL=${GRAFANA_INTERNAL_BASEROW_URL:-http://baserow}
+      - BASEROW_AUTH_MODE=${BASEROW_AUTH_MODE:-token}
+      - BASEROW_DATABASE_ID=${BASEROW_DATABASE_ID:-}
+      - BASEROW_API_TOKEN=${BASEROW_API_TOKEN:-}
+      - BASEROW_EMAIL=${BASEROW_EMAIL:-}
+      - BASEROW_PASSWORD=${BASEROW_PASSWORD:-}
     depends_on:
       nocodb-seed:
         condition: service_completed_successfully
+      baserow:
+        condition: service_healthy
 
   # --- NocoDB plugin backing services ---------------------------------------
 
@@ -87,5 +105,31 @@ services:
         condition: service_healthy
     restart: "no"
 
+  # --- Baserow plugin backing services --------------------------------------
+
+  baserow:
+    image: baserow/baserow:1.34.5
+    ports:
+      - "8980:80/tcp"
+    environment:
+      - BASEROW_PUBLIC_URL=http://localhost:8980
+      # Grafana reaches Baserow at the internal host `http://baserow`. Register
+      # it so the all-in-one Caddy routes /api/* to the backend (otherwise that
+      # host is treated as a published app-builder domain -> "Site not found").
+      - BASEROW_EXTRA_PUBLIC_URLS=http://baserow
+      # Baserow imports ~120 example templates on first migration, which can add
+      # several minutes to the initial boot. Disable it for a fast local start.
+      - BASEROW_TRIGGER_SYNC_TEMPLATES_AFTER_MIGRATION=false
+      # Skip the periodic background template sync as well.
+      - BASEROW_SYNC_TEMPLATES_ON_STARTUP=false
+    volumes:
+      - baserow_data:/baserow/data
+    healthcheck:
+      test: ["CMD", "curl", "-fSs", "http://localhost/api/_health/"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+
 volumes:
   nocodb_data:
+  baserow_data:
