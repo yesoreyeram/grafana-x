@@ -42,6 +42,7 @@ services:
       - ./plugins/grafana-airtable-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-airtable-datasource
       - ./plugins/grafana-appwrite-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-appwrite-datasource
       - ./plugins/grafana-plane-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-plane-datasource
+      - ./plugins/grafana-monday-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-monday-datasource
       # Static provisioning shared by the stack (this repo's provisioning/ dir).
       # The NocoDB seed job also drops a generated datasource (with a fresh
       # token) into provisioning/datasources, alongside the static Notion one.
@@ -50,7 +51,7 @@ services:
       - GF_DEFAULT_APP_MODE=development
       - GF_LOG_LEVEL=debug
       # Allow every unsigned plugin in this monorepo.
-      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-nocodb-datasource,yesoreyeram-notion-datasource,yesoreyeram-baserow-datasource,yesoreyeram-linear-datasource,yesoreyeram-clickup-datasource,yesoreyeram-airtable-datasource,yesoreyeram-appwrite-datasource,yesoreyeram-plane-datasource
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-nocodb-datasource,yesoreyeram-notion-datasource,yesoreyeram-baserow-datasource,yesoreyeram-linear-datasource,yesoreyeram-clickup-datasource,yesoreyeram-airtable-datasource,yesoreyeram-appwrite-datasource,yesoreyeram-plane-datasource,yesoreyeram-monday-datasource
       # Anonymous access with admin role so no login is required locally.
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
@@ -88,6 +89,10 @@ services:
       #   PLANE_API_KEY=plane_api_... PLANE_WORKSPACE_SLUG=my-team docker compose up
       - PLANE_API_KEY=${PLANE_API_KEY:-}
       - PLANE_WORKSPACE_SLUG=${PLANE_WORKSPACE_SLUG:-}
+      # monday.com datasource provisioning reads the personal API token from here.
+      # Copy your token from avatar menu > Developers > My Access Tokens, then run:
+      #   MONDAY_API_TOKEN=... docker compose up
+      - MONDAY_API_TOKEN=${MONDAY_API_TOKEN:-}
       # Baserow datasource provisioning (all optional). Create a database/table
       # and a database token in the Baserow UI at http://localhost:8980 first.
       - GRAFANA_INTERNAL_BASEROW_URL=${GRAFANA_INTERNAL_BASEROW_URL:-http://baserow}

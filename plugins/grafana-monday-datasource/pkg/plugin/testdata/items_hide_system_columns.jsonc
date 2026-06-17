@@ -1,0 +1,102 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 5 Fields by 1 Rows
+//  +-------------------------------+-----------------+-----------------+-----------------+-----------------+
+//  | Name: created_at              | Name: Status    | Name: id        | Name: name      | Name: state     |
+//  | Labels:                       | Labels:         | Labels:         | Labels:         | Labels:         |
+//  | Type: []*time.Time            | Type: []*string | Type: []*string | Type: []*string | Type: []*string |
+//  +-------------------------------+-----------------+-----------------+-----------------+-----------------+
+//  | 2024-01-15 10:00:00 +0000 UTC | Working         | 11              | Fix login       | active          |
+//  +-------------------------------+-----------------+-----------------+-----------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "created_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Status",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "state",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705312800000
+          ],
+          [
+            "Working"
+          ],
+          [
+            "11"
+          ],
+          [
+            "Fix login"
+          ],
+          [
+            "active"
+          ]
+        ]
+      }
+    }
+  ]
+}

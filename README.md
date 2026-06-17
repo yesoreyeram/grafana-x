@@ -33,6 +33,7 @@ orchestration and caching handled by [Turborepo](https://turborepo.com).
 | [`yesoreyeram-notion-datasource`](./plugins/grafana-notion-datasource) | Grafana data source plugin for [Notion](https://www.notion.so) (TypeScript frontend + Go backend). |
 | [`yesoreyeram-linear-datasource`](./plugins/grafana-linear-datasource) | Grafana data source plugin for [Linear](https://linear.app) (TypeScript frontend + Go backend). |
 | [`yesoreyeram-plane-datasource`](./plugins/grafana-plane-datasource) | Grafana data source plugin for [Plane](https://plane.so) (TypeScript frontend + Go backend). |
+| [`yesoreyeram-monday-datasource`](./plugins/grafana-monday-datasource) | Grafana data source plugin for [monday.com](https://monday.com) (TypeScript frontend + Go backend). |
 
 ## Registry
 

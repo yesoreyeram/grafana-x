@@ -1,0 +1,120 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 6 Fields by 2 Rows
+//  +-------------------------------+-----------------+-------------------+-----------------+-----------------+-----------------+
+//  | Name: updated_at              | Name: id        | Name: items_count | Name: name      | Name: state     | Name: workspace |
+//  | Labels:                       | Labels:         | Labels:           | Labels:         | Labels:         | Labels:         |
+//  | Type: []*time.Time            | Type: []*string | Type: []*float64  | Type: []*string | Type: []*string | Type: []*string |
+//  +-------------------------------+-----------------+-------------------+-----------------+-----------------+-----------------+
+//  | 2024-01-16 10:00:00 +0000 UTC | 1               | 12                | Tasks           | active          | Main            |
+//  | 2024-01-10 10:00:00 +0000 UTC | 2               | 4                 | Bugs            | active          | Main            |
+//  +-------------------------------+-----------------+-------------------+-----------------+-----------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "updated_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "items_count",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "state",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "workspace",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705399200000,
+            1704880800000
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            "Tasks",
+            "Bugs"
+          ],
+          [
+            "active",
+            "active"
+          ],
+          [
+            "Main",
+            "Main"
+          ]
+        ]
+      }
+    }
+  ]
+}

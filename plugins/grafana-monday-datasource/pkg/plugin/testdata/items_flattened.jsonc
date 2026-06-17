@@ -1,0 +1,168 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 10 Fields by 2 Rows
+//  +-------------------------------+-------------------------------+---------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+//  | Name: created_at              | Name: updated_at              | Name: Done    | Name: Owner     | Name: Status    | Name: board     | Name: group     | Name: id        | Name: name      | Name: state     |
+//  | Labels:                       | Labels:                       | Labels:       | Labels:         | Labels:         | Labels:         | Labels:         | Labels:         | Labels:         | Labels:         |
+//  | Type: []*time.Time            | Type: []*time.Time            | Type: []*bool | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*string |
+//  +-------------------------------+-------------------------------+---------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+//  | 2024-01-15 10:00:00 +0000 UTC | 2024-01-16 10:00:00 +0000 UTC | false         | Alice           | Working         | Tasks           | Doing           | 11              | Fix login       | active          |
+//  | 2024-01-14 09:00:00 +0000 UTC | 2024-01-15 09:00:00 +0000 UTC | true          | Bob             | Done            | Tasks           | Doing           | 12              | Add SSO         | active          |
+//  +-------------------------------+-------------------------------+---------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "created_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "updated_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Done",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Owner",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Status",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "board",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "group",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "state",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705312800000,
+            1705222800000
+          ],
+          [
+            1705399200000,
+            1705309200000
+          ],
+          [
+            false,
+            true
+          ],
+          [
+            "Alice",
+            "Bob"
+          ],
+          [
+            "Working",
+            "Done"
+          ],
+          [
+            "Tasks",
+            "Tasks"
+          ],
+          [
+            "Doing",
+            "Doing"
+          ],
+          [
+            "11",
+            "12"
+          ],
+          [
+            "Fix login",
+            "Add SSO"
+          ],
+          [
+            "active",
+            "active"
+          ]
+        ]
+      }
+    }
+  ]
+}

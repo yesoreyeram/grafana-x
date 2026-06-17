@@ -1,0 +1,20 @@
+apiVersion: 1
+
+datasources:
+  - name: monday.com
+    type: yesoreyeram-monday-datasource
+    access: proxy
+    jsonData:
+      baseURL: https://api.monday.com/v2
+      # Authentication method: "apiKey" (personal API token) or "oauth" (Bearer token).
+      authMethod: apiKey
+      # Optional monday.com API version (sent as the API-Version header).
+      # apiVersion: "2024-10"
+    secureJsonData:
+      # monday.com personal API token (used when authMethod is apiKey), sent raw
+      # as the Authorization header. Find it under your avatar menu >
+      # Developers > My Access Tokens (or Admin > API).
+      apiToken: ${MONDAY_API_TOKEN}
+      # For OAuth, set authMethod to "oauth" and provide the access token instead:
+      # oauthToken: ${MONDAY_OAUTH_TOKEN}
+    editable: true
