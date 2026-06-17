@@ -1,0 +1,108 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 5 Fields by 2 Rows
+//  +-------------------+-----------------+------------------+-----------------+------------------+
+//  | Name: archived_at | Name: id        | Name: identifier | Name: name      | Name: network    |
+//  | Labels:           | Labels:         | Labels:          | Labels:         | Labels:          |
+//  | Type: []*string   | Type: []*string | Type: []*string  | Type: []*string | Type: []*float64 |
+//  +-------------------+-----------------+------------------+-----------------+------------------+
+//  | null              | p1              | APO              | Apollo          | 2                |
+//  | null              | p2              | BCN              | Beacon          | 0                |
+//  +-------------------+-----------------+------------------+-----------------+------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "archived_at",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "identifier",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "network",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            null,
+            null
+          ],
+          [
+            "p1",
+            "p2"
+          ],
+          [
+            "APO",
+            "BCN"
+          ],
+          [
+            "Apollo",
+            "Beacon"
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      }
+    }
+  ]
+}

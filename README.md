@@ -31,6 +31,7 @@ This is a [Yarn 4](https://yarnpkg.com) workspaces monorepo.
 | [`yesoreyeram-nocodb-datasource`](./plugins/grafana-nocodb-datasource) | Grafana data source plugin for [NocoDB](https://nocodb.com) (TypeScript frontend + Go backend). |
 | [`yesoreyeram-notion-datasource`](./plugins/grafana-notion-datasource) | Grafana data source plugin for [Notion](https://www.notion.so) (TypeScript frontend + Go backend). |
 | [`yesoreyeram-linear-datasource`](./plugins/grafana-linear-datasource) | Grafana data source plugin for [Linear](https://linear.app) (TypeScript frontend + Go backend). |
+| [`yesoreyeram-plane-datasource`](./plugins/grafana-plane-datasource) | Grafana data source plugin for [Plane](https://plane.so) (TypeScript frontend + Go backend). |
 
 ## Registry
 

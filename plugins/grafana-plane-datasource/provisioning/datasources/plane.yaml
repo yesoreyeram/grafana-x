@@ -1,0 +1,13 @@
+apiVersion: 1
+
+datasources:
+  - name: Plane
+    type: yesoreyeram-plane-datasource
+    access: proxy
+    jsonData:
+      baseURL: https://api.plane.so
+      workspaceSlug: ${PLANE_WORKSPACE_SLUG}
+      authMethod: apiKey
+    secureJsonData:
+      apiKey: ${PLANE_API_KEY}
+    editable: true

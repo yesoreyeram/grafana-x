@@ -1,0 +1,216 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 14 Fields by 2 Rows
+//  +-------------------------------+-------------------------------+-------------------------------+-----------------+------------------+-----------------+----------------+-----------------+-----------------+-----------------+-----------------+-------------------+-----------------+-------------------+
+//  | Name: created_at              | Name: target_date             | Name: updated_at              | Name: assignees | Name: created_by | Name: id        | Name: is_draft | Name: labels    | Name: name      | Name: priority  | Name: project   | Name: sequence_id | Name: state     | Name: state_group |
+//  | Labels:                       | Labels:                       | Labels:                       | Labels:         | Labels:          | Labels:         | Labels:        | Labels:         | Labels:         | Labels:         | Labels:         | Labels:           | Labels:         | Labels:           |
+//  | Type: []*time.Time            | Type: []*time.Time            | Type: []*time.Time            | Type: []*string | Type: []*string  | Type: []*string | Type: []*bool  | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*float64  | Type: []*string | Type: []*string   |
+//  +-------------------------------+-------------------------------+-------------------------------+-----------------+------------------+-----------------+----------------+-----------------+-----------------+-----------------+-----------------+-------------------+-----------------+-------------------+
+//  | 2024-01-01 09:00:00 +0000 UTC | 2024-02-01 00:00:00 +0000 UTC | 2024-01-02 10:30:00 +0000 UTC | Alice, Bob      | Carol            | 9hx             | false          | bug             | Fix login bug   | high            | Apollo          | 12                | In Progress     | started           |
+//  | 2024-01-01 09:05:00 +0000 UTC | null                          | 2024-01-01 09:05:00 +0000 UTC | null            | Carol            | 9hz             | false          | null            | Update docs     | low             | Apollo          | 13                | Todo            | unstarted         |
+//  +-------------------------------+-------------------------------+-------------------------------+-----------------+------------------+-----------------+----------------+-----------------+-----------------+-----------------+-----------------+-------------------+-----------------+-------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "created_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "target_date",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "updated_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "assignees",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "created_by",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "is_draft",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "labels",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "priority",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "project",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "sequence_id",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "state",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "state_group",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1704099600000,
+            1704099900000
+          ],
+          [
+            1706745600000,
+            null
+          ],
+          [
+            1704191400000,
+            1704099900000
+          ],
+          [
+            "Alice, Bob",
+            null
+          ],
+          [
+            "Carol",
+            "Carol"
+          ],
+          [
+            "9hx",
+            "9hz"
+          ],
+          [
+            false,
+            false
+          ],
+          [
+            "bug",
+            null
+          ],
+          [
+            "Fix login bug",
+            "Update docs"
+          ],
+          [
+            "high",
+            "low"
+          ],
+          [
+            "Apollo",
+            "Apollo"
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            "In Progress",
+            "Todo"
+          ],
+          [
+            "started",
+            "unstarted"
+          ]
+        ]
+      }
+    }
+  ]
+}
