@@ -1,0 +1,57 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "numeric-wide",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 1 Fields by 1 Rows
+//  +---------------+
+//  | Name: count   |
+//  | Labels:       |
+//  | Type: []int64 |
+//  +---------------+
+//  | 42            |
+//  +---------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "numeric-wide",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "count",
+            "type": "number",
+            "typeInfo": {
+              "frame": "int64"
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            42
+          ]
+        ]
+      }
+    }
+  ]
+}

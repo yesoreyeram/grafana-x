@@ -1,0 +1,101 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 4 Fields by 3 Rows
+//  +-------------------------------+------------------+------------------+-----------------+
+//  | Name: Timestamp               | Name: CPU        | Name: Requests   | Name: Service   |
+//  | Labels:                       | Labels:          | Labels:          | Labels:         |
+//  | Type: []*time.Time            | Type: []*float64 | Type: []*float64 | Type: []*string |
+//  +-------------------------------+------------------+------------------+-----------------+
+//  | 2024-03-01 10:00:00 +0000 UTC | 80.5             | 1200             | api             |
+//  | 2024-03-01 09:00:00 +0000 UTC | 40               | 600              | api             |
+//  | 2024-03-01 02:30:00 +0000 UTC | 12.25            | 150              | api             |
+//  +-------------------------------+------------------+------------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "Timestamp",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "CPU",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Requests",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Service",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1709287200000,
+            1709283600000,
+            1709260200000
+          ],
+          [
+            80.5,
+            40,
+            12.25
+          ],
+          [
+            1200,
+            600,
+            150
+          ],
+          [
+            "api",
+            "api",
+            "api"
+          ]
+        ]
+      }
+    }
+  ]
+}
