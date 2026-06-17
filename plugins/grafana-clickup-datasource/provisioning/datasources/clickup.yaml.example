@@ -1,0 +1,18 @@
+apiVersion: 1
+
+datasources:
+  - name: ClickUp
+    type: yesoreyeram-clickup-datasource
+    access: proxy
+    jsonData:
+      baseURL: https://api.clickup.com/api
+      # Authentication method: "apiKey" (personal token) or "oauth" (Bearer token).
+      authMethod: apiKey
+    secureJsonData:
+      # ClickUp personal API token (used when authMethod is apiKey), sent raw as
+      # the Authorization header. Generate one at:
+      #   Settings > Apps > API Token
+      apiKey: ${CLICKUP_API_TOKEN}
+      # For OAuth, set authMethod to "oauth" and provide the access token instead:
+      # oauthToken: ${CLICKUP_OAUTH_TOKEN}
+    editable: true

@@ -1,0 +1,240 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 16 Fields by 2 Rows
+//  +-----------------------------------+-------------------------------+-----------------------------------+----------------+-----------------+-----------------+-----------------+-----------------+-----------------+------------------+-----------------+-----------------+-----------------+-------------------+-----------------+-------------------------------+
+//  | Name: date_created                | Name: date_updated            | Name: due_date                    | Name: archived | Name: assignees | Name: creator   | Name: id        | Name: list      | Name: name      | Name: points     | Name: priority  | Name: space     | Name: status    | Name: status_type | Name: tags      | Name: url                     |
+//  | Labels:                           | Labels:                       | Labels:                           | Labels:        | Labels:         | Labels:         | Labels:         | Labels:         | Labels:         | Labels:          | Labels:         | Labels:         | Labels:         | Labels:           | Labels:         | Labels:                       |
+//  | Type: []*time.Time                | Type: []*time.Time            | Type: []*time.Time                | Type: []*bool  | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*float64 | Type: []*string | Type: []*string | Type: []*string | Type: []*string   | Type: []*string | Type: []*string               |
+//  +-----------------------------------+-------------------------------+-----------------------------------+----------------+-----------------+-----------------+-----------------+-----------------+-----------------+------------------+-----------------+-----------------+-----------------+-------------------+-----------------+-------------------------------+
+//  | 2019-09-06 14:34:10.202 +0000 UTC | 2019-09-06 14:34:20 +0000 UTC | 2017-10-18 23:26:34.377 +0000 UTC | false          | Alice, Bob      | Alex            | 9hx             | Sprint Backlog  | Fix login bug   | 3                | urgent          | null            | in progress     | custom            | bug             | https://app.clickup.com/t/9hx |
+//  | 2019-09-06 14:34:10.5 +0000 UTC   | 2019-09-06 14:34:30 +0000 UTC | null                              | false          | null            | Alex            | 9hz             | Sprint Backlog  | Update docs     | null             | null            | null            | to do           | open              | null            | https://app.clickup.com/t/9hz |
+//  +-----------------------------------+-------------------------------+-----------------------------------+----------------+-----------------+-----------------+-----------------+-----------------+-----------------+------------------+-----------------+-----------------+-----------------+-------------------+-----------------+-------------------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "date_created",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "date_updated",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "due_date",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "archived",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "assignees",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "creator",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "list",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "points",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "priority",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "space",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status_type",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "tags",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1567780450202,
+            1567780450500
+          ],
+          [
+            1567780460000,
+            1567780470000
+          ],
+          [
+            1508369194377,
+            null
+          ],
+          [
+            false,
+            false
+          ],
+          [
+            "Alice, Bob",
+            null
+          ],
+          [
+            "Alex",
+            "Alex"
+          ],
+          [
+            "9hx",
+            "9hz"
+          ],
+          [
+            "Sprint Backlog",
+            "Sprint Backlog"
+          ],
+          [
+            "Fix login bug",
+            "Update docs"
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            "urgent",
+            null
+          ],
+          [
+            null,
+            null
+          ],
+          [
+            "in progress",
+            "to do"
+          ],
+          [
+            "custom",
+            "open"
+          ],
+          [
+            "bug",
+            null
+          ],
+          [
+            "https://app.clickup.com/t/9hx",
+            "https://app.clickup.com/t/9hz"
+          ]
+        ]
+      }
+    }
+  ]
+}

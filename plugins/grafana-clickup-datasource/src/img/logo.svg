@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="cuPink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF02F0"/>
+      <stop offset="1" stop-color="#FFC800"/>
+    </linearGradient>
+    <linearGradient id="cuTeal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8930FD"/>
+      <stop offset="1" stop-color="#49CCF9"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#cuTeal)" d="M14 70.4 28.6 59.2c7.8 10.2 16 14.9 25.2 14.9 9.1 0 17.1-4.6 24.5-14.7L93 70.5C82.3 85.1 69 92.8 53.8 92.8 38.6 92.8 25.2 85.2 14 70.4Z"/>
+  <path fill="url(#cuPink)" d="M53.7 26.5 27.8 49l-12-13.8L53.8 2.6l38.1 32.6-12.1 13.8Z"/>
+</svg>

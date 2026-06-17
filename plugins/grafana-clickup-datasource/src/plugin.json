@@ -1,0 +1,43 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "ClickUp",
+  "id": "yesoreyeram-clickup-datasource",
+  "metrics": true,
+  "backend": true,
+  "executable": "gpx_clickup",
+  "info": {
+    "description": "Query tasks, lists, folders, spaces and workspaces from ClickUp in Grafana",
+    "author": {
+      "name": "yesoreyeram"
+    },
+    "keywords": [
+      "clickup",
+      "tasks",
+      "project management",
+      "rest",
+      "tickets"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/yesoreyeram/grafana-x"
+      },
+      {
+        "name": "ClickUp",
+        "url": "https://clickup.com"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.4.0",
+    "plugins": []
+  }
+}
