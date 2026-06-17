@@ -1,0 +1,37 @@
+{
+  "name": "@yesoreyeram/grafana-plugin-tools",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Shared templates and configuration distributed to Grafana plugin repositories via registry.json. Not a buildable package; the files under local/ and templates/ are consumed by the shadcn-style registry.",
+  "keywords": [
+    "grafana",
+    "plugin",
+    "templates"
+  ],
+  "author": {
+    "name": "Sriramajeyam Sugumaran",
+    "url": "https://x.com/yesoreyeram"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/yesoreyeram/grafana-x#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yesoreyeram/grafana-x.git",
+    "directory": "packages/plugin-tools"
+  },
+  "bugs": {
+    "url": "https://github.com/yesoreyeram/grafana-x/issues"
+  },
+  "files": [
+    "local",
+    "templates"
+  ],
+  "scripts": {
+    "build": "echo \"plugin-tools ships template assets; nothing to build\"",
+    "typecheck": "echo \"plugin-tools ships template assets; nothing to typecheck\"",
+    "test": "echo \"plugin-tools ships template assets; nothing to test\""
+  },
+  "engines": {
+    "node": ">=24.16.0"
+  }
+}

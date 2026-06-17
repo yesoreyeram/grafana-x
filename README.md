@@ -21,7 +21,13 @@ This is a [Yarn 4](https://yarnpkg.com) workspaces monorepo.
 | Package | Description |
 | --- | --- |
 | [`@yesoreyeram/grafana-utils`](./packages/utils) | CLI tool for Grafana plugin development and management. |
-| [`plugin-tools`](./packages/plugin-tools) | Shared templates and configuration distributed via the registry below. |
+| [`@yesoreyeram/grafana-plugin-tools`](./packages/plugin-tools) | Shared templates and configuration distributed via the registry below. |
+
+## Plugins
+
+| Plugin | Description |
+| --- | --- |
+| [`yesoreyeram-nocodb-datasource`](./plugins/grafana-nocodb-datasource) | Grafana data source plugin for [NocoDB](https://nocodb.com) (TypeScript frontend + Go backend). |
 
 ## Registry
 

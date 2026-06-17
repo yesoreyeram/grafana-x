@@ -39,22 +39,28 @@ Magefile.go               Backend build via grafana-plugin-sdk-go build targets
 webpack.config.ts         Frontend build (self-contained, not the create-plugin .config indirection)
 ```
 
-## Commands (run from repo root)
+## Commands
+
+This plugin is a workspace in the **`grafana-x` Yarn 4 monorepo**. Run the
+commands below **from this plugin directory** (`yarn` resolves the workspace
+automatically), or from the monorepo root with
+`yarn workspace yesoreyeram-nocodb-datasource <script>`. Install deps with a
+single `yarn install` at the monorepo root — there is no per-plugin install.
 
 | Task                | Command |
 | ------------------- | ------- |
-| Install deps        | `npm install` |
-| Frontend build      | `npm run build` |
-| Frontend watch      | `npm run dev` |
-| Typecheck           | `npm run typecheck` |
-| Lint                | `npm run lint` (`npm run lint -- --fix` to fix) |
-| Frontend tests      | `npm test` |
+| Install deps        | `yarn install` (run at monorepo root) |
+| Frontend build      | `yarn build` |
+| Frontend watch      | `yarn dev` |
+| Typecheck           | `yarn typecheck` |
+| Lint                | `yarn lint` (`yarn lint:fix` to fix) |
+| Frontend tests      | `yarn test` |
 | Backend tests       | `go test ./pkg/...` |
 | Backend build (1)   | `mage -v build:linuxARM64` (or `build:linux`, `build:darwinARM64`, …) |
 | Backend build (all) | `mage -v buildAll` |
 | Local full stack    | `docker compose up` (build `dist/` first) |
 
-Before declaring work done, run: `npm run typecheck && npm run lint && npm test && go test ./pkg/...`.
+Before declaring work done, run: `yarn typecheck && yarn lint && yarn test && go test ./pkg/...`.
 
 ## Key architecture facts (do not regress these)
 
@@ -88,8 +94,10 @@ Before declaring work done, run: `npm run typecheck && npm run lint && npm test 
   `httptest`.
 - Match existing code style; do not introduce new frameworks or build tooling.
 - **Toolchain is pinned**: Node in `.nvmrc`/`.tool-versions`, Go in
-  `go.mod`/`.go-version`/`.tool-versions`; all npm deps are pinned to exact
-  versions (no `^`/`~`). Keep them exact when adding/upgrading deps.
+  `go.mod`/`.go-version`/`.tool-versions`; all JS deps are pinned to exact
+  versions (no `^`/`~`). Keep them exact when adding/upgrading deps. The
+  monorepo uses Yarn 4 with `defaultSemverRangePrefix: ""`, so `yarn add`
+  already records exact versions.
 
 ## Golden data-frame tests
 

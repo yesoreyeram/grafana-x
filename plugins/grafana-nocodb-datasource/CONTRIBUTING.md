@@ -5,7 +5,7 @@ This guide covers local setup, the architecture, how to test, and the PR process
 
 ## Prerequisites
 
-- **Node.js >= 20** and npm
+- **Node.js >= 24.16** and **Yarn 4** (Corepack; managed by the monorepo)
 - **Go >= 1.23**
 - **Mage** (`go install github.com/magefile/mage@latest`) for backend builds
 - **Docker** (optional) for the local end-to-end stack
@@ -27,17 +27,22 @@ There's a fuller architecture map for tooling in [AGENTS.md](./AGENTS.md).
 
 ## Getting started
 
+This plugin lives in the [`grafana-x`](https://github.com/yesoreyeram/grafana-x)
+Yarn 4 monorepo under `plugins/grafana-nocodb-datasource`. Install dependencies
+once from the monorepo root; all plugin commands below run from this directory.
+
 ```bash
-git clone https://github.com/yesoreyeram/grafana-nocodb-datasource
-cd grafana-nocodb-datasource
-npm install
+git clone https://github.com/yesoreyeram/grafana-x
+cd grafana-x
+yarn install
+cd plugins/grafana-nocodb-datasource
 ```
 
 ### Build
 
 ```bash
 # Frontend → dist/module.js (+ plugin.json, img, etc.)
-npm run build          # or: npm run dev  (watch mode)
+yarn build             # or: yarn dev  (watch mode)
 
 # Backend → dist/gpx_nocodb_<os>_<arch>
 mage -v build:linuxARM64   # pick your platform; or build:linux, build:darwinARM64, …
@@ -63,7 +68,7 @@ Symlink or copy `dist/` into Grafana's plugins directory as
 
 ```bash
 mage -v build:linuxARM64   # or build:linux on amd64
-npm run build
+yarn build
 docker compose up
 ```
 
@@ -118,9 +123,9 @@ QueryEditor (React)
 ## Testing
 
 ```bash
-npm run typecheck       # TypeScript
-npm run lint            # ESLint (npm run lint -- --fix to autofix)
-npm test                # Jest (frontend unit tests)
+yarn typecheck          # TypeScript
+yarn lint               # ESLint (yarn lint:fix to autofix)
+yarn test               # Jest (frontend unit tests)
 go test ./pkg/...       # Go unit tests
 ```
 
@@ -180,7 +185,7 @@ curl -s -X POST http://localhost:3000/api/ds/query -H 'Content-Type: application
 
 1. Create a topic branch from `main`.
 2. Make focused changes with tests.
-3. Run `npm run typecheck && npm run lint && npm test && go test ./pkg/...`.
+3. Run `yarn typecheck && yarn lint && yarn test && go test ./pkg/...`.
 4. Update `CHANGELOG.md` and any affected docs (`README.md`, `AGENTS.md`).
 5. Open a PR describing the change and how you verified it (include the live
    `docker compose` check when behavior changes).
