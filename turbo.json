@@ -1,0 +1,86 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "ui": "stream",
+  "globalDependencies": [
+    ".nvmrc",
+    "cspell.config.json",
+    "eslint.config.mjs"
+  ],
+  "globalEnv": [
+    "CI",
+    "NODE_ENV"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "src/**",
+        "pkg/**",
+        "plugin.json",
+        "webpack.config.ts",
+        "tsconfig.json",
+        "tsconfig.build.json",
+        "Magefile.go",
+        "go.mod",
+        "go.sum"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "typecheck": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "src/**",
+        "tsconfig.json",
+        "tsconfig.build.json"
+      ],
+      "outputs": []
+    },
+    "test": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "src/**",
+        "jest.config.*",
+        "tsconfig.json"
+      ],
+      "outputs": [
+        "coverage/**"
+      ]
+    },
+    "lint": {
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "src/**",
+        "eslint.config.*",
+        ".eslintrc*"
+      ],
+      "outputs": [
+        ".eslintcache"
+      ]
+    },
+    "spellcheck": {
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "cspell.config.json"
+      ],
+      "outputs": []
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}

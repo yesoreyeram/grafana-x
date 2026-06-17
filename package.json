@@ -24,9 +24,9 @@
     "plugins/*"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach -A --topological-dev run build",
-    "typecheck": "yarn workspaces foreach -A run typecheck",
-    "test": "yarn workspaces foreach -A run test",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"packages/**/src/**/*.ts\"",
@@ -34,7 +34,7 @@
     "spellcheck": "cspell -c cspell.config.json \"**/*.{ts,tsx,js,go,md,mdx,yml,yaml,json,scss,css}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "yarn build && changeset publish"
+    "release": "turbo run build && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "2.31.0",
@@ -42,6 +42,7 @@
     "cspell": "10.0.1",
     "eslint": "9.39.4",
     "prettier": "3.8.3",
+    "turbo": "2.9.18",
     "typescript": "6.0.3",
     "typescript-eslint": "8.60.1"
   },

@@ -27,6 +27,17 @@ yarn install --immutable
    yarn test
    ```
 
+   `build`, `typecheck`, and `test` run across all workspaces via
+   [Turborepo](https://turborepo.com) (see [`turbo.json`](./turbo.json)), which
+   runs them in topological order and caches results — unchanged tasks replay
+   from cache (`>>> FULL TURBO`). To target one workspace, filter it:
+
+   ```bash
+   yarn turbo run build --filter=yesoreyeram-notion-datasource
+   ```
+
+   If a task seems to use a stale cache, re-run with `--force`.
+
 4. If you changed a publishable package (for example
    `@yesoreyeram/grafana-utils`), add a changeset:
 

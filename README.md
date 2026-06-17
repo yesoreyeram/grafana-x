@@ -16,7 +16,8 @@
 
 ## Packages
 
-This is a [Yarn 4](https://yarnpkg.com) workspaces monorepo.
+This is a [Yarn 4](https://yarnpkg.com) workspaces monorepo, with task
+orchestration and caching handled by [Turborepo](https://turborepo.com).
 
 | Package | Description |
 | --- | --- |
@@ -54,6 +55,35 @@ yarn typecheck
 yarn build
 yarn test
 ```
+
+### Task running and caching
+
+`build`, `typecheck`, and `test` are run across all workspaces by
+[Turborepo](https://turborepo.com) (configured in [`turbo.json`](./turbo.json)).
+Turborepo runs tasks in topological order (a plugin's dependencies build first)
+and **caches** their results — re-running a task with no relevant changes
+replays the cached output instantly (`>>> FULL TURBO`).
+
+```bash
+# Run a task across every workspace (cached)
+yarn build          # turbo run build
+yarn typecheck      # turbo run typecheck
+yarn test           # turbo run test
+
+# Run a task for a single workspace
+yarn turbo run build --filter=yesoreyeram-notion-datasource
+
+# Watch/dev (not cached)
+yarn turbo run dev --filter=yesoreyeram-notion-datasource
+
+# Force a run, ignoring the cache
+yarn turbo run build --force
+```
+
+The cache lives in `.turbo/` (git-ignored). Cache keys are derived from each
+task's inputs (source files, configs) plus global config such as `.nvmrc`,
+`eslint.config.mjs`, and `cspell.config.json`, so changing any of these
+invalidates the affected tasks.
 
 ### Local stack (all plugins)
 
