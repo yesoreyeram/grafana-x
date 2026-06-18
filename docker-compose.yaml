@@ -17,7 +17,7 @@
 #
 # Then start everything:
 #
-#   NOTION_API_TOKEN=secret_... BASEROW_API_TOKEN=... BASEROW_DATABASE_ID=1 docker compose up
+#   NOTION_API_TOKEN=secret_... HUBSPOT_ACCESS_TOKEN=pat-... BASEROW_API_TOKEN=... BASEROW_DATABASE_ID=1 docker compose up
 #
 # Grafana runs with anonymous admin at http://localhost:3000 (no login).
 # NocoDB runs at http://localhost:8080 (seeded with sample data).
@@ -43,6 +43,7 @@ services:
       - ./plugins/grafana-appwrite-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-appwrite-datasource
       - ./plugins/grafana-plane-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-plane-datasource
       - ./plugins/grafana-monday-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-monday-datasource
+      - ./plugins/grafana-hubspot-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-hubspot-datasource
       # Static provisioning shared by the stack (this repo's provisioning/ dir).
       # The NocoDB seed job also drops a generated datasource (with a fresh
       # token) into provisioning/datasources, alongside the static Notion one.
@@ -51,7 +52,7 @@ services:
       - GF_DEFAULT_APP_MODE=development
       - GF_LOG_LEVEL=debug
       # Allow every unsigned plugin in this monorepo.
-      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-nocodb-datasource,yesoreyeram-notion-datasource,yesoreyeram-baserow-datasource,yesoreyeram-linear-datasource,yesoreyeram-clickup-datasource,yesoreyeram-airtable-datasource,yesoreyeram-appwrite-datasource,yesoreyeram-plane-datasource,yesoreyeram-monday-datasource
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-nocodb-datasource,yesoreyeram-notion-datasource,yesoreyeram-baserow-datasource,yesoreyeram-linear-datasource,yesoreyeram-clickup-datasource,yesoreyeram-airtable-datasource,yesoreyeram-appwrite-datasource,yesoreyeram-plane-datasource,yesoreyeram-monday-datasource,yesoreyeram-hubspot-datasource
       # Anonymous access with admin role so no login is required locally.
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
@@ -93,6 +94,12 @@ services:
       # Copy your token from avatar menu > Developers > My Access Tokens, then run:
       #   MONDAY_API_TOKEN=... docker compose up
       - MONDAY_API_TOKEN=${MONDAY_API_TOKEN:-}
+      # HubSpot datasource provisioning reads the private app access token from here.
+      # Create a private app at Settings > Integrations > Private Apps with at minimum
+      # crm.objects.owners.read (for health check) plus scopes for the objects you query.
+      # Then run:
+      #   HUBSPOT_ACCESS_TOKEN=pat-xxxxx docker compose up
+      - HUBSPOT_ACCESS_TOKEN=${HUBSPOT_ACCESS_TOKEN:-}
       # Baserow datasource provisioning (all optional). Create a database/table
       # and a database token in the Baserow UI at http://localhost:8980 first.
       - GRAFANA_INTERNAL_BASEROW_URL=${GRAFANA_INTERNAL_BASEROW_URL:-http://baserow}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "HubSpot",
+  "id": "yesoreyeram-hubspot-datasource",
+  "metrics": true,
+  "backend": true,
+  "executable": "gpx_hubspot",
+  "info": {
+    "description": "Query contacts, companies, deals, tickets and more from HubSpot in Grafana",
+    "author": {
+      "name": "yesoreyeram"
+    },
+    "keywords": ["hubspot","crm","contacts","deals","tickets","sales","rest"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      { "name": "Website", "url": "https://github.com/yesoreyeram/grafana-x" },
+      { "name": "HubSpot", "url": "https://developers.hubspot.com/docs/api/overview" }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.4.0",
+    "plugins": []
+  }
+}

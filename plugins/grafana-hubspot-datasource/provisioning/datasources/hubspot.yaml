@@ -1,0 +1,31 @@
+# Grafana datasource provisioning for HubSpot.
+#
+# Usage:
+#   export HUBSPOT_ACCESS_TOKEN=pat-xxxxxx
+#   docker compose up
+#
+# Required scopes on the private app token:
+#   crm.objects.owners.read  (minimum for health check to pass)
+#   crm.objects.contacts.read
+#   crm.objects.companies.read
+#   crm.objects.deals.read
+#   crm.objects.tickets.read
+#   crm.objects.products.read
+#   crm.objects.line_items.read
+#   crm.objects.engagements.read
+#   crm.schemas.custom.read
+#
+# Create the token at: Settings > Integrations > Private Apps
+
+apiVersion: 1
+
+datasources:
+  - name: HubSpot
+    type: yesoreyeram-hubspot-datasource
+    access: proxy
+    jsonData:
+      baseURL: https://api.hubapi.com
+      authMethod: privateApp
+    secureJsonData:
+      privateAppToken: ${HUBSPOT_ACCESS_TOKEN}
+    editable: true

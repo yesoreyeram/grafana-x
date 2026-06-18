@@ -1,0 +1,26 @@
+services:
+  grafana:
+    image: grafana/grafana:${GRAFANA_VERSION:-11.3.0}
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - ./dist:/var/lib/grafana/plugins/yesoreyeram-hubspot-datasource
+      - ./provisioning:/etc/grafana/provisioning
+    environment:
+      - GF_DEFAULT_APP_MODE=development
+      - GF_LOG_LEVEL=debug
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-hubspot-datasource
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_ANONYMOUS_ORG_NAME=Main Org.
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+      - GF_AUTH_BASIC_ENABLED=false
+      - GF_USERS_DEFAULT_THEME=dark
+      - HUBSPOT_ACCESS_TOKEN=${HUBSPOT_ACCESS_TOKEN:-}
+    # Usage:
+    #   1. Build the plugin (yarn build)
+    #   2. Create a private app in HubSpot (Settings > Integrations > Private Apps)
+    #      with at minimum the scope crm.objects.owners.read (for health check)
+    #      plus scopes for the objects you want to query.
+    #   3. HUBSPOT_ACCESS_TOKEN=pat-xxxxxxx docker compose up
+    #   4. Open http://localhost:3000
