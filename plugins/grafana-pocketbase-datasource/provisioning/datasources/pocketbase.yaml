@@ -1,0 +1,19 @@
+apiVersion: 1
+
+# Auto-provisioned PocketBase datasource for the local docker-compose stack.
+# Connection details come from environment variables (see docker-compose.yaml
+# header). The local stack uses superuser auth against the seeded PocketBase.
+datasources:
+  - name: PocketBase
+    type: yesoreyeram-pocketbase-datasource
+    access: proxy
+    isDefault: true
+    jsonData:
+      url: $POCKETBASE_URL
+      authMode: $POCKETBASE_AUTH_MODE
+      identity: $POCKETBASE_IDENTITY
+      authCollection: $POCKETBASE_AUTH_COLLECTION
+    secureJsonData:
+      password: $POCKETBASE_PASSWORD
+      authToken: $POCKETBASE_AUTH_TOKEN
+    editable: true

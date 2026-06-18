@@ -1,0 +1,90 @@
+# Local stack for the PocketBase data source plugin: a single Grafana with the
+# built plugin mounted, a real PocketBase instance, and a one-shot seed job that
+# creates sample collections (demo, metrics) and records. The datasource is
+# auto-provisioned (superuser auth) against the local PocketBase.
+#
+# Prerequisites — build the plugin's dist/ first (frontend + backend):
+#
+#   yarn build                  # frontend + backend (all platforms)
+#   # or: yarn build:frontend && mage -v build:linux
+#
+# Then start everything:
+#
+#   docker compose up
+#
+# Grafana runs with anonymous admin at http://localhost:3000 (no login).
+# PocketBase runs at http://localhost:8090 (admin UI at /_/). The seeded
+# superuser is admin@example.com / Password123! (override via env below).
+
+services:
+  grafana:
+    image: grafana/grafana:${GRAFANA_VERSION:-11.3.0}
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - ./dist:/var/lib/grafana/plugins/yesoreyeram-pocketbase-datasource
+      - ./provisioning:/etc/grafana/provisioning
+    environment:
+      - GF_DEFAULT_APP_MODE=development
+      - GF_LOG_LEVEL=debug
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-pocketbase-datasource
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_ANONYMOUS_ORG_NAME=Main Org.
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+      - GF_AUTH_BASIC_ENABLED=false
+      - GF_USERS_DEFAULT_THEME=dark
+      # PocketBase datasource provisioning reads connection details from these.
+      - POCKETBASE_URL=${POCKETBASE_URL:-http://pocketbase:8090}
+      - POCKETBASE_AUTH_MODE=${POCKETBASE_AUTH_MODE:-superuser}
+      - POCKETBASE_IDENTITY=${POCKETBASE_IDENTITY:-admin@example.com}
+      - POCKETBASE_AUTH_COLLECTION=${POCKETBASE_AUTH_COLLECTION:-}
+      - POCKETBASE_PASSWORD=${POCKETBASE_PASSWORD:-Password123!}
+      - POCKETBASE_AUTH_TOKEN=${POCKETBASE_AUTH_TOKEN:-}
+    depends_on:
+      pocketbase:
+        condition: service_healthy
+      pocketbase-seed:
+        condition: service_completed_successfully
+
+  # PocketBase: upsert a superuser on boot, then serve. Single binary, single
+  # SQLite-backed data dir (persisted in a named volume).
+  pocketbase:
+    image: ghcr.io/muchobien/pocketbase:${POCKETBASE_VERSION:-latest}
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        pocketbase superuser upsert "$$PB_SUPERUSER_EMAIL" "$$PB_SUPERUSER_PASSWORD" --dir=/pb_data || true
+        exec pocketbase serve --http=0.0.0.0:8090 --dir=/pb_data
+    environment:
+      - PB_SUPERUSER_EMAIL=${POCKETBASE_IDENTITY:-admin@example.com}
+      - PB_SUPERUSER_PASSWORD=${POCKETBASE_PASSWORD:-Password123!}
+    ports:
+      - "8090:8090/tcp"
+    volumes:
+      - pocketbase_data:/pb_data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8090/api/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  # One-shot job that seeds PocketBase with sample collections and records.
+  pocketbase-seed:
+    image: node:20-alpine
+    working_dir: /seed
+    volumes:
+      - ./scripts:/seed:ro
+    environment:
+      - POCKETBASE_INTERNAL_URL=http://pocketbase:8090
+      - POCKETBASE_IDENTITY=${POCKETBASE_IDENTITY:-admin@example.com}
+      - POCKETBASE_PASSWORD=${POCKETBASE_PASSWORD:-Password123!}
+    command: ["node", "/seed/seed.mjs"]
+    depends_on:
+      pocketbase:
+        condition: service_healthy
+    restart: "no"
+
+volumes:
+  pocketbase_data:

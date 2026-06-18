@@ -1,0 +1,19 @@
+apiVersion: 1
+
+# PocketBase datasource for the root local stack. The stack runs a real
+# self-hosted PocketBase (seeded with sample collections) and provisions this
+# datasource with superuser auth. Override the values via the POCKETBASE_* env
+# vars in docker-compose.yaml.
+datasources:
+  - name: PocketBase
+    type: yesoreyeram-pocketbase-datasource
+    access: proxy
+    jsonData:
+      url: $POCKETBASE_URL
+      authMode: $POCKETBASE_AUTH_MODE
+      identity: $POCKETBASE_IDENTITY
+      authCollection: $POCKETBASE_AUTH_COLLECTION
+    secureJsonData:
+      password: $POCKETBASE_PASSWORD
+      authToken: $POCKETBASE_AUTH_TOKEN
+    editable: true

@@ -44,6 +44,7 @@ services:
       - ./plugins/grafana-plane-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-plane-datasource
       - ./plugins/grafana-monday-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-monday-datasource
       - ./plugins/grafana-hubspot-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-hubspot-datasource
+      - ./plugins/grafana-pocketbase-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-pocketbase-datasource
       # Static provisioning shared by the stack (this repo's provisioning/ dir).
       # The NocoDB seed job also drops a generated datasource (with a fresh
       # token) into provisioning/datasources, alongside the static Notion one.
@@ -52,7 +53,7 @@ services:
       - GF_DEFAULT_APP_MODE=development
       - GF_LOG_LEVEL=debug
       # Allow every unsigned plugin in this monorepo.
-      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-nocodb-datasource,yesoreyeram-notion-datasource,yesoreyeram-baserow-datasource,yesoreyeram-linear-datasource,yesoreyeram-clickup-datasource,yesoreyeram-airtable-datasource,yesoreyeram-appwrite-datasource,yesoreyeram-plane-datasource,yesoreyeram-monday-datasource,yesoreyeram-hubspot-datasource
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-nocodb-datasource,yesoreyeram-notion-datasource,yesoreyeram-baserow-datasource,yesoreyeram-linear-datasource,yesoreyeram-clickup-datasource,yesoreyeram-airtable-datasource,yesoreyeram-appwrite-datasource,yesoreyeram-plane-datasource,yesoreyeram-monday-datasource,yesoreyeram-hubspot-datasource,yesoreyeram-pocketbase-datasource
       # Anonymous access with admin role so no login is required locally.
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
@@ -108,11 +109,23 @@ services:
       - BASEROW_API_TOKEN=${BASEROW_API_TOKEN:-}
       - BASEROW_EMAIL=${BASEROW_EMAIL:-}
       - BASEROW_PASSWORD=${BASEROW_PASSWORD:-}
+      # PocketBase datasource provisioning. The stack runs a real PocketBase
+      # (seeded with demo/metrics collections) with superuser auth.
+      - POCKETBASE_URL=${POCKETBASE_URL:-http://pocketbase:8090}
+      - POCKETBASE_AUTH_MODE=${POCKETBASE_AUTH_MODE:-superuser}
+      - POCKETBASE_IDENTITY=${POCKETBASE_IDENTITY:-admin@example.com}
+      - POCKETBASE_AUTH_COLLECTION=${POCKETBASE_AUTH_COLLECTION:-}
+      - POCKETBASE_PASSWORD=${POCKETBASE_PASSWORD:-Password123!}
+      - POCKETBASE_AUTH_TOKEN=${POCKETBASE_AUTH_TOKEN:-}
     depends_on:
       nocodb-seed:
         condition: service_completed_successfully
       baserow:
         condition: service_healthy
+      pocketbase:
+        condition: service_healthy
+      pocketbase-seed:
+        condition: service_completed_successfully
 
   # --- NocoDB plugin backing services ---------------------------------------
 
@@ -172,6 +185,48 @@ services:
       timeout: 5s
       retries: 60
 
+  # --- PocketBase plugin backing services -----------------------------------
+
+  # PocketBase: upsert a superuser on boot, then serve. Single binary, single
+  # SQLite-backed data dir (persisted in a named volume).
+  pocketbase:
+    image: ghcr.io/muchobien/pocketbase:${POCKETBASE_VERSION:-latest}
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        pocketbase superuser upsert "$$PB_SUPERUSER_EMAIL" "$$PB_SUPERUSER_PASSWORD" --dir=/pb_data || true
+        exec pocketbase serve --http=0.0.0.0:8090 --dir=/pb_data
+    environment:
+      - PB_SUPERUSER_EMAIL=${POCKETBASE_IDENTITY:-admin@example.com}
+      - PB_SUPERUSER_PASSWORD=${POCKETBASE_PASSWORD:-Password123!}
+    ports:
+      - "8090:8090/tcp"
+    volumes:
+      - pocketbase_data:/pb_data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8090/api/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  # One-shot job that seeds PocketBase with sample collections and records.
+  pocketbase-seed:
+    image: node:20-alpine
+    working_dir: /seed
+    volumes:
+      - ./plugins/grafana-pocketbase-datasource/scripts:/seed:ro
+    environment:
+      - POCKETBASE_INTERNAL_URL=http://pocketbase:8090
+      - POCKETBASE_IDENTITY=${POCKETBASE_IDENTITY:-admin@example.com}
+      - POCKETBASE_PASSWORD=${POCKETBASE_PASSWORD:-Password123!}
+    command: ["node", "/seed/seed.mjs"]
+    depends_on:
+      pocketbase:
+        condition: service_healthy
+    restart: "no"
+
 volumes:
   nocodb_data:
   baserow_data:
+  pocketbase_data:

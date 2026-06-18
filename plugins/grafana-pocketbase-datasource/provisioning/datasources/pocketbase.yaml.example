@@ -1,0 +1,21 @@
+apiVersion: 1
+
+datasources:
+  - name: PocketBase
+    type: yesoreyeram-pocketbase-datasource
+    access: proxy
+    jsonData:
+      # PocketBase base URL (no trailing /api). Local: http://127.0.0.1:8090.
+      url: http://127.0.0.1:8090
+      # Authentication strategy: superuser | user | token.
+      authMode: superuser
+      # Superuser/user email used for password auth (superuser/user modes).
+      identity: admin@example.com
+      # Auth collection for user mode (defaults to `users`). Ignored otherwise.
+      authCollection: users
+    secureJsonData:
+      # Password for superuser/user auth.
+      password: ${POCKETBASE_PASSWORD}
+      # OR, for token auth (authMode: token), a pre-issued auth token instead.
+      authToken: ${POCKETBASE_AUTH_TOKEN}
+    editable: true

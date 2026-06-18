@@ -35,6 +35,7 @@ orchestration and caching handled by [Turborepo](https://turborepo.com).
 | [`yesoreyeram-plane-datasource`](./plugins/grafana-plane-datasource)     | Grafana data source plugin for [Plane](https://plane.so) (TypeScript frontend + Go backend).          |
 | [`yesoreyeram-monday-datasource`](./plugins/grafana-monday-datasource)   | Grafana data source plugin for [monday.com](https://monday.com) (TypeScript frontend + Go backend).   |
 | [`yesoreyeram-hubspot-datasource`](./plugins/grafana-hubspot-datasource) | Grafana data source plugin for [hubspot.com](https://hubspot.com) (TypeScript frontend + Go backend). |
+| [`yesoreyeram-pocketbase-datasource`](./plugins/grafana-pocketbase-datasource) | Grafana data source plugin for [PocketBase](https://pocketbase.io) (TypeScript frontend + Go backend). |
 
 ## Registry
 
