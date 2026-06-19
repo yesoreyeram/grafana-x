@@ -37,6 +37,12 @@ orchestration and caching handled by [Turborepo](https://turborepo.com).
 | [`yesoreyeram-hubspot-datasource`](./plugins/grafana-hubspot-datasource) | Grafana data source plugin for [hubspot.com](https://hubspot.com) (TypeScript frontend + Go backend). |
 | [`yesoreyeram-pocketbase-datasource`](./plugins/grafana-pocketbase-datasource) | Grafana data source plugin for [PocketBase](https://pocketbase.io) (TypeScript frontend + Go backend). |
 | [`yesoreyeram-asana-datasource`](./plugins/grafana-asana-datasource)     | Grafana data source plugin for [Asana](https://asana.com) (TypeScript frontend + Go backend).         |
+| [`yesoreyeram-airtable-datasource`](./plugins/grafana-airtable-datasource) | Grafana data source plugin for [Airtable](https://airtable.com) (TypeScript frontend + Go backend).   |
+| [`yesoreyeram-appwrite-datasource`](./plugins/grafana-appwrite-datasource) | Grafana data source plugin for [Appwrite](https://appwrite.io) (TypeScript frontend + Go backend).    |
+| [`yesoreyeram-clickup-datasource`](./plugins/grafana-clickup-datasource) | Grafana data source plugin for [ClickUp](https://clickup.com) (TypeScript frontend + Go backend).     |
+
+See [`ROADMAP.md`](./ROADMAP.md) for the list of plugins planned next, each verified
+as not yet published on [grafana.com/api/plugins](https://grafana.com/api/plugins).
 
 ## Registry
 
