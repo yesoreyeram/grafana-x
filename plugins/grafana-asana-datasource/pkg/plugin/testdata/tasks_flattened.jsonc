@@ -1,0 +1,264 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 18 Fields by 2 Rows
+//  +-------------------------------+-------------------------------+-------------------------------+-----------------+--------------------+-----------------+-----------------------+-----------------+-----------------+-----------------+-----------------+--------------------+-----------------+-----------------------------+-----------------+---------------------+-----------------+-----------------+
+//  | Name: created_at              | Name: due_on                  | Name: modified_at             | Name: Priority  | Name: Story Points | Name: assignee  | Name: assignee_status | Name: completed | Name: gid       | Name: name      | Name: notes     | Name: num_subtasks | Name: parent    | Name: permalink_url         | Name: projects  | Name: resource_type | Name: start_on  | Name: tags      |
+//  | Labels:                       | Labels:                       | Labels:                       | Labels:         | Labels:            | Labels:         | Labels:               | Labels:         | Labels:         | Labels:         | Labels:         | Labels:            | Labels:         | Labels:                     | Labels:         | Labels:             | Labels:         | Labels:         |
+//  | Type: []*time.Time            | Type: []*time.Time            | Type: []*time.Time            | Type: []*string | Type: []*float64   | Type: []*string | Type: []*string       | Type: []*bool   | Type: []*string | Type: []*string | Type: []*string | Type: []*float64   | Type: []*string | Type: []*string             | Type: []*string | Type: []*string     | Type: []*string | Type: []*string |
+//  +-------------------------------+-------------------------------+-------------------------------+-----------------+--------------------+-----------------+-----------------------+-----------------+-----------------+-----------------+-----------------+--------------------+-----------------+-----------------------------+-----------------+---------------------+-----------------+-----------------+
+//  | 2024-01-02 03:04:05 +0000 UTC | 2024-02-01 00:00:00 +0000 UTC | 2024-01-03 03:04:05 +0000 UTC | High            | 5                  | Alice           | inbox                 | false           | 1               | Fix login bug   | repro steps     | 2                  | null            | https://app.asana.com/0/1/1 | Mobile          | task                | null            | bug             |
+//  | 2024-01-04 03:04:05 +0000 UTC | null                          | 2024-01-05 03:04:05 +0000 UTC | null            | null               | null            | upcoming              | true            | 2               | Write docs      |                 | 0                  | null            | https://app.asana.com/0/1/2 | null            | task                | null            | null            |
+//  +-------------------------------+-------------------------------+-------------------------------+-----------------+--------------------+-----------------+-----------------------+-----------------+-----------------+-----------------+-----------------+--------------------+-----------------+-----------------------------+-----------------+---------------------+-----------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "created_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "due_on",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "modified_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Priority",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Story Points",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "assignee",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "assignee_status",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "completed",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "gid",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "notes",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "num_subtasks",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "parent",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "permalink_url",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "projects",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "resource_type",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "start_on",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "tags",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1704164645000,
+            1704337445000
+          ],
+          [
+            1706745600000,
+            null
+          ],
+          [
+            1704251045000,
+            1704423845000
+          ],
+          [
+            "High",
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            "Alice",
+            null
+          ],
+          [
+            "inbox",
+            "upcoming"
+          ],
+          [
+            false,
+            true
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "Fix login bug",
+            "Write docs"
+          ],
+          [
+            "repro steps",
+            ""
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            null,
+            null
+          ],
+          [
+            "https://app.asana.com/0/1/1",
+            "https://app.asana.com/0/1/2"
+          ],
+          [
+            "Mobile",
+            null
+          ],
+          [
+            "task",
+            "task"
+          ],
+          [
+            null,
+            null
+          ],
+          [
+            "bug",
+            null
+          ]
+        ]
+      }
+    }
+  ]
+}

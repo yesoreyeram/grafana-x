@@ -45,6 +45,7 @@ services:
       - ./plugins/grafana-monday-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-monday-datasource
       - ./plugins/grafana-hubspot-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-hubspot-datasource
       - ./plugins/grafana-pocketbase-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-pocketbase-datasource
+      - ./plugins/grafana-asana-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-asana-datasource
       # Static provisioning shared by the stack (this repo's provisioning/ dir).
       # The NocoDB seed job also drops a generated datasource (with a fresh
       # token) into provisioning/datasources, alongside the static Notion one.
@@ -53,7 +54,7 @@ services:
       - GF_DEFAULT_APP_MODE=development
       - GF_LOG_LEVEL=debug
       # Allow every unsigned plugin in this monorepo.
-      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-nocodb-datasource,yesoreyeram-notion-datasource,yesoreyeram-baserow-datasource,yesoreyeram-linear-datasource,yesoreyeram-clickup-datasource,yesoreyeram-airtable-datasource,yesoreyeram-appwrite-datasource,yesoreyeram-plane-datasource,yesoreyeram-monday-datasource,yesoreyeram-hubspot-datasource,yesoreyeram-pocketbase-datasource
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-nocodb-datasource,yesoreyeram-notion-datasource,yesoreyeram-baserow-datasource,yesoreyeram-linear-datasource,yesoreyeram-clickup-datasource,yesoreyeram-airtable-datasource,yesoreyeram-appwrite-datasource,yesoreyeram-plane-datasource,yesoreyeram-monday-datasource,yesoreyeram-hubspot-datasource,yesoreyeram-pocketbase-datasource,yesoreyeram-asana-datasource
       # Anonymous access with admin role so no login is required locally.
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
@@ -117,6 +118,10 @@ services:
       - POCKETBASE_AUTH_COLLECTION=${POCKETBASE_AUTH_COLLECTION:-}
       - POCKETBASE_PASSWORD=${POCKETBASE_PASSWORD:-Password123!}
       - POCKETBASE_AUTH_TOKEN=${POCKETBASE_AUTH_TOKEN:-}
+      # Asana datasource provisioning reads the personal access token from here.
+      # Create a token at My Settings > Apps > Developer apps, then run:
+      #   ASANA_API_TOKEN=1/123:abc... docker compose up
+      - ASANA_API_TOKEN=${ASANA_API_TOKEN:-}
     depends_on:
       nocodb-seed:
         condition: service_completed_successfully

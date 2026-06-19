@@ -1,0 +1,14 @@
+apiVersion: 1
+
+datasources:
+  - name: Asana
+    type: yesoreyeram-asana-datasource
+    access: proxy
+    jsonData:
+      baseURL: https://app.asana.com/api/1.0
+    secureJsonData:
+      # Asana personal access token (PAT) or OAuth access token, sent as the
+      # Authorization: Bearer header. Create a PAT at:
+      #   My Settings > Apps > Developer apps > Manage developer apps
+      apiKey: ${ASANA_API_TOKEN}
+    editable: true
