@@ -17,11 +17,8 @@
       ],
       "options": {
         "editorMode": "builder",
-        "renderer": "canvas",
         "tooltip": true,
-        "showActions": false,
-        "padding": 8,
-        "theme": { "colorScheme": "palette-classic", "background": "transparent" },
+        "theme": { "colorScheme": "palette-classic" },
         "data": { "source": "auto" },
         "builder": { "mark": { "type": "line", "tooltip": true }, "encodings": [], "transforms": [] }
       }
