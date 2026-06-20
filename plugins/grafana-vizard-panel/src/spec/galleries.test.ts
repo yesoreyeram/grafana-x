@@ -13,7 +13,9 @@ describe('demo galleries', () => {
     expect(json).not.toContain('specOverrideJson');
     expect(json).not.toContain('configJson');
     expect(json).not.toContain('advancedJson');
-    console.log('GALLERY_STATS', JSON.stringify(stats));
+    if (process.env.GEN_GALLERIES === 'true') {
+      console.log('GALLERY_STATS', JSON.stringify(stats));
+    }
   });
 
   it('writes the dashboards when GEN_GALLERIES=true', () => {
