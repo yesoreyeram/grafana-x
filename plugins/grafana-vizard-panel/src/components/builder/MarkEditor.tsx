@@ -77,7 +77,10 @@ export function MarkEditor({ value, onChange }: Props) {
   const propVal = (key: string): unknown => value.props?.[key];
   /** A property reads from the typed field or the props bag depending on its target. */
   const readVal = (def: MarkPropDef): unknown => (def.target === 'field' ? fieldVal(def.key) : propVal(def.key));
-  const commit = (def: MarkPropDef, v: unknown) => (def.target === 'field' ? set({ [def.key]: v }) : setProp(def.key, v));
+  const commit = (def: MarkPropDef, v: unknown) =>
+    def.target === 'field'
+      ? set({ [def.key as keyof MarkModel]: v } as Partial<MarkModel>)
+      : setProp(def.key, v);
 
   const commitNumber = (def: MarkPropDef, raw: string) => {
     const n = parseFloat(raw);
