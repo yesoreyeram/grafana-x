@@ -1,0 +1,6523 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "graphTooltip": 0,
+  "panels": [
+    {
+      "id": 13,
+      "type": "row",
+      "title": "animated_gapminder … interactive_paintbrush_color (12)",
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "panels": [
+        {
+          "id": 1,
+          "title": "animated_gapminder",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 1
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/gapminder.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1",
+                  "channel": "color",
+                  "field": "country"
+                },
+                {
+                  "id": "enc-2",
+                  "channel": "x",
+                  "field": "fertility",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-3",
+                  "channel": "y",
+                  "field": "life_expect",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-4",
+                  "channel": "time",
+                  "field": "year",
+                  "type": "ordinal"
+                }
+              ],
+              "transforms": [
+                {
+                  "id": "tf-5",
+                  "kind": "filter",
+                  "mode": "builder",
+                  "json": "{\n  \"filter\": {\n    \"param\": \"animation_frame\"\n  }\n}"
+                }
+              ],
+              "params": [
+                {
+                  "id": "param-6",
+                  "name": "animation_frame",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "year"
+                      ],
+                      "on": "timer"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 2,
+          "title": "animated_hop",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 1
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "csv",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/seattle-weather.csv",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "tick"
+              },
+              "encodings": [
+                {
+                  "id": "enc-7",
+                  "channel": "y",
+                  "field": "precipitation",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-8",
+                  "channel": "time",
+                  "field": "date",
+                  "type": "ordinal"
+                }
+              ],
+              "transforms": [
+                {
+                  "id": "tf-9",
+                  "kind": "filter",
+                  "mode": "builder",
+                  "json": "{\n  \"filter\": {\n    \"param\": \"animation_frame\"\n  }\n}"
+                }
+              ],
+              "params": [
+                {
+                  "id": "param-10",
+                  "name": "animation_frame",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "date"
+                      ],
+                      "on": "timer"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 3,
+          "title": "area_params",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 10
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "inline",
+              "data": "[{\"u\":1,\"v\":28},{\"u\":2,\"v\":55},{\"u\":3,\"v\":42},{\"u\":4,\"v\":34},{\"u\":5,\"v\":36},{\"u\":6,\"v\":48}]"
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "area",
+                "props": {
+                  "interpolate": {
+                    "expr": "interpolate"
+                  },
+                  "tension": {
+                    "expr": "tension"
+                  }
+                }
+              },
+              "encodings": [
+                {
+                  "id": "enc-68",
+                  "channel": "x",
+                  "field": "u",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-69",
+                  "channel": "y",
+                  "field": "v",
+                  "type": "quantitative"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-70",
+                  "name": "interpolate",
+                  "spec": {
+                    "value": "linear",
+                    "bind": {
+                      "input": "select",
+                      "options": [
+                        "basis",
+                        "cardinal",
+                        "catmull-rom",
+                        "linear",
+                        "monotone",
+                        "natural",
+                        "step",
+                        "step-after",
+                        "step-before"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "param-71",
+                  "name": "tension",
+                  "spec": {
+                    "value": 0,
+                    "bind": {
+                      "input": "range",
+                      "min": 0,
+                      "max": 1,
+                      "step": 0.05
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 4,
+          "title": "bar_axis_orient",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 10
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "inline",
+              "data": "[{\"a\":\"A\",\"b\":28},{\"a\":\"B\",\"b\":55},{\"a\":\"C\",\"b\":43},{\"a\":\"D\",\"b\":91},{\"a\":\"E\",\"b\":81},{\"a\":\"F\",\"b\":53},{\"a\":\"G\",\"b\":19},{\"a\":\"H\",\"b\":87},{\"a\":\"I\",\"b\":52}]"
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "bar"
+              },
+              "encodings": [
+                {
+                  "id": "enc-119",
+                  "channel": "x",
+                  "field": "a",
+                  "type": "ordinal",
+                  "axis": {
+                    "orient": {
+                      "expr": "xAxisOrient"
+                    }
+                  }
+                },
+                {
+                  "id": "enc-120",
+                  "channel": "y",
+                  "field": "b",
+                  "type": "quantitative",
+                  "axis": {
+                    "orient": {
+                      "expr": "yAxisOrient"
+                    }
+                  }
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-121",
+                  "name": "xAxisOrient",
+                  "spec": {
+                    "value": "bottom",
+                    "bind": {
+                      "input": "select",
+                      "options": [
+                        "top",
+                        "bottom"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "param-122",
+                  "name": "yAxisOrient",
+                  "spec": {
+                    "value": "left",
+                    "bind": {
+                      "input": "select",
+                      "options": [
+                        "left",
+                        "right"
+                      ]
+                    }
+                  }
+                }
+              ],
+              "extra": {
+                "description": "A bar chart that uses signals for axis orient."
+              }
+            }
+          }
+        },
+        {
+          "id": 5,
+          "title": "circle_bubble_health_income",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 19
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "csv",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/gapminder-health-income.csv",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-485",
+                  "channel": "y",
+                  "field": "health",
+                  "type": "quantitative",
+                  "scale": {
+                    "zero": false
+                  },
+                  "axis": {
+                    "minExtent": 30
+                  }
+                },
+                {
+                  "id": "enc-486",
+                  "channel": "x",
+                  "field": "income",
+                  "scale": {
+                    "type": "log"
+                  }
+                },
+                {
+                  "id": "enc-487",
+                  "channel": "size",
+                  "field": "population",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-488",
+                  "channel": "color",
+                  "value": "#000"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-489",
+                  "name": "view",
+                  "spec": {
+                    "select": "interval",
+                    "bind": "scales"
+                  }
+                }
+              ],
+              "extra": {
+                "description": "A bubble plot showing the correlation between health and income for 187 countries in the world (modified from an example in Lisa Charlotte Rost's blog post 'One Chart, Twelve Charting Libraries' --http://lisacharlotterost.github.io/2016/05/17/one-chart-code/)."
+              }
+            }
+          }
+        },
+        {
+          "id": 6,
+          "title": "interactive_bar_select_highlight",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 19
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "inline",
+              "data": "[{\"a\":\"A\",\"b\":28},{\"a\":\"B\",\"b\":55},{\"a\":\"C\",\"b\":43},{\"a\":\"D\",\"b\":91},{\"a\":\"E\",\"b\":81},{\"a\":\"F\",\"b\":53},{\"a\":\"G\",\"b\":19},{\"a\":\"H\",\"b\":87},{\"a\":\"I\",\"b\":52}]"
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "bar",
+                "props": {
+                  "fill": "#4C78A8",
+                  "stroke": "black"
+                }
+              },
+              "encodings": [
+                {
+                  "id": "enc-624",
+                  "channel": "x",
+                  "field": "a",
+                  "type": "ordinal"
+                },
+                {
+                  "id": "enc-625",
+                  "channel": "y",
+                  "field": "b",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-626",
+                  "channel": "fillOpacity",
+                  "condition": {
+                    "param": "select",
+                    "value": 1
+                  },
+                  "value": "0.3"
+                },
+                {
+                  "id": "enc-627",
+                  "channel": "strokeWidth",
+                  "value": "0",
+                  "extra": {
+                    "condition": [
+                      {
+                        "param": "select",
+                        "empty": false,
+                        "value": 2
+                      },
+                      {
+                        "param": "highlight",
+                        "empty": false,
+                        "value": 1
+                      }
+                    ]
+                  }
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-628",
+                  "name": "highlight",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "on": "pointerover"
+                    }
+                  }
+                },
+                {
+                  "id": "param-629",
+                  "name": "select",
+                  "spec": {
+                    "select": "point"
+                  }
+                }
+              ],
+              "extra": {
+                "description": "A bar chart with highlighting on hover and selecting on click. (Inspired by Tableau's interaction style.)"
+              }
+            }
+          }
+        },
+        {
+          "id": 7,
+          "title": "interactive_brush",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 28
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-630",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-631",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-632",
+                  "channel": "color",
+                  "condition": {
+                    "param": "brush",
+                    "field": "Cylinders",
+                    "type": "ordinal"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-633",
+                  "name": "brush",
+                  "spec": {
+                    "select": "interval",
+                    "value": {
+                      "x": [
+                        55,
+                        160
+                      ],
+                      "y": [
+                        13,
+                        37
+                      ]
+                    }
+                  }
+                }
+              ],
+              "extra": {
+                "description": "Drag out a rectangular brush to highlight points."
+              }
+            }
+          }
+        },
+        {
+          "id": 8,
+          "title": "interactive_legend",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 28
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/unemployment-across-industries.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "area"
+              },
+              "encodings": [
+                {
+                  "id": "enc-648",
+                  "channel": "x",
+                  "timeUnit": "yearmonth",
+                  "field": "date",
+                  "axis": {
+                    "domain": false,
+                    "format": "%Y",
+                    "tickSize": 0
+                  }
+                },
+                {
+                  "id": "enc-649",
+                  "channel": "y",
+                  "aggregate": "sum",
+                  "field": "count",
+                  "stack": "center",
+                  "axis": null
+                },
+                {
+                  "id": "enc-650",
+                  "channel": "color",
+                  "field": "series"
+                },
+                {
+                  "id": "enc-651",
+                  "channel": "opacity",
+                  "condition": {
+                    "param": "industry",
+                    "value": 1
+                  },
+                  "value": "0.2"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-652",
+                  "name": "industry",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "series"
+                      ]
+                    },
+                    "bind": "legend"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 9,
+          "title": "interactive_legend_dblclick",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 37
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/unemployment-across-industries.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "area"
+              },
+              "encodings": [
+                {
+                  "id": "enc-653",
+                  "channel": "x",
+                  "timeUnit": "yearmonth",
+                  "field": "date",
+                  "axis": {
+                    "domain": false,
+                    "format": "%Y",
+                    "tickSize": 0
+                  }
+                },
+                {
+                  "id": "enc-654",
+                  "channel": "y",
+                  "aggregate": "sum",
+                  "field": "count",
+                  "stack": "center",
+                  "axis": null
+                },
+                {
+                  "id": "enc-655",
+                  "channel": "color",
+                  "field": "series"
+                },
+                {
+                  "id": "enc-656",
+                  "channel": "opacity",
+                  "condition": {
+                    "param": "industry",
+                    "value": 1
+                  },
+                  "value": "0.2"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-657",
+                  "name": "industry",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "series"
+                      ]
+                    },
+                    "bind": {
+                      "legend": "dblclick"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 10,
+          "title": "interactive_line_brush_cursor",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 37
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "csv",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/stocks.csv",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "line"
+              },
+              "encodings": [
+                {
+                  "id": "enc-658",
+                  "channel": "x",
+                  "field": "date",
+                  "type": "temporal"
+                },
+                {
+                  "id": "enc-659",
+                  "channel": "y",
+                  "field": "price",
+                  "type": "quantitative"
+                }
+              ],
+              "transforms": [
+                {
+                  "id": "tf-660",
+                  "kind": "filter",
+                  "mode": "builder",
+                  "json": "{\n  \"filter\": \"datum.symbol==='GOOG'\"\n}"
+                }
+              ],
+              "params": [
+                {
+                  "id": "param-661",
+                  "name": "brush",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "encodings": [
+                        "x"
+                      ],
+                      "mark": {
+                        "cursor": "pointer"
+                      }
+                    }
+                  }
+                }
+              ],
+              "extra": {
+                "description": "A line chart with text cursor to indicate the brush selection. The cursor changes to pointer on the mark as it can be moved with drag&drop.",
+                "view": {
+                  "cursor": "text"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 11,
+          "title": "interactive_paintbrush",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 46
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-684",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-685",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-686",
+                  "channel": "size",
+                  "condition": {
+                    "param": "paintbrush",
+                    "value": 300
+                  },
+                  "value": "50"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-687",
+                  "name": "paintbrush",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "on": "pointerover",
+                      "nearest": true
+                    }
+                  }
+                }
+              ],
+              "extra": {
+                "description": "Select multiple points with the shift key."
+              }
+            }
+          }
+        },
+        {
+          "id": 12,
+          "title": "interactive_paintbrush_color",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 46
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-688",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-689",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-690",
+                  "channel": "color",
+                  "condition": {
+                    "param": "paintbrush",
+                    "field": "Cylinders",
+                    "type": "ordinal"
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-691",
+                  "channel": "size",
+                  "value": "75"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-692",
+                  "name": "paintbrush",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "on": "pointerover"
+                    }
+                  }
+                }
+              ],
+              "extra": {
+                "description": "Select multiple points with the shift key."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "type": "row",
+      "title": "interactive_paintbrush_color_nearest … selection_bind_origin (12)",
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 1
+      },
+      "panels": [
+        {
+          "id": 14,
+          "title": "interactive_paintbrush_color_nearest",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 2
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-693",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-694",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-695",
+                  "channel": "color",
+                  "condition": {
+                    "param": "paintbrush",
+                    "field": "Cylinders",
+                    "type": "ordinal"
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-696",
+                  "channel": "size",
+                  "value": "75"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-697",
+                  "name": "paintbrush",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "on": "pointerover",
+                      "nearest": true
+                    }
+                  }
+                }
+              ],
+              "extra": {
+                "description": "Select multiple points with the shift key."
+              }
+            }
+          }
+        },
+        {
+          "id": 15,
+          "title": "interactive_paintbrush_interval",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 2
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-698",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-699",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-700",
+                  "channel": "size",
+                  "condition": {
+                    "param": "paintbrush",
+                    "value": 300
+                  },
+                  "value": "50"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-701",
+                  "name": "paintbrush",
+                  "spec": {
+                    "select": "interval"
+                  }
+                }
+              ],
+              "extra": {
+                "description": "Select multiple points by dragging an interval."
+              }
+            }
+          }
+        },
+        {
+          "id": 16,
+          "title": "interactive_paintbrush_simple_false",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 11
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-702",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-703",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-704",
+                  "channel": "color",
+                  "condition": {
+                    "param": "toggleOrigin",
+                    "field": "Origin",
+                    "type": "nominal"
+                  },
+                  "value": "steelblue"
+                },
+                {
+                  "id": "enc-705",
+                  "channel": "size",
+                  "condition": {
+                    "param": "paintbrush",
+                    "empty": false,
+                    "value": 300
+                  },
+                  "value": "50"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-706",
+                  "name": "toggleOrigin",
+                  "spec": {
+                    "bind": {
+                      "input": "checkbox"
+                    }
+                  }
+                },
+                {
+                  "id": "param-707",
+                  "name": "paintbrush",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "on": "pointerover"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 17,
+          "title": "interactive_paintbrush_simple_true",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 11
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-708",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-709",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-710",
+                  "channel": "color",
+                  "condition": {
+                    "param": "toggleOrigin",
+                    "field": "Origin",
+                    "type": "nominal"
+                  },
+                  "value": "steelblue"
+                },
+                {
+                  "id": "enc-711",
+                  "channel": "size",
+                  "condition": {
+                    "param": "paintbrush",
+                    "value": 300
+                  },
+                  "value": "50"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-712",
+                  "name": "toggleOrigin",
+                  "spec": {
+                    "bind": {
+                      "input": "checkbox"
+                    }
+                  }
+                },
+                {
+                  "id": "param-713",
+                  "name": "paintbrush",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "on": "pointerover"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 18,
+          "title": "interactive_point_init",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 20
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-720",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-721",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-722",
+                  "channel": "color",
+                  "condition": {
+                    "param": "CylYr",
+                    "field": "Origin",
+                    "type": "nominal"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [
+                {
+                  "id": "tf-723",
+                  "kind": "calculate",
+                  "mode": "builder",
+                  "json": "{\n  \"calculate\": \"year(datum.Year)\",\n  \"as\": \"Year\"\n}"
+                }
+              ],
+              "params": [
+                {
+                  "id": "param-724",
+                  "name": "CylYr",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "Cylinders",
+                        "Year"
+                      ]
+                    },
+                    "value": [
+                      {
+                        "Cylinders": 4,
+                        "Year": 1981
+                      },
+                      {
+                        "Cylinders": 8,
+                        "Year": 1972
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 19,
+          "title": "isotype_grid",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 20
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "inline",
+              "data": "[{\"id\":1},{\"id\":2},{\"id\":3},{\"id\":4},{\"id\":5},{\"id\":6},{\"id\":7},{\"id\":8},{\"id\":9},{\"id\":10},{\"id\":11},{\"id\":12},{\"id\":13},{\"id\":14},{\"id\":15},{\"id\":16},{\"id\":17},{\"id\":18},{\"id\":19},{\"id\":20},{\"id\":21},{\"id\":22},{\"id\":23},{\"id\":24},{\"id\":25},{\"id\":26},{\"id\":27},{\"id\":28},{\"id\":29},{\"id\":30},{\"id\":31},{\"id\":32},{\"id\":33},{\"id\":34},{\"id\":35},{\"id\":36},{\"id\":37},{\"id\":38},{\"id\":39},{\"id\":40},{\"id\":41},{\"id\":42},{\"id\":43},{\"id\":44},{\"id\":45},{\"id\":46},{\"id\":47},{\"id\":48},{\"id\":49},{\"id\":50},{\"id\":51},{\"id\":52},{\"id\":53},{\"id\":54},{\"id\":55},{\"id\":56},{\"id\":57},{\"id\":58},{\"id\":59},{\"id\":60},{\"id\":61},{\"id\":62},{\"id\":63},{\"id\":64},{\"id\":65},{\"id\":66},{\"id\":67},{\"id\":68},{\"id\":69},{\"id\":70},{\"id\":71},{\"id\":72},{\"id\":73},{\"id\":74},{\"id\":75},{\"id\":76},{\"id\":77},{\"id\":78},{\"id\":79},{\"id\":80},{\"id\":81},{\"id\":82},{\"id\":83},{\"id\":84},{\"id\":85},{\"id\":86},{\"id\":87},{\"id\":88},{\"id\":89},{\"id\":90},{\"id\":91},{\"id\":92},{\"id\":93},{\"id\":94},{\"id\":95},{\"id\":96},{\"id\":97},{\"id\":98},{\"id\":99},{\"id\":100}]"
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point",
+                "filled": true
+              },
+              "encodings": [
+                {
+                  "id": "enc-765",
+                  "channel": "x",
+                  "field": "col",
+                  "type": "ordinal",
+                  "axis": null
+                },
+                {
+                  "id": "enc-766",
+                  "channel": "y",
+                  "field": "row",
+                  "type": "ordinal",
+                  "axis": null
+                },
+                {
+                  "id": "enc-767",
+                  "channel": "shape",
+                  "value": "M1.7 -1.7h-0.8c0.3 -0.2 0.6 -0.5 0.6 -0.9c0 -0.6 -0.4 -1 -1 -1c-0.6 0 -1 0.4 -1 1c0 0.4 0.2 0.7 0.6 0.9h-0.8c-0.4 0 -0.7 0.3 -0.7 0.6v1.9c0 0.3 0.3 0.6 0.6 0.6h0.2c0 0 0 0.1 0 0.1v1.9c0 0.3 0.2 0.6 0.3 0.6h1.3c0.2 0 0.3 -0.3 0.3 -0.6v-1.8c0 0 0 -0.1 0 -0.1h0.2c0.3 0 0.6 -0.3 0.6 -0.6v-2c0.2 -0.3 -0.1 -0.6 -0.4 -0.6z"
+                },
+                {
+                  "id": "enc-768",
+                  "channel": "color",
+                  "condition": {
+                    "param": "highlight",
+                    "value": "rgb(194,81,64)"
+                  },
+                  "value": "rgb(167,165,156)"
+                },
+                {
+                  "id": "enc-769",
+                  "channel": "size",
+                  "value": "90"
+                }
+              ],
+              "transforms": [
+                {
+                  "id": "tf-770",
+                  "kind": "calculate",
+                  "mode": "builder",
+                  "json": "{\n  \"calculate\": \"ceil (datum.id/10)\",\n  \"as\": \"col\"\n}"
+                },
+                {
+                  "id": "tf-771",
+                  "kind": "calculate",
+                  "mode": "builder",
+                  "json": "{\n  \"calculate\": \"datum.id - datum.col*10\",\n  \"as\": \"row\"\n}"
+                }
+              ],
+              "params": [
+                {
+                  "id": "param-772",
+                  "name": "highlight",
+                  "spec": {
+                    "select": "interval"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 20,
+          "title": "line_params",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 29
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "inline",
+              "data": "[{\"u\":1,\"v\":28},{\"u\":2,\"v\":55},{\"u\":3,\"v\":42},{\"u\":4,\"v\":34},{\"u\":5,\"v\":36},{\"u\":6,\"v\":48}]"
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "line",
+                "props": {
+                  "interpolate": {
+                    "expr": "interpolate"
+                  },
+                  "tension": {
+                    "expr": "tension"
+                  },
+                  "strokeWidth": {
+                    "expr": "strokeWidth"
+                  },
+                  "strokeDash": {
+                    "expr": "strokeDash"
+                  },
+                  "strokeCap": {
+                    "expr": "strokeCap"
+                  }
+                }
+              },
+              "encodings": [
+                {
+                  "id": "enc-1241",
+                  "channel": "x",
+                  "field": "u",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1242",
+                  "channel": "y",
+                  "field": "v",
+                  "type": "quantitative"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1243",
+                  "name": "interpolate",
+                  "spec": {
+                    "value": "linear",
+                    "bind": {
+                      "input": "select",
+                      "options": [
+                        "basis",
+                        "cardinal",
+                        "catmull-rom",
+                        "linear",
+                        "monotone",
+                        "natural",
+                        "step",
+                        "step-after",
+                        "step-before"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "param-1244",
+                  "name": "tension",
+                  "spec": {
+                    "value": 0,
+                    "bind": {
+                      "input": "range",
+                      "min": 0,
+                      "max": 1,
+                      "step": 0.05
+                    }
+                  }
+                },
+                {
+                  "id": "param-1245",
+                  "name": "strokeWidth",
+                  "spec": {
+                    "value": 2,
+                    "bind": {
+                      "input": "range",
+                      "min": 0,
+                      "max": 10,
+                      "step": 0.5
+                    }
+                  }
+                },
+                {
+                  "id": "param-1246",
+                  "name": "strokeCap",
+                  "spec": {
+                    "value": "butt",
+                    "bind": {
+                      "input": "select",
+                      "options": [
+                        "butt",
+                        "round",
+                        "square"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "param-1247",
+                  "name": "strokeDash",
+                  "spec": {
+                    "value": [
+                      1,
+                      0
+                    ],
+                    "bind": {
+                      "input": "select",
+                      "options": [
+                        [
+                          1,
+                          0
+                        ],
+                        [
+                          8,
+                          8
+                        ],
+                        [
+                          8,
+                          4
+                        ],
+                        [
+                          4,
+                          4
+                        ],
+                        [
+                          4,
+                          2
+                        ],
+                        [
+                          2,
+                          1
+                        ],
+                        [
+                          1,
+                          1
+                        ]
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 21,
+          "title": "param_expr",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 29
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point",
+                "props": {
+                  "size": {
+                    "expr": "sel.Miles_per_Gallon * 10 || 75"
+                  },
+                  "opacity": {
+                    "expr": "opacityVar/100"
+                  }
+                }
+              },
+              "encodings": [
+                {
+                  "id": "enc-1282",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1283",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1284",
+                  "name": "opacityVar",
+                  "spec": {
+                    "value": 50,
+                    "bind": {
+                      "input": "range",
+                      "min": 1,
+                      "max": 100
+                    }
+                  }
+                },
+                {
+                  "id": "param-1285",
+                  "name": "sel",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "Miles_per_Gallon"
+                      ],
+                      "toggle": false
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 22,
+          "title": "point_params",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 38
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point",
+                "props": {
+                  "angle": {
+                    "expr": "angle"
+                  },
+                  "size": {
+                    "expr": "size"
+                  },
+                  "shape": {
+                    "expr": "shape"
+                  },
+                  "strokeWidth": {
+                    "expr": "strokeWidth"
+                  }
+                }
+              },
+              "encodings": [
+                {
+                  "id": "enc-1378",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1379",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1380",
+                  "name": "shape",
+                  "spec": {
+                    "value": "circle",
+                    "bind": {
+                      "input": "select",
+                      "options": [
+                        "arrow",
+                        "circle",
+                        "square",
+                        "cross",
+                        "diamond",
+                        "triangle",
+                        "triangle-up",
+                        "triangle-down",
+                        "triangle-right",
+                        "triangle-left",
+                        "wedge",
+                        "stroke",
+                        "M-1,-1H1V1H-1Z",
+                        "M0,.5L.6,.8L.5,.1L1,-.3L.3,-.4L0,-1L-.3,-.4L-1,-.3L-.5,.1L-.6,.8L0,.5Z"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "param-1381",
+                  "name": "angle",
+                  "spec": {
+                    "value": 0,
+                    "bind": {
+                      "input": "range",
+                      "min": -360,
+                      "max": 360,
+                      "step": 1
+                    }
+                  }
+                },
+                {
+                  "id": "param-1382",
+                  "name": "size",
+                  "spec": {
+                    "value": 30,
+                    "bind": {
+                      "input": "range",
+                      "min": 0,
+                      "max": 10000,
+                      "step": 100
+                    }
+                  }
+                },
+                {
+                  "id": "param-1383",
+                  "name": "strokeWidth",
+                  "spec": {
+                    "value": 2,
+                    "bind": {
+                      "input": "range",
+                      "min": 0,
+                      "max": 10,
+                      "step": 0.5
+                    }
+                  }
+                }
+              ],
+              "extra": {
+                "description": "A scatterplot showing horsepower and miles per gallons for various cars."
+              }
+            }
+          }
+        },
+        {
+          "id": 23,
+          "title": "rule_params",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 38
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "inline",
+              "data": "[{}]"
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rule",
+                "props": {
+                  "color": "orange",
+                  "strokeWidth": {
+                    "expr": "strokeWidth"
+                  },
+                  "strokeDash": {
+                    "expr": "strokeDash"
+                  },
+                  "strokeCap": {
+                    "expr": "strokeCap"
+                  }
+                }
+              },
+              "encodings": [
+                {
+                  "id": "enc-1437",
+                  "channel": "x",
+                  "datum": "{\"expr\":\"x\"}",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1438",
+                  "channel": "y",
+                  "datum": "{\"expr\":\"y\"}",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1439",
+                  "channel": "x2",
+                  "datum": "{\"expr\":\"x2\"}"
+                },
+                {
+                  "id": "enc-1440",
+                  "channel": "y2",
+                  "datum": "{\"expr\":\"y2\"}"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1441",
+                  "name": "x",
+                  "spec": {
+                    "value": 25,
+                    "bind": {
+                      "input": "range",
+                      "min": 1,
+                      "max": 100,
+                      "step": 1
+                    }
+                  }
+                },
+                {
+                  "id": "param-1442",
+                  "name": "x2",
+                  "spec": {
+                    "value": 75,
+                    "bind": {
+                      "input": "range",
+                      "min": 1,
+                      "max": 100,
+                      "step": 1
+                    }
+                  }
+                },
+                {
+                  "id": "param-1443",
+                  "name": "y",
+                  "spec": {
+                    "value": 25,
+                    "bind": {
+                      "input": "range",
+                      "min": 1,
+                      "max": 100,
+                      "step": 1
+                    }
+                  }
+                },
+                {
+                  "id": "param-1444",
+                  "name": "y2",
+                  "spec": {
+                    "value": 75,
+                    "bind": {
+                      "input": "range",
+                      "min": 1,
+                      "max": 100,
+                      "step": 1
+                    }
+                  }
+                },
+                {
+                  "id": "param-1445",
+                  "name": "strokeWidth",
+                  "spec": {
+                    "value": 2,
+                    "bind": {
+                      "input": "range",
+                      "min": 0,
+                      "max": 10,
+                      "step": 0.5
+                    }
+                  }
+                },
+                {
+                  "id": "param-1446",
+                  "name": "strokeCap",
+                  "spec": {
+                    "value": "butt",
+                    "bind": {
+                      "input": "select",
+                      "options": [
+                        "butt",
+                        "round",
+                        "square"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "param-1447",
+                  "name": "strokeDash",
+                  "spec": {
+                    "value": [
+                      1,
+                      0
+                    ],
+                    "bind": {
+                      "input": "select",
+                      "options": [
+                        [
+                          1,
+                          0
+                        ],
+                        [
+                          8,
+                          8
+                        ],
+                        [
+                          8,
+                          4
+                        ],
+                        [
+                          4,
+                          4
+                        ],
+                        [
+                          4,
+                          2
+                        ],
+                        [
+                          2,
+                          1
+                        ],
+                        [
+                          1,
+                          1
+                        ]
+                      ]
+                    }
+                  }
+                }
+              ],
+              "extra": {
+                "description": "A scatterplot showing horsepower and miles per gallons for various cars."
+              }
+            }
+          }
+        },
+        {
+          "id": 24,
+          "title": "selection_bind_cylyr",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 47
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1451",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1452",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1453",
+                  "channel": "color",
+                  "condition": {
+                    "param": "CylYr",
+                    "field": "Origin",
+                    "type": "nominal"
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-1454",
+                  "channel": "size",
+                  "condition": {
+                    "param": "CylYr",
+                    "value": 100
+                  },
+                  "value": "50"
+                }
+              ],
+              "transforms": [
+                {
+                  "id": "tf-1455",
+                  "kind": "calculate",
+                  "mode": "builder",
+                  "json": "{\n  \"calculate\": \"year(datum.Year)\",\n  \"as\": \"Year\"\n}"
+                }
+              ],
+              "params": [
+                {
+                  "id": "param-1456",
+                  "name": "CylYr",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "Cylinders",
+                        "Year"
+                      ]
+                    },
+                    "bind": {
+                      "Cylinders": {
+                        "input": "range",
+                        "min": 3,
+                        "max": 8,
+                        "step": 1
+                      },
+                      "Year": {
+                        "input": "range",
+                        "min": 1969,
+                        "max": 1981,
+                        "step": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 25,
+          "title": "selection_bind_origin",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 47
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1457",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1458",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1459",
+                  "channel": "color",
+                  "condition": {
+                    "param": "org",
+                    "field": "Cylinders",
+                    "type": "ordinal"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1460",
+                  "name": "org",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "Origin"
+                      ]
+                    },
+                    "bind": {
+                      "input": "select",
+                      "options": [
+                        null,
+                        "Europe",
+                        "Japan",
+                        "USA"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "type": "row",
+      "title": "selection_clear_brush … selection_project_multi (12)",
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 2
+      },
+      "panels": [
+        {
+          "id": 27,
+          "title": "selection_clear_brush",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 3
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1461",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1462",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1463",
+                  "channel": "color",
+                  "condition": {
+                    "param": "brush",
+                    "field": "Cylinders",
+                    "type": "ordinal"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1464",
+                  "name": "brush",
+                  "spec": {
+                    "value": {
+                      "x": [
+                        55,
+                        160
+                      ],
+                      "y": [
+                        13,
+                        37
+                      ]
+                    },
+                    "select": {
+                      "type": "interval",
+                      "clear": "pointerup"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 28,
+          "title": "selection_composition_and",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 3
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rect"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1465",
+                  "channel": "y",
+                  "field": "Origin",
+                  "type": "ordinal"
+                },
+                {
+                  "id": "enc-1466",
+                  "channel": "x",
+                  "field": "Cylinders",
+                  "type": "ordinal"
+                },
+                {
+                  "id": "enc-1467",
+                  "channel": "color",
+                  "condition": {
+                    "test": {
+                      "and": [
+                        {
+                          "param": "alex"
+                        },
+                        {
+                          "param": "morgan"
+                        }
+                      ]
+                    },
+                    "aggregate": "count"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1468",
+                  "name": "alex",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "on": "[pointerdown[!event.shiftKey], pointerup] > pointermove",
+                      "translate": "[pointerdown[!event.shiftKey], pointerup] > pointermove"
+                    }
+                  }
+                },
+                {
+                  "id": "param-1469",
+                  "name": "morgan",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "on": "[pointerdown[event.shiftKey], pointerup] > pointermove",
+                      "translate": "[pointerdown[event.shiftKey], pointerup] > pointermove",
+                      "mark": {
+                        "fill": "#fdbb84",
+                        "fillOpacity": 0.5,
+                        "stroke": "#e34a33"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 29,
+          "title": "selection_composition_or",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 12
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rect"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1470",
+                  "channel": "y",
+                  "field": "Origin",
+                  "type": "ordinal"
+                },
+                {
+                  "id": "enc-1471",
+                  "channel": "x",
+                  "field": "Cylinders",
+                  "type": "ordinal"
+                },
+                {
+                  "id": "enc-1472",
+                  "channel": "color",
+                  "condition": {
+                    "test": {
+                      "or": [
+                        {
+                          "param": "alex"
+                        },
+                        {
+                          "param": "morgan"
+                        }
+                      ]
+                    },
+                    "aggregate": "count"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1473",
+                  "name": "alex",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "on": "[pointerdown[!event.shiftKey], pointerup] > pointermove",
+                      "translate": "[pointerdown[!event.shiftKey], pointerup] > pointermove"
+                    }
+                  }
+                },
+                {
+                  "id": "param-1474",
+                  "name": "morgan",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "on": "[pointerdown[event.shiftKey], pointerup] > pointermove",
+                      "translate": "[pointerdown[event.shiftKey], pointerup] > pointermove",
+                      "mark": {
+                        "fill": "#fdbb84",
+                        "fillOpacity": 0.5,
+                        "stroke": "#e34a33"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 30,
+          "title": "selection_heatmap",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 12
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "inline",
+              "data": "[{\"actual\":\"A\",\"predicted\":\"A\",\"count\":13},{\"actual\":\"A\",\"predicted\":\"B\",\"count\":0},{\"actual\":\"A\",\"predicted\":\"C\",\"count\":0},{\"actual\":\"B\",\"predicted\":\"A\",\"count\":0},{\"actual\":\"B\",\"predicted\":\"B\",\"count\":10},{\"actual\":\"B\",\"predicted\":\"C\",\"count\":6},{\"actual\":\"C\",\"predicted\":\"A\",\"count\":0},{\"actual\":\"C\",\"predicted\":\"B\",\"count\":0},{\"actual\":\"C\",\"predicted\":\"C\",\"count\":9}]"
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rect",
+                "props": {
+                  "strokeWidth": 2
+                }
+              },
+              "encodings": [
+                {
+                  "id": "enc-1475",
+                  "channel": "y",
+                  "field": "actual",
+                  "type": "nominal"
+                },
+                {
+                  "id": "enc-1476",
+                  "channel": "x",
+                  "field": "predicted",
+                  "type": "nominal"
+                },
+                {
+                  "id": "enc-1477",
+                  "channel": "fill",
+                  "field": "count",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1478",
+                  "channel": "stroke",
+                  "condition": {
+                    "param": "highlight",
+                    "empty": false,
+                    "value": "black"
+                  },
+                  "value": "null"
+                },
+                {
+                  "id": "enc-1479",
+                  "channel": "opacity",
+                  "condition": {
+                    "param": "highlight",
+                    "value": 1
+                  },
+                  "value": "0.5"
+                },
+                {
+                  "id": "enc-1480",
+                  "channel": "order",
+                  "condition": {
+                    "param": "highlight",
+                    "value": 1
+                  },
+                  "value": "0"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1481",
+                  "name": "highlight",
+                  "spec": {
+                    "select": "point"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 31,
+          "title": "selection_insert",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 21
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1482",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1483",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1484",
+                  "channel": "color",
+                  "condition": {
+                    "param": "paintbrush",
+                    "field": "Cylinders",
+                    "type": "ordinal"
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-1485",
+                  "channel": "size",
+                  "value": "75"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1486",
+                  "name": "paintbrush",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "toggle": false
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 32,
+          "title": "selection_interval_mark_style",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 21
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rect"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1487",
+                  "channel": "y",
+                  "field": "Origin"
+                },
+                {
+                  "id": "enc-1488",
+                  "channel": "x",
+                  "field": "Cylinders"
+                },
+                {
+                  "id": "enc-1489",
+                  "channel": "color",
+                  "aggregate": "count"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1490",
+                  "name": "alex",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "on": "[pointerdown[!event.shiftKey], pointerup] > pointermove",
+                      "translate": "[pointerdown[!event.shiftKey], pointerup] > pointermove"
+                    }
+                  }
+                },
+                {
+                  "id": "param-1491",
+                  "name": "morgan",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "on": "[pointerdown[event.shiftKey], pointerup] > pointermove",
+                      "translate": "[pointerdown[event.shiftKey], pointerup] > pointermove",
+                      "mark": {
+                        "fill": "#fdbb84",
+                        "fillOpacity": 0.5,
+                        "stroke": "#e34a33"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 33,
+          "title": "selection_multi_condition",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 30
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1502",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1503",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1504",
+                  "channel": "color",
+                  "value": "grey",
+                  "extra": {
+                    "condition": [
+                      {
+                        "param": "hoverbrush",
+                        "value": "teal"
+                      },
+                      {
+                        "param": "brush",
+                        "value": "skyblue"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1505",
+                  "name": "brush",
+                  "spec": {
+                    "select": "interval"
+                  }
+                },
+                {
+                  "id": "param-1506",
+                  "name": "hoverbrush",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "on": "pointerover",
+                      "nearest": true
+                    }
+                  }
+                }
+              ],
+              "extra": {
+                "description": "Drag out a rectangular brush to highlight points."
+              }
+            }
+          }
+        },
+        {
+          "id": 34,
+          "title": "selection_project_interval",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 30
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rect"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1516",
+                  "channel": "y",
+                  "field": "Origin",
+                  "type": "ordinal"
+                },
+                {
+                  "id": "enc-1517",
+                  "channel": "x",
+                  "field": "Cylinders",
+                  "type": "ordinal"
+                },
+                {
+                  "id": "enc-1518",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "aggregate": "count"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1519",
+                  "name": "pts",
+                  "spec": {
+                    "select": "interval"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 35,
+          "title": "selection_project_interval_x",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 39
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rect"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1520",
+                  "channel": "y",
+                  "field": "Origin"
+                },
+                {
+                  "id": "enc-1521",
+                  "channel": "x",
+                  "field": "Cylinders"
+                },
+                {
+                  "id": "enc-1522",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "aggregate": "count"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1523",
+                  "name": "pts",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "encodings": [
+                        "x"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 36,
+          "title": "selection_project_interval_x_y",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 39
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rect"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1524",
+                  "channel": "y",
+                  "field": "Origin"
+                },
+                {
+                  "id": "enc-1525",
+                  "channel": "x",
+                  "field": "Cylinders"
+                },
+                {
+                  "id": "enc-1526",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "aggregate": "count"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1527",
+                  "name": "pts",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "encodings": [
+                        "x",
+                        "y"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 37,
+          "title": "selection_project_interval_y",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 48
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rect"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1528",
+                  "channel": "y",
+                  "field": "Origin"
+                },
+                {
+                  "id": "enc-1529",
+                  "channel": "x",
+                  "field": "Cylinders"
+                },
+                {
+                  "id": "enc-1530",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "aggregate": "count"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1531",
+                  "name": "pts",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "encodings": [
+                        "y"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 38,
+          "title": "selection_project_multi",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 48
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1532",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1533",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1534",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "field": "Cylinders",
+                    "type": "ordinal",
+                    "scale": {
+                      "scheme": "yelloworangebrown"
+                    }
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-1535",
+                  "channel": "size",
+                  "condition": {
+                    "param": "pts",
+                    "empty": false,
+                    "value": 200
+                  },
+                  "value": "50"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1536",
+                  "name": "pts",
+                  "spec": {
+                    "select": "point"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "type": "row",
+      "title": "selection_project_multi_cylinders … selection_translate_brush_shift-drag (12)",
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 3
+      },
+      "panels": [
+        {
+          "id": 40,
+          "title": "selection_project_multi_cylinders",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 4
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1537",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1538",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1539",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "field": "Cylinders",
+                    "type": "ordinal",
+                    "scale": {
+                      "scheme": "yelloworangebrown"
+                    }
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-1540",
+                  "channel": "size",
+                  "condition": {
+                    "param": "pts",
+                    "value": 200
+                  },
+                  "value": "50"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1541",
+                  "name": "pts",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "Cylinders"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 41,
+          "title": "selection_project_multi_cylinders_origin",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 4
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1542",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1543",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1544",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "field": "Cylinders",
+                    "type": "ordinal",
+                    "scale": {
+                      "scheme": "yelloworangebrown"
+                    }
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-1545",
+                  "channel": "shape",
+                  "condition": {
+                    "param": "pts",
+                    "field": "Origin",
+                    "type": "nominal",
+                    "scale": {
+                      "range": [
+                        "triangle-left",
+                        "triangle-right",
+                        "triangle-up"
+                      ]
+                    }
+                  },
+                  "value": "circle"
+                },
+                {
+                  "id": "enc-1546",
+                  "channel": "size",
+                  "condition": {
+                    "param": "pts",
+                    "value": 200
+                  },
+                  "value": "50"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1547",
+                  "name": "pts",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "Cylinders",
+                        "Origin"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 42,
+          "title": "selection_project_multi_origin",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 13
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1548",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1549",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1550",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "field": "Cylinders",
+                    "type": "ordinal",
+                    "scale": {
+                      "scheme": "yelloworangebrown"
+                    }
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-1551",
+                  "channel": "shape",
+                  "condition": {
+                    "param": "pts",
+                    "field": "Origin",
+                    "type": "nominal",
+                    "scale": {
+                      "range": [
+                        "triangle-left",
+                        "triangle-right",
+                        "triangle-up"
+                      ]
+                    }
+                  },
+                  "value": "circle"
+                },
+                {
+                  "id": "enc-1552",
+                  "channel": "size",
+                  "condition": {
+                    "param": "pts",
+                    "value": 200
+                  },
+                  "value": "50"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1553",
+                  "name": "pts",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "Origin"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 43,
+          "title": "selection_project_single",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 13
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1554",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1555",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1556",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "field": "Cylinders",
+                    "type": "ordinal",
+                    "scale": {
+                      "scheme": "yelloworangebrown"
+                    }
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-1557",
+                  "channel": "size",
+                  "condition": {
+                    "param": "pts",
+                    "value": 200
+                  },
+                  "value": "50"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1558",
+                  "name": "pts",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "toggle": false
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 44,
+          "title": "selection_project_single_cylinders",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 22
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1559",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1560",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1561",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "field": "Cylinders",
+                    "type": "ordinal",
+                    "scale": {
+                      "scheme": "yelloworangebrown"
+                    }
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-1562",
+                  "channel": "size",
+                  "condition": {
+                    "param": "pts",
+                    "value": 200
+                  },
+                  "value": "50"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1563",
+                  "name": "pts",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "Cylinders"
+                      ],
+                      "toggle": false
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 45,
+          "title": "selection_project_single_cylinders_origin",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 22
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1564",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1565",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1566",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "field": "Cylinders",
+                    "type": "ordinal",
+                    "scale": {
+                      "scheme": "yelloworangebrown"
+                    }
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-1567",
+                  "channel": "shape",
+                  "condition": {
+                    "param": "pts",
+                    "field": "Origin",
+                    "type": "nominal",
+                    "scale": {
+                      "range": [
+                        "triangle-left",
+                        "triangle-right",
+                        "triangle-up"
+                      ]
+                    }
+                  },
+                  "value": "circle"
+                },
+                {
+                  "id": "enc-1568",
+                  "channel": "size",
+                  "condition": {
+                    "param": "pts",
+                    "value": 200
+                  },
+                  "value": "50"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1569",
+                  "name": "pts",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "Cylinders",
+                        "Origin"
+                      ],
+                      "toggle": false
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 46,
+          "title": "selection_project_single_origin",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 31
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "point"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1570",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1571",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1572",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "field": "Cylinders",
+                    "type": "ordinal",
+                    "scale": {
+                      "scheme": "yelloworangebrown"
+                    }
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-1573",
+                  "channel": "shape",
+                  "condition": {
+                    "param": "pts",
+                    "field": "Origin",
+                    "type": "nominal",
+                    "scale": {
+                      "range": [
+                        "triangle-left",
+                        "triangle-right",
+                        "triangle-up"
+                      ]
+                    }
+                  },
+                  "value": "circle"
+                },
+                {
+                  "id": "enc-1574",
+                  "channel": "size",
+                  "condition": {
+                    "param": "pts",
+                    "value": 200
+                  },
+                  "value": "50"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1575",
+                  "name": "pts",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "Origin"
+                      ],
+                      "toggle": false
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 47,
+          "title": "selection_toggle_altKey",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 31
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1576",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1577",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1578",
+                  "channel": "color",
+                  "condition": {
+                    "param": "paintbrush",
+                    "field": "Cylinders",
+                    "type": "ordinal"
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-1579",
+                  "channel": "size",
+                  "value": "75"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1580",
+                  "name": "paintbrush",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "toggle": "event.altKey"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 48,
+          "title": "selection_toggle_altKey_shiftKey",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 40
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1581",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1582",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1583",
+                  "channel": "color",
+                  "condition": {
+                    "param": "paintbrush",
+                    "field": "Cylinders",
+                    "type": "ordinal"
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-1584",
+                  "channel": "size",
+                  "value": "75"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1585",
+                  "name": "paintbrush",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "toggle": "event.altKey && event.shiftKey"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 49,
+          "title": "selection_toggle_shiftKey",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 40
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1586",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1587",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1588",
+                  "channel": "color",
+                  "condition": {
+                    "param": "paintbrush",
+                    "field": "Cylinders",
+                    "type": "ordinal"
+                  },
+                  "value": "grey"
+                },
+                {
+                  "id": "enc-1589",
+                  "channel": "size",
+                  "value": "75"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1590",
+                  "name": "paintbrush",
+                  "spec": {
+                    "select": "point"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 50,
+          "title": "selection_translate_brush_drag",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 49
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle",
+                "props": {
+                  "clip": true
+                }
+              },
+              "encodings": [
+                {
+                  "id": "enc-1591",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      75,
+                      150
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1592",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      20,
+                      40
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1593",
+                  "channel": "size",
+                  "field": "Cylinders",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1594",
+                  "channel": "color",
+                  "condition": {
+                    "param": "brush",
+                    "field": "Origin",
+                    "type": "nominal"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1595",
+                  "name": "brush",
+                  "spec": {
+                    "select": "interval"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 51,
+          "title": "selection_translate_brush_shift-drag",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 49
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle",
+                "props": {
+                  "clip": true
+                }
+              },
+              "encodings": [
+                {
+                  "id": "enc-1596",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      75,
+                      150
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1597",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      20,
+                      40
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1598",
+                  "channel": "size",
+                  "field": "Cylinders",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1599",
+                  "channel": "color",
+                  "condition": {
+                    "param": "brush",
+                    "field": "Origin",
+                    "type": "nominal"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1600",
+                  "name": "brush",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "translate": "[pointerdown[event.shiftKey], window:pointerup] > window:pointermove!"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "type": "row",
+      "title": "selection_translate_scatterplot_drag … trellis_selections (12)",
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 4
+      },
+      "panels": [
+        {
+          "id": 53,
+          "title": "selection_translate_scatterplot_drag",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 5
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1601",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      75,
+                      150
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1602",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      20,
+                      40
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1603",
+                  "channel": "size",
+                  "field": "Cylinders",
+                  "type": "quantitative"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1604",
+                  "name": "grid",
+                  "spec": {
+                    "select": "interval",
+                    "bind": "scales"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 54,
+          "title": "selection_translate_scatterplot_shift-drag",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 5
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1605",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      75,
+                      150
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1606",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      20,
+                      40
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1607",
+                  "channel": "size",
+                  "field": "Cylinders",
+                  "type": "quantitative"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1608",
+                  "name": "grid",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "translate": "[pointerdown[event.shiftKey], window:pointerup] > window:pointermove!"
+                    },
+                    "bind": "scales"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 55,
+          "title": "selection_type_interval",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 14
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rect"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1609",
+                  "channel": "y",
+                  "field": "Origin"
+                },
+                {
+                  "id": "enc-1610",
+                  "channel": "x",
+                  "field": "Cylinders"
+                },
+                {
+                  "id": "enc-1611",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "aggregate": "count"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1612",
+                  "name": "pts",
+                  "spec": {
+                    "select": "interval"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 56,
+          "title": "selection_type_interval_invert",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 14
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rect"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1613",
+                  "channel": "y",
+                  "field": "Origin"
+                },
+                {
+                  "id": "enc-1614",
+                  "channel": "x",
+                  "field": "Cylinders"
+                },
+                {
+                  "id": "enc-1615",
+                  "channel": "color",
+                  "condition": {
+                    "test": {
+                      "not": {
+                        "param": "pts"
+                      }
+                    },
+                    "value": "grey"
+                  },
+                  "aggregate": "count"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1616",
+                  "name": "pts",
+                  "spec": {
+                    "select": "interval"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 57,
+          "title": "selection_type_point",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 23
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rect"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1617",
+                  "channel": "y",
+                  "field": "Origin"
+                },
+                {
+                  "id": "enc-1618",
+                  "channel": "x",
+                  "field": "Cylinders"
+                },
+                {
+                  "id": "enc-1619",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "aggregate": "count"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1620",
+                  "name": "pts",
+                  "spec": {
+                    "select": "point"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 58,
+          "title": "selection_type_single_dblclick",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 23
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rect"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1621",
+                  "channel": "y",
+                  "field": "Origin"
+                },
+                {
+                  "id": "enc-1622",
+                  "channel": "x",
+                  "field": "Cylinders"
+                },
+                {
+                  "id": "enc-1623",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "aggregate": "count"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1624",
+                  "name": "pts",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "on": "dblclick"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 59,
+          "title": "selection_type_single_pointerover",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 32
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "rect"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1625",
+                  "channel": "y",
+                  "field": "Origin"
+                },
+                {
+                  "id": "enc-1626",
+                  "channel": "x",
+                  "field": "Cylinders"
+                },
+                {
+                  "id": "enc-1627",
+                  "channel": "color",
+                  "condition": {
+                    "param": "pts",
+                    "aggregate": "count"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1628",
+                  "name": "pts",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "on": "pointerover"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 60,
+          "title": "selection_zoom_brush_shift-wheel",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 32
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle",
+                "props": {
+                  "clip": true
+                }
+              },
+              "encodings": [
+                {
+                  "id": "enc-1629",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      75,
+                      150
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1630",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      20,
+                      40
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1631",
+                  "channel": "size",
+                  "field": "Cylinders",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1632",
+                  "channel": "color",
+                  "condition": {
+                    "param": "brush",
+                    "field": "Origin",
+                    "type": "nominal"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1633",
+                  "name": "brush",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "zoom": "wheel![event.shiftKey]"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 61,
+          "title": "selection_zoom_brush_wheel",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 41
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle",
+                "props": {
+                  "clip": true
+                }
+              },
+              "encodings": [
+                {
+                  "id": "enc-1634",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      75,
+                      150
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1635",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      20,
+                      40
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1636",
+                  "channel": "size",
+                  "field": "Cylinders",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-1637",
+                  "channel": "color",
+                  "condition": {
+                    "param": "brush",
+                    "field": "Origin",
+                    "type": "nominal"
+                  },
+                  "value": "grey"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1638",
+                  "name": "brush",
+                  "spec": {
+                    "select": "interval"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 62,
+          "title": "selection_zoom_scatterplot_shift-wheel",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 41
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1639",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      75,
+                      150
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1640",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      20,
+                      40
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1641",
+                  "channel": "size",
+                  "field": "Cylinders",
+                  "type": "quantitative"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1642",
+                  "name": "grid",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "zoom": "wheel![event.shiftKey]"
+                    },
+                    "bind": "scales"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 63,
+          "title": "selection_zoom_scatterplot_wheel",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 50
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1643",
+                  "channel": "x",
+                  "field": "Horsepower",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      75,
+                      150
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1644",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      20,
+                      40
+                    ]
+                  }
+                },
+                {
+                  "id": "enc-1645",
+                  "channel": "size",
+                  "field": "Cylinders",
+                  "type": "quantitative"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1646",
+                  "name": "grid",
+                  "spec": {
+                    "select": "interval",
+                    "bind": "scales"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 64,
+          "title": "trellis_selections",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 50
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/anscombe.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "circle"
+              },
+              "encodings": [
+                {
+                  "id": "enc-1884",
+                  "channel": "column",
+                  "field": "Series"
+                },
+                {
+                  "id": "enc-1885",
+                  "channel": "x",
+                  "field": "X",
+                  "type": "quantitative",
+                  "scale": {
+                    "zero": false
+                  }
+                },
+                {
+                  "id": "enc-1886",
+                  "channel": "y",
+                  "field": "Y",
+                  "type": "quantitative",
+                  "scale": {
+                    "zero": false
+                  }
+                },
+                {
+                  "id": "enc-1887",
+                  "channel": "size",
+                  "value": "100",
+                  "condition": {
+                    "param": "brush",
+                    "value": 250
+                  }
+                },
+                {
+                  "id": "enc-1888",
+                  "channel": "color",
+                  "value": "steelblue",
+                  "condition": {
+                    "param": "xenc",
+                    "value": "red"
+                  }
+                },
+                {
+                  "id": "enc-1889",
+                  "channel": "opacity",
+                  "value": "1"
+                }
+              ],
+              "transforms": [],
+              "params": [
+                {
+                  "id": "param-1890",
+                  "name": "brush",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "encodings": [
+                        "x"
+                      ],
+                      "resolve": "intersect",
+                      "on": "[pointerdown[event.shiftKey], pointerup] > pointermove",
+                      "translate": "[pointerdown[event.shiftKey], pointerup] > pointermove"
+                    }
+                  }
+                },
+                {
+                  "id": "param-1891",
+                  "name": "grid",
+                  "spec": {
+                    "select": {
+                      "type": "interval",
+                      "resolve": "global",
+                      "translate": "[pointerdown[!event.shiftKey], pointerup] > pointermove"
+                    },
+                    "bind": "scales"
+                  }
+                },
+                {
+                  "id": "param-1892",
+                  "name": "xenc",
+                  "spec": {
+                    "select": {
+                      "type": "point",
+                      "fields": [
+                        "X"
+                      ],
+                      "resolve": "global",
+                      "on": "pointerover",
+                      "nearest": true
+                    },
+                    "bind": {
+                      "input": "number"
+                    }
+                  }
+                }
+              ],
+              "extra": {
+                "description": "Anscombe's Quartet"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": [
+    "vizard",
+    "vega-lite",
+    "gallery"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timezone": "browser",
+  "title": "Vizard — Interactive gallery",
+  "uid": "vizard-gallery-interactive",
+  "version": 1
+}

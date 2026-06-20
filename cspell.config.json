@@ -6,12 +6,17 @@
         ".yarn",
         ".github",
         "registry.json",
+        "provisioning/",
+        "docker-compose.{yaml,yml}",
         "packages/plugin-tools/**"
     ],
     "words": [
         "yesoreyeram",
         "sriramajeyam",
         "sugumaran",
+        "vega",
+        "vegalite",
+        "vizard",
         "nocodb",
         "Noco",
         "baserow",
@@ -84,6 +89,11 @@
         "matomo",
         "calcom",
         "calendly",
+        "gofmt",
+        "testdata",
+        "httptest",
+        "datetime",
+        "datetimes",
         "savvycal"
     ]
 }

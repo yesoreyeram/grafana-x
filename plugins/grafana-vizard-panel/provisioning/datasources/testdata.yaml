@@ -1,0 +1,11 @@
+apiVersion: 1
+
+# The built-in TestData data source, so the demo dashboard has data to chart
+# without any external dependency.
+datasources:
+  - name: TestData
+    uid: vizard-testdata
+    type: grafana-testdata-datasource
+    access: proxy
+    isDefault: true
+    editable: true

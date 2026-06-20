@@ -1,0 +1,572 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "graphTooltip": 0,
+  "panels": [
+    {
+      "id": 8,
+      "type": "row",
+      "title": "boxplot_2D_vertical_single_per_group … errorbar_tooltip (7)",
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "panels": [
+        {
+          "id": 1,
+          "title": "boxplot_2D_vertical_single_per_group",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 1
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "inline",
+              "data": "[{\"a\":\"A\",\"b\":28},{\"a\":\"A\",\"b\":30},{\"a\":\"B\",\"b\":55}]"
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "boxplot"
+              },
+              "encodings": [
+                {
+                  "id": "enc-448",
+                  "channel": "x",
+                  "field": "a",
+                  "type": "nominal",
+                  "axis": {
+                    "labelAngle": 0
+                  }
+                },
+                {
+                  "id": "enc-449",
+                  "channel": "y",
+                  "field": "b",
+                  "type": "quantitative"
+                }
+              ],
+              "transforms": [],
+              "extra": {
+                "description": "A simple bar chart with embedded data."
+              }
+            }
+          }
+        },
+        {
+          "id": 2,
+          "title": "boxplot_2D_vertical_single_per_group_color",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 1
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "inline",
+              "data": "[{\"a\":\"A\",\"b\":28},{\"a\":\"A\",\"b\":30},{\"a\":\"B\",\"b\":55}]"
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "boxplot"
+              },
+              "encodings": [
+                {
+                  "id": "enc-450",
+                  "channel": "x",
+                  "field": "a",
+                  "type": "nominal",
+                  "axis": {
+                    "labelAngle": 0
+                  }
+                },
+                {
+                  "id": "enc-451",
+                  "channel": "color",
+                  "field": "a",
+                  "type": "nominal"
+                },
+                {
+                  "id": "enc-452",
+                  "channel": "y",
+                  "field": "b",
+                  "type": "quantitative"
+                }
+              ],
+              "transforms": [],
+              "extra": {
+                "description": "A simple bar chart with embedded data."
+              }
+            }
+          }
+        },
+        {
+          "id": 3,
+          "title": "boxplot_groupped",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 10
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "boxplot"
+              },
+              "encodings": [
+                {
+                  "id": "enc-453",
+                  "channel": "x",
+                  "field": "Cylinders",
+                  "type": "nominal"
+                },
+                {
+                  "id": "enc-454",
+                  "channel": "color",
+                  "field": "Origin",
+                  "type": "nominal"
+                },
+                {
+                  "id": "enc-455",
+                  "channel": "xOffset",
+                  "field": "Origin",
+                  "type": "nominal"
+                },
+                {
+                  "id": "enc-456",
+                  "channel": "y",
+                  "field": "Acceleration",
+                  "type": "quantitative"
+                }
+              ],
+              "transforms": [],
+              "extra": {
+                "description": "A vertical box plot showing median, min, and max body mass of penguins."
+              }
+            }
+          }
+        },
+        {
+          "id": 4,
+          "title": "errorband_2d_vertical_borders",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 10
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "errorband",
+                "props": {
+                  "extent": "ci",
+                  "borders": true
+                }
+              },
+              "encodings": [
+                {
+                  "id": "enc-540",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative",
+                  "scale": {
+                    "zero": false
+                  },
+                  "title": "Miles per Gallon (95% CIs)"
+                },
+                {
+                  "id": "enc-541",
+                  "channel": "x",
+                  "timeUnit": "year",
+                  "field": "Year"
+                }
+              ],
+              "transforms": []
+            }
+          }
+        },
+        {
+          "id": 5,
+          "title": "errorband_tooltip",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 19
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "errorband"
+              },
+              "encodings": [
+                {
+                  "id": "enc-542",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                },
+                {
+                  "id": "enc-543",
+                  "channel": "x",
+                  "timeUnit": "year",
+                  "field": "Year"
+                },
+                {
+                  "id": "enc-544",
+                  "channel": "tooltip",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative"
+                }
+              ],
+              "transforms": []
+            }
+          }
+        },
+        {
+          "id": 6,
+          "title": "errorbar_2d_vertical_ticks",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 19
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/cars.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "errorbar",
+                "props": {
+                  "extent": "ci",
+                  "ticks": true
+                }
+              },
+              "encodings": [
+                {
+                  "id": "enc-545",
+                  "channel": "y",
+                  "field": "Miles_per_Gallon",
+                  "type": "quantitative",
+                  "scale": {
+                    "zero": false
+                  },
+                  "title": "Miles per Gallon (95% CIs)"
+                },
+                {
+                  "id": "enc-546",
+                  "channel": "x",
+                  "timeUnit": "year",
+                  "field": "Year"
+                }
+              ],
+              "transforms": []
+            }
+          }
+        },
+        {
+          "id": 7,
+          "title": "errorbar_tooltip",
+          "type": "yesoreyeram-vizard-panel",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "vizard-infinity"
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 28
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "datasource": {
+                "type": "yesoreyeram-infinity-datasource",
+                "uid": "vizard-infinity"
+              },
+              "type": "json",
+              "format": "table",
+              "parser": "backend",
+              "root_selector": "",
+              "columns": [],
+              "filters": [],
+              "source": "url",
+              "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/barley.json",
+              "url_options": {
+                "method": "GET",
+                "data": ""
+              }
+            }
+          ],
+          "options": {
+            "editorMode": "builder",
+            "renderer": "canvas",
+            "tooltip": true,
+            "legend": true,
+            "theme": {
+              "colorScheme": "palette-classic"
+            },
+            "data": {
+              "source": "auto"
+            },
+            "builder": {
+              "mark": {
+                "type": "errorbar"
+              },
+              "encodings": [
+                {
+                  "id": "enc-581",
+                  "channel": "x",
+                  "field": "yield",
+                  "type": "quantitative",
+                  "scale": {
+                    "zero": false
+                  }
+                },
+                {
+                  "id": "enc-582",
+                  "channel": "y",
+                  "field": "variety",
+                  "type": "ordinal"
+                },
+                {
+                  "id": "enc-583",
+                  "channel": "tooltip",
+                  "field": "variety",
+                  "type": "ordinal"
+                }
+              ],
+              "transforms": []
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": [
+    "vizard",
+    "vega-lite",
+    "gallery"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timezone": "browser",
+  "title": "Vizard — Composite marks gallery",
+  "uid": "vizard-gallery-composite",
+  "version": 1
+}

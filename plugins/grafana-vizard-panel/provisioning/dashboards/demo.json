@@ -1,0 +1,82 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "graphTooltip": 0,
+  "links": [],
+  "panels": [
+    {
+      "id": 1,
+      "title": "Time series (auto suggestion)",
+      "type": "yesoreyeram-vizard-panel",
+      "datasource": { "type": "grafana-testdata-datasource", "uid": "vizard-testdata" },
+      "gridPos": { "h": 9, "w": 12, "x": 0, "y": 0 },
+      "targets": [
+        { "refId": "A", "scenarioId": "random_walk", "alias": "cpu", "datasource": { "type": "grafana-testdata-datasource", "uid": "vizard-testdata" } },
+        { "refId": "B", "scenarioId": "random_walk", "alias": "memory", "datasource": { "type": "grafana-testdata-datasource", "uid": "vizard-testdata" } },
+        { "refId": "C", "scenarioId": "random_walk", "alias": "disk", "datasource": { "type": "grafana-testdata-datasource", "uid": "vizard-testdata" } }
+      ],
+      "options": {
+        "editorMode": "builder",
+        "tooltip": true,
+        "theme": { "colorScheme": "palette-classic" },
+        "data": { "source": "auto" },
+        "builder": { "mark": { "type": "line", "tooltip": true }, "encodings": [], "transforms": [] }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Stacked bars (builder)",
+      "type": "yesoreyeram-vizard-panel",
+      "datasource": { "type": "grafana-testdata-datasource", "uid": "vizard-testdata" },
+      "gridPos": { "h": 9, "w": 12, "x": 12, "y": 0 },
+      "targets": [
+        { "refId": "A", "scenarioId": "random_walk", "alias": "cpu", "datasource": { "type": "grafana-testdata-datasource", "uid": "vizard-testdata" } },
+        { "refId": "B", "scenarioId": "random_walk", "alias": "memory", "datasource": { "type": "grafana-testdata-datasource", "uid": "vizard-testdata" } }
+      ],
+      "options": {
+        "editorMode": "builder",
+        "renderer": "canvas",
+        "tooltip": true,
+        "theme": { "colorScheme": "tableau10" },
+        "data": { "source": "auto" },
+        "builder": {
+          "mark": { "type": "bar", "tooltip": true },
+          "encodings": [
+            { "id": "x", "channel": "x", "field": "time", "type": "temporal", "timeUnit": "yearmonthdatehoursminutes" },
+            { "id": "y", "channel": "y", "field": "value", "type": "quantitative", "aggregate": "mean" },
+            { "id": "color", "channel": "color", "field": "series", "type": "nominal" }
+          ],
+          "transforms": []
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Single series (auto)",
+      "type": "yesoreyeram-vizard-panel",
+      "datasource": { "type": "grafana-testdata-datasource", "uid": "vizard-testdata" },
+      "gridPos": { "h": 9, "w": 24, "x": 0, "y": 9 },
+      "targets": [
+        { "refId": "A", "scenarioId": "random_walk", "alias": "throughput", "datasource": { "type": "grafana-testdata-datasource", "uid": "vizard-testdata" } }
+      ],
+      "options": {
+        "editorMode": "builder",
+        "renderer": "canvas",
+        "tooltip": true,
+        "theme": { "colorScheme": "continuous-blues" },
+        "data": { "source": "auto" },
+        "builder": { "mark": { "type": "area", "tooltip": true, "point": false }, "encodings": [], "transforms": [] }
+      }
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": ["vizard", "vega-lite", "demo"],
+  "templating": { "list": [] },
+  "time": { "from": "now-6h", "to": "now" },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Vizard — Vega-Lite demos",
+  "uid": "vizard-demos",
+  "version": 1,
+  "weekStart": ""
+}
