@@ -13,7 +13,7 @@ export function hasReadme() {
   return fs.existsSync(path.resolve(process.cwd(), 'src/README.md'));
 }
 
-// Entry points: the plugin module and any web workers.
+// Entry points: the plugin module.
 export async function getEntries(): Promise<Record<string, string>> {
   const parent = 'src';
   const entries: Record<string, string> = {};
