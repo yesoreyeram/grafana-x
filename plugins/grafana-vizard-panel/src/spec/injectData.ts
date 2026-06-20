@@ -3,7 +3,10 @@ import { SpecObject } from '../types';
 import { isPlainObject } from './merge';
 
 function hasInlineData(data: unknown): boolean {
-  return isPlainObject(data) && ('values' in data || 'name' in data || 'sequence' in data);
+  return (
+    isPlainObject(data) &&
+    ('values' in data || 'name' in data || 'sequence' in data || 'sphere' in data || 'graticule' in data)
+  );
 }
 
 /**
