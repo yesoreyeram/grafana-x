@@ -57,10 +57,14 @@ src/
   plugin.json               Panel manifest (type: panel)
 scripts/gen-demo-dashboards.mjs  Generates the Infinity-backed example galleries
 scripts/gen-showcase.mjs    Generates showcase.json (Grafana 13 tabs, v2 schema, inline data)
+scripts/gen-logo.mjs        Generates logo.json (the Grafana mark, 27 variants in two
+                            v2 tabs — "Grafana" (bitmap/effects/animated) + "Football
+                            Fever" — incl. timer-driven animations). See logo.test.ts.
 provisioning/
   datasources/              TestData + Infinity (yesoreyeram-infinity-datasource)
   dashboards/               demo.json (TestData quickstart) + gallery-*.json (Infinity examples)
                             + showcase.json (tabbed v2 dashboard; brilliant inline-data charts)
+                            + logo.json (the Grafana mark drawn many creative + animated ways)
 docker-compose.yaml         Grafana + the panel + Infinity (GF_INSTALL_PLUGINS) + provisioning
 webpack.config.ts           Frontend build (self-contained)
 ```

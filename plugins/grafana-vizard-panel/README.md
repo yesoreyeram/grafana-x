@@ -264,10 +264,34 @@ The bundled stack provisions these (TestData + Infinity datasources, all
 | Vizard — Composite marks gallery| `vizard-gallery-composite`   | Box plots, error bars/bands.                              |
 | Vizard — Layered gallery        | `vizard-gallery-layered`     | Multi-mark layered charts.                                |
 | Vizard — Interactive gallery    | `vizard-gallery-interactive` | Charts with selections/params.                            |
-| Vizard — Grafana logo           | `vizard-logo`                | The Grafana mark drawn 8 creative ways (a fun stress test). |
+| Vizard — Grafana logo           | `vizard-logo`                | The Grafana mark drawn 27 ways across two tabs — **Grafana** (bitmaps, effects, timer-driven animations) and **Football Fever** ⚽ (football-themed variants + a waving flag / tricolore gloss). |
 
 The galleries fetch real datasets live via the Infinity datasource from the
 [Vega data repository](https://github.com/vega/vega/tree/main/docs/data).
+
+### Animated charts
+
+The **Grafana logo** dashboard's **Grafana** tab drives smooth, auto-playing
+animations (radial reveal, hue spin, breathing pulse, shimmer sweep, particle
+assembly, self-drawing wireframe, matrix rain) alongside the static bitmap/effect
+variants; the **Football Fever** ⚽ tab adds football-themed ones (Mexican wave,
+flag wave, orbiting trophy shine) plus a waving Brazil flag and a French tricolore
+gloss sweep. All are inspired by MIT's
+[Animated Vega-Lite](https://vis.csail.mit.edu/pubs/animated-vega-lite/) and run
+entirely inside the hardened `mode: 'vega-lite'` pipeline (no raw Vega, no network)
+using a **timer-driven Vega-Lite parameter** that `calculate` / `filter` transforms
+read each frame:
+
+```jsonc
+"params": [{ "name": "anim", "value": 0,
+  "on": [{ "events": { "type": "timer", "throttle": 45 }, "update": "(anim + 1) % 60" }] }]
+```
+
+Vega-Lite 6 also ships a native `time` encoding channel from that research, but in
+the pinned `vega-lite@6.4.3` it fails to parse to a runtime dataflow, so the
+timer-parameter primitive (what the native channel compiles down to) is used
+instead. See `scripts/gen-logo.mjs` and the `src/spec/logo.test.ts` regression
+test (compile + Vega parse + a timer-signal assertion for every variant).
 
 ## Development
 

@@ -57,6 +57,8 @@ maxbins
 ntile
 redblue
 viridis
+sinebow
+tricolore
 tableau
 renderable
 topojson
