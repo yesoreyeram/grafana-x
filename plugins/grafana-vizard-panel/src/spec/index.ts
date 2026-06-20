@@ -36,6 +36,10 @@ function disableLegend(node: unknown): unknown {
   }
   const out: SpecObject = {};
   for (const [key, value] of Object.entries(node)) {
+    if (key === 'data' || key === 'datasets') {
+      out[key] = value;
+      continue;
+    }
     if (key === 'encoding' && isPlainObject(value)) {
       const enc: SpecObject = {};
       for (const [ch, def] of Object.entries(value)) {
