@@ -35,11 +35,11 @@ function hasAnySelection(spec: SpecObject): boolean {
 }
 
 /**
- * Enable native-style time-range zooming: for single (or layered) views with a
- * temporal x and no existing interval selection, add an x interval-selection
- * param. `VegaView` listens for it and propagates the brushed range to the
- * dashboard time range (`onChangeTimeRange`). Multi-view specs and specs that
- * already define their own interval interaction are left untouched.
+ * Enable native-style time-range zooming: for single-view specs with a continuous temporal x
+ * and no existing interval selection, add an x interval-selection param. `VegaView` listens
+ * for it and propagates the brushed range to the dashboard time range (`onChangeTimeRange`).
+ * Multi-view and layered specs, and specs that already define their own interval interaction,
+ * are left untouched.
  */
 export function injectZoom(spec: SpecObject): { spec: SpecObject; enabled: boolean } {
   if (COMPOSITION_KEYS.some((key) => key in spec)) {
