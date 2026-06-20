@@ -12,57 +12,40 @@
   ],
   "tasks": {
     "build": {
+      "description": "Build a Grafana plugin: webpack frontend + copied assets (dist/module.js, plugin.json, README, LICENSE, img) and Go backend binaries (dist/gpx_*, go_plugin_build_manifest).",
       "dependsOn": [
         "^build"
       ],
       "inputs": [
-        "$TURBO_DEFAULT$",
-        "src/**",
-        "pkg/**",
-        "plugin.json",
-        "webpack.config.ts",
-        "tsconfig.json",
-        "tsconfig.build.json",
-        "Magefile.go",
-        "go.mod",
-        "go.sum"
+        "$TURBO_DEFAULT$"
       ],
       "outputs": [
         "dist/**"
       ]
     },
     "typecheck": {
+      "description": "Type-check frontend sources with tsc; emits no cacheable file output.",
       "dependsOn": [
         "^build"
       ],
       "inputs": [
-        "$TURBO_DEFAULT$",
-        "src/**",
-        "tsconfig.json",
-        "tsconfig.build.json"
+        "$TURBO_DEFAULT$"
       ],
       "outputs": []
     },
     "test": {
+      "description": "Run unit tests (frontend Jest + Go backend); emits no cacheable file output.",
       "dependsOn": [
         "^build"
       ],
       "inputs": [
-        "$TURBO_DEFAULT$",
-        "src/**",
-        "jest.config.*",
-        "tsconfig.json"
+        "$TURBO_DEFAULT$"
       ],
-      "outputs": [
-        "coverage/**"
-      ]
+      "outputs": []
     },
     "lint": {
       "inputs": [
-        "$TURBO_DEFAULT$",
-        "src/**",
-        "eslint.config.*",
-        ".eslintrc*"
+        "$TURBO_DEFAULT$"
       ],
       "outputs": [
         ".eslintcache"
@@ -70,8 +53,7 @@
     },
     "spellcheck": {
       "inputs": [
-        "$TURBO_DEFAULT$",
-        "cspell.config.json"
+        "$TURBO_DEFAULT$"
       ],
       "outputs": []
     },

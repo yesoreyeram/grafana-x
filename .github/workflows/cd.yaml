@@ -1,0 +1,98 @@
+name: CD
+on:
+    push:
+        branches:
+            - main
+permissions: {}
+concurrency:
+    group: release-${{ github.ref }}
+    cancel-in-progress: false
+jobs:
+    backend-security:
+        name: Backend ${{ matrix.plugin }}
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+        strategy:
+            fail-fast: true
+            matrix:
+                plugin:
+                    - grafana-airtable-datasource
+                    - grafana-appwrite-datasource
+                    - grafana-asana-datasource
+                    - grafana-baserow-datasource
+                    - grafana-clickup-datasource
+                    - grafana-hubspot-datasource
+                    - grafana-linear-datasource
+                    - grafana-monday-datasource
+                    - grafana-nocodb-datasource
+                    - grafana-notion-datasource
+                    - grafana-plane-datasource
+                    - grafana-pocketbase-datasource
+        steps:
+            - name: Harden the runner
+              uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+              with:
+                  egress-policy: audit
+            - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+              with:
+                  persist-credentials: false
+            - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
+              with:
+                  go-version-file: 'plugins/datasources/${{ matrix.plugin }}/go.mod'
+                  cache-dependency-path: 'plugins/datasources/${{ matrix.plugin }}/go.sum'
+            - name: Lint (golangci-lint)
+              uses: golangci/golangci-lint-action@82606bf257cbaff209d206a39f5134f0cfbfd2ee # v9.2.1
+              with:
+                  working-directory: 'plugins/datasources/${{ matrix.plugin }}'
+                  args: --timeout=5m
+            - name: Test
+              working-directory: 'plugins/datasources/${{ matrix.plugin }}'
+              run: go test -race ./...
+            - name: Vulnerability scan (govulncheck)
+              working-directory: 'plugins/datasources/${{ matrix.plugin }}'
+              run: go run golang.org/x/vuln/cmd/govulncheck@v1.3.0 --show verbose ./...
+
+    release:
+        needs: backend-security
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            pull-requests: write
+            id-token: write
+        steps:
+            - name: Harden the runner
+              uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+              with:
+                  egress-policy: audit
+            - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+              with:
+                  persist-credentials: false
+            - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+              with:
+                  node-version-file: '.nvmrc'
+                  cache: 'yarn'
+                  registry-url: 'https://registry.npmjs.org'
+            - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
+              with:
+                  go-version-file: 'plugins/datasources/grafana-linear-datasource/go.mod'
+                  cache-dependency-path: 'plugins/datasources/*/go.sum'
+            - name: Install Mage
+              run: go install github.com/magefile/mage@v1.15.0
+            - name: Install dependencies
+              run: yarn install --immutable
+            - name: Audit dependencies (yarn npm audit)
+              run: yarn npm audit --all --recursive --severity high
+            - name: Build
+              run: yarn build
+            - name: Create release pull request or publish
+              uses: changesets/action@e0145edc7d9d8679003495b11f87bd8ef63c0cba # v1.5.3
+              with:
+                  version: yarn version-packages
+                  publish: yarn release
+                  commit: 'chore: release packages'
+                  title: 'chore: release packages'
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

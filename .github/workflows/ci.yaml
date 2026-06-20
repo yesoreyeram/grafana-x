@@ -1,43 +1,125 @@
 name: CI
 on:
-  push:
-    branches:
-      - main
-  pull_request:
+    push:
+        branches:
+            - main
+    pull_request:
 permissions: {}
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+    group: ci-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 jobs:
-  test-and-build:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
-        with:
-          persist-credentials: false
-      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
-        with:
-          node-version-file: ".nvmrc"
-          cache: "yarn"
-      - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
-        with:
-          go-version-file: "plugins/grafana-linear-datasource/go.mod"
-          cache-dependency-path: "plugins/*/go.sum"
-      - name: Install Mage
-        run: go install github.com/magefile/mage@v1.15.0
-      - name: Install dependencies
-        run: yarn install --immutable
-      - name: Spell check
-        run: yarn spellcheck
-      - name: Lint
-        run: yarn lint
-      - name: Format check
-        run: yarn format:check
-      - name: Type check
-        run: yarn typecheck
-      - name: Build
-        run: yarn build
-      - name: Test
-        run: yarn test
+    frontend:
+        name: Frontend ${{ matrix.package }}
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+        strategy:
+            fail-fast: false
+            matrix:
+                package:
+                    - '@yesoreyeram/grafana-utils'
+                    - '@yesoreyeram/grafana-airtable-datasource'
+                    - '@yesoreyeram/grafana-appwrite-datasource'
+                    - '@yesoreyeram/grafana-asana-datasource'
+                    - '@yesoreyeram/grafana-baserow-datasource'
+                    - '@yesoreyeram/grafana-clickup-datasource'
+                    - '@yesoreyeram/grafana-hubspot-datasource'
+                    - '@yesoreyeram/grafana-linear-datasource'
+                    - '@yesoreyeram/grafana-monday-datasource'
+                    - '@yesoreyeram/grafana-nocodb-datasource'
+                    - '@yesoreyeram/grafana-notion-datasource'
+                    - '@yesoreyeram/grafana-plane-datasource'
+                    - '@yesoreyeram/grafana-pocketbase-datasource'
+                    - '@yesoreyeram/grafana-vizard-panel'
+        steps:
+            - name: Harden the runner
+              uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+              with:
+                  egress-policy: audit
+            - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+              with:
+                  persist-credentials: false
+            - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+              with:
+                  node-version-file: '.nvmrc'
+                  cache: 'yarn'
+            - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
+              with:
+                  go-version-file: 'plugins/datasources/grafana-linear-datasource/go.mod'
+                  cache-dependency-path: 'plugins/datasources/*/go.sum'
+            - name: Install Mage
+              run: go install github.com/magefile/mage@v1.15.0
+            - name: Install dependencies
+              run: yarn install --immutable
+            - name: Quality gates (turbo --filter)
+              run: yarn turbo run spellcheck lint typecheck build test --filter='${{ matrix.package }}'
+
+    repo:
+        name: Repo-wide checks (format, audit)
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+        steps:
+            - name: Harden the runner
+              uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+              with:
+                  egress-policy: audit
+            - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+              with:
+                  persist-credentials: false
+            - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+              with:
+                  node-version-file: '.nvmrc'
+                  cache: 'yarn'
+            - name: Install dependencies
+              run: yarn install --immutable
+            - name: Format check
+              run: yarn format:check
+            - name: Audit dependencies (yarn npm audit)
+              run: yarn npm audit --all --recursive --severity high
+
+    backend:
+        name: Backend ${{ matrix.plugin }}
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+        strategy:
+            fail-fast: false
+            matrix:
+                plugin:
+                    - grafana-airtable-datasource
+                    - grafana-appwrite-datasource
+                    - grafana-asana-datasource
+                    - grafana-baserow-datasource
+                    - grafana-clickup-datasource
+                    - grafana-hubspot-datasource
+                    - grafana-linear-datasource
+                    - grafana-monday-datasource
+                    - grafana-nocodb-datasource
+                    - grafana-notion-datasource
+                    - grafana-plane-datasource
+                    - grafana-pocketbase-datasource
+        steps:
+            - name: Harden the runner
+              uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+              with:
+                  egress-policy: audit
+            - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+              with:
+                  persist-credentials: false
+            - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
+              with:
+                  go-version-file: 'plugins/datasources/${{ matrix.plugin }}/go.mod'
+                  cache-dependency-path: 'plugins/datasources/${{ matrix.plugin }}/go.sum'
+            - name: Lint (golangci-lint)
+              uses: golangci/golangci-lint-action@82606bf257cbaff209d206a39f5134f0cfbfd2ee # v9.2.1
+              with:
+                  working-directory: 'plugins/datasources/${{ matrix.plugin }}'
+                  args: --timeout=5m
+            - name: Test
+              working-directory: 'plugins/datasources/${{ matrix.plugin }}'
+              run: go test -race ./...
+            - name: Vulnerability scan (govulncheck)
+              working-directory: 'plugins/datasources/${{ matrix.plugin }}'
+              run: go run golang.org/x/vuln/cmd/govulncheck@v1.3.0 --show verbose ./...

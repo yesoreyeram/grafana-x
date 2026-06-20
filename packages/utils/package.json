@@ -42,12 +42,12 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "commander": "^12.1.0"
+    "commander": "catalog:"
   },
   "devDependencies": {
-    "@types/node": "25.9.1",
-    "tsx": "^4.19.0",
-    "typescript": "6.0.3"
+    "@types/node": "catalog:cli",
+    "tsx": "catalog:",
+    "typescript": "catalog:"
   },
   "engines": {
     "node": ">=24.16.0"

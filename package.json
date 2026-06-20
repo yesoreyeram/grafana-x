@@ -21,7 +21,9 @@
   },
   "workspaces": [
     "packages/*",
-    "plugins/*"
+    "plugins/datasources/*",
+    "plugins/panel/*",
+    "plugins/app/*"
   ],
   "scripts": {
     "build": "turbo run build",
@@ -37,14 +39,14 @@
     "release": "turbo run build && changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "2.31.0",
-    "@eslint/js": "9.39.4",
-    "cspell": "10.0.1",
-    "eslint": "9.39.4",
-    "prettier": "3.8.3",
-    "turbo": "2.9.18",
-    "typescript": "6.0.3",
-    "typescript-eslint": "8.60.1"
+    "@changesets/cli": "catalog:",
+    "@eslint/js": "catalog:",
+    "cspell": "catalog:",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:"
   },
   "engines": {
     "node": ">=24.16.0",

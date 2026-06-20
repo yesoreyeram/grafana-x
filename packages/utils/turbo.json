@@ -1,0 +1,30 @@
+{
+    "$schema": "https://turborepo.com/schema.json",
+    "extends": [
+        "//"
+    ],
+    "tasks": {
+        "build": {
+            "description": "TypeScript-only CLI library: compiled with tsc to dist/ (no webpack, no Go backend).",
+            "dependsOn": [
+                "^build"
+            ],
+            "inputs": [
+                "$TURBO_DEFAULT$"
+            ],
+            "outputs": [
+                "dist/**"
+            ]
+        },
+        "test": {
+            "description": "Run the node:test suite via tsx; emits no cacheable file output.",
+            "dependsOn": [
+                "^build"
+            ],
+            "inputs": [
+                "$TURBO_DEFAULT$"
+            ],
+            "outputs": []
+        }
+    }
+}

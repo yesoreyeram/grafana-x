@@ -26,21 +26,21 @@ orchestration and caching handled by [Turborepo](https://turborepo.com).
 
 ## Plugins
 
-| Plugin                                                                   | Description                                                                                           |
-| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
-| [`yesoreyeram-baserow-datasource`](./plugins/grafana-baserow-datasource) | Grafana data source plugin for [Baserow](https://baserow.io) (TypeScript frontend + Go backend).      |
-| [`yesoreyeram-nocodb-datasource`](./plugins/grafana-nocodb-datasource)   | Grafana data source plugin for [NocoDB](https://nocodb.com) (TypeScript frontend + Go backend).       |
-| [`yesoreyeram-notion-datasource`](./plugins/grafana-notion-datasource)   | Grafana data source plugin for [Notion](https://www.notion.so) (TypeScript frontend + Go backend).    |
-| [`yesoreyeram-linear-datasource`](./plugins/grafana-linear-datasource)   | Grafana data source plugin for [Linear](https://linear.app) (TypeScript frontend + Go backend).       |
-| [`yesoreyeram-plane-datasource`](./plugins/grafana-plane-datasource)     | Grafana data source plugin for [Plane](https://plane.so) (TypeScript frontend + Go backend).          |
-| [`yesoreyeram-monday-datasource`](./plugins/grafana-monday-datasource)   | Grafana data source plugin for [monday.com](https://monday.com) (TypeScript frontend + Go backend).   |
-| [`yesoreyeram-hubspot-datasource`](./plugins/grafana-hubspot-datasource) | Grafana data source plugin for [hubspot.com](https://hubspot.com) (TypeScript frontend + Go backend). |
-| [`yesoreyeram-pocketbase-datasource`](./plugins/grafana-pocketbase-datasource) | Grafana data source plugin for [PocketBase](https://pocketbase.io) (TypeScript frontend + Go backend). |
-| [`yesoreyeram-asana-datasource`](./plugins/grafana-asana-datasource)     | Grafana data source plugin for [Asana](https://asana.com) (TypeScript frontend + Go backend).         |
-| [`yesoreyeram-airtable-datasource`](./plugins/grafana-airtable-datasource) | Grafana data source plugin for [Airtable](https://airtable.com) (TypeScript frontend + Go backend).   |
-| [`yesoreyeram-appwrite-datasource`](./plugins/grafana-appwrite-datasource) | Grafana data source plugin for [Appwrite](https://appwrite.io) (TypeScript frontend + Go backend).    |
-| [`yesoreyeram-clickup-datasource`](./plugins/grafana-clickup-datasource) | Grafana data source plugin for [ClickUp](https://clickup.com) (TypeScript frontend + Go backend).     |
-| [`yesoreyeram-vizard-panel`](./plugins/grafana-vizard-panel)                   | Grafana **panel** plugin: a [Vega-Lite](https://vega.github.io/vega-lite/) visual builder that renders any data frame (TypeScript frontend, no backend). |
+| Plugin                                                                                     | Description                                                                                                                                              |
+| ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`yesoreyeram-baserow-datasource`](./plugins/datasources/grafana-baserow-datasource)       | Grafana data source plugin for [Baserow](https://baserow.io) (TypeScript frontend + Go backend).                                                         |
+| [`yesoreyeram-nocodb-datasource`](./plugins/datasources/grafana-nocodb-datasource)         | Grafana data source plugin for [NocoDB](https://nocodb.com) (TypeScript frontend + Go backend).                                                          |
+| [`yesoreyeram-notion-datasource`](./plugins/datasources/grafana-notion-datasource)         | Grafana data source plugin for [Notion](https://www.notion.so) (TypeScript frontend + Go backend).                                                       |
+| [`yesoreyeram-linear-datasource`](./plugins/datasources/grafana-linear-datasource)         | Grafana data source plugin for [Linear](https://linear.app) (TypeScript frontend + Go backend).                                                          |
+| [`yesoreyeram-plane-datasource`](./plugins/datasources/grafana-plane-datasource)           | Grafana data source plugin for [Plane](https://plane.so) (TypeScript frontend + Go backend).                                                             |
+| [`yesoreyeram-monday-datasource`](./plugins/datasources/grafana-monday-datasource)         | Grafana data source plugin for [monday.com](https://monday.com) (TypeScript frontend + Go backend).                                                      |
+| [`yesoreyeram-hubspot-datasource`](./plugins/datasources/grafana-hubspot-datasource)       | Grafana data source plugin for [hubspot.com](https://hubspot.com) (TypeScript frontend + Go backend).                                                    |
+| [`yesoreyeram-pocketbase-datasource`](./plugins/datasources/grafana-pocketbase-datasource) | Grafana data source plugin for [PocketBase](https://pocketbase.io) (TypeScript frontend + Go backend).                                                   |
+| [`yesoreyeram-asana-datasource`](./plugins/datasources/grafana-asana-datasource)           | Grafana data source plugin for [Asana](https://asana.com) (TypeScript frontend + Go backend).                                                            |
+| [`yesoreyeram-airtable-datasource`](./plugins/datasources/grafana-airtable-datasource)     | Grafana data source plugin for [Airtable](https://airtable.com) (TypeScript frontend + Go backend).                                                      |
+| [`yesoreyeram-appwrite-datasource`](./plugins/datasources/grafana-appwrite-datasource)     | Grafana data source plugin for [Appwrite](https://appwrite.io) (TypeScript frontend + Go backend).                                                       |
+| [`yesoreyeram-clickup-datasource`](./plugins/datasources/grafana-clickup-datasource)       | Grafana data source plugin for [ClickUp](https://clickup.com) (TypeScript frontend + Go backend).                                                        |
+| [`yesoreyeram-vizard-panel`](./plugins/panel/grafana-vizard-panel)                         | Grafana **panel** plugin: a [Vega-Lite](https://vega.github.io/vega-lite/) visual builder that renders any data frame (TypeScript frontend, no backend). |
 
 See [`ROADMAP.md`](./ROADMAP.md) for the list of plugins planned next, each verified
 as not yet published on [grafana.com/api/plugins](https://grafana.com/api/plugins).

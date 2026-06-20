@@ -1,0 +1,20 @@
+{
+    "$schema": "https://turborepo.com/schema.json",
+    "extends": [
+        "//"
+    ],
+    "tasks": {
+        "build": {
+            "description": "No-op: ships template assets under local/ and templates/; nothing is compiled.",
+            "cache": false
+        },
+        "typecheck": {
+            "description": "No-op: ships template assets; nothing to type-check.",
+            "cache": false
+        },
+        "test": {
+            "description": "No-op: ships template assets; nothing to test.",
+            "cache": false
+        }
+    }
+}
