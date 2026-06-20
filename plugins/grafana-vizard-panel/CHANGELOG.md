@@ -38,10 +38,7 @@ Initial release.
   theme-aware schemes (Classic palette, Classic by series name, and the
   continuous Green-Yellow-Red / Blues / … gradients via `fieldColorModeRegistry`)
   or a Vega color scheme (tableau10, viridis, …).
-- **Distinct series colors by default** — categorical color uses the full Grafana
-  palette (distinct per series); continuous (quantitative) color uses a
-  theme-aware sequential gradient instead of a rainbow of the categorical palette.
-- Transparent or solid (card) background.
+- Transparent background.
 - Responsive sizing from the panel dimensions with `autosize: fit`.
 
 ### Interactivity
