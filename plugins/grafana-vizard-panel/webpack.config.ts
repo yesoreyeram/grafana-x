@@ -106,7 +106,7 @@ const config = async (env: Record<string, unknown>): Promise<Configuration> => {
           { from: '../README.md', to: '.', force: true, noErrorOnMissing: true },
           { from: '../LICENSE', to: '.', noErrorOnMissing: true },
           { from: '../CHANGELOG.md', to: '.', force: true, noErrorOnMissing: true },
-          { from: '**/*.json', to: '.', noErrorOnMissing: true },
+          { from: '**/*.json', to: '.', noErrorOnMissing: true, globOptions: { ignore: ['**/__fixtures__/**', '**/*.test.*'] } },
           { from: 'img/**/*', to: '.', noErrorOnMissing: true },
           { from: '**/*.svg', to: '.', noErrorOnMissing: true },
         ],
