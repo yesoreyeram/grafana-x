@@ -44,7 +44,7 @@ export function JsonInput({ label, description, value, placeholder, rows = 4, on
         placeholder={placeholder}
         spellCheck={false}
         onChange={(e) => setText(e.currentTarget.value)}
-        onBlur={() => onChange(text)}
+        onBlur={(e) => onChange(e.currentTarget.value)}
       />
     </Field>
   );
