@@ -60,10 +60,7 @@ function normalizeValue(field: Pick<Field, 'type'>, value: unknown): unknown {
       }
       return value; // ISO-8601 string — Vega-Lite parses these as temporal
     case FieldType.number:
-      if (typeof value === 'number') {
-        return value;
-      }
-      return value === '' ? null : Number(value);
+      return numberOrNull(value);
     case FieldType.boolean:
       return Boolean(value);
     default:
