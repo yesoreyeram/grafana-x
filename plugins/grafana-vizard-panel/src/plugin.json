@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "panel",
+  "name": "Vizard",
+  "id": "yesoreyeram-vizard-panel",
+  "info": {
+    "description": "Visual builder for Vega-Lite. Turns any Grafana data frame (numeric, time series, logs, table) into a Vega-Lite visualization, themed to match Grafana and fully responsive.",
+    "author": {
+      "name": "yesoreyeram"
+    },
+    "keywords": [
+      "vega",
+      "vega-lite",
+      "visualization",
+      "chart",
+      "builder",
+      "grammar of graphics"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/yesoreyeram/grafana-x"
+      },
+      {
+        "name": "Vega-Lite",
+        "url": "https://vega.github.io/vega-lite/"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.4.0",
+    "plugins": []
+  }
+}

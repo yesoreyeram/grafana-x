@@ -40,6 +40,7 @@ orchestration and caching handled by [Turborepo](https://turborepo.com).
 | [`yesoreyeram-airtable-datasource`](./plugins/grafana-airtable-datasource) | Grafana data source plugin for [Airtable](https://airtable.com) (TypeScript frontend + Go backend).   |
 | [`yesoreyeram-appwrite-datasource`](./plugins/grafana-appwrite-datasource) | Grafana data source plugin for [Appwrite](https://appwrite.io) (TypeScript frontend + Go backend).    |
 | [`yesoreyeram-clickup-datasource`](./plugins/grafana-clickup-datasource) | Grafana data source plugin for [ClickUp](https://clickup.com) (TypeScript frontend + Go backend).     |
+| [`yesoreyeram-vizard-panel`](./plugins/grafana-vizard-panel)                   | Grafana **panel** plugin: a [Vega-Lite](https://vega.github.io/vega-lite/) visual builder that renders any data frame (TypeScript frontend, no backend). |
 
 See [`ROADMAP.md`](./ROADMAP.md) for the list of plugins planned next, each verified
 as not yet published on [grafana.com/api/plugins](https://grafana.com/api/plugins).

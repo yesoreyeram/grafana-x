@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+.npmrc
+
+# Build artifacts
+dist/
+coverage/
+.eslintcache
+
+# OS
+.DS_Store
+**/.DS_Store
+
+# Editor
+.idea/
+.vscode/
+*.swp

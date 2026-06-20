@@ -1,0 +1,13 @@
+apiVersion: 1
+
+# Infinity datasource (yesoreyeram-infinity-datasource) — fetches the Vega-Lite
+# example datasets (JSON/CSV) as Grafana data frames so the demo dashboards can
+# drive Vizard with real query data instead of inline spec data.
+datasources:
+  - name: Infinity
+    uid: vizard-infinity
+    type: yesoreyeram-infinity-datasource
+    access: proxy
+    isDefault: false
+    editable: true
+    jsonData: {}
