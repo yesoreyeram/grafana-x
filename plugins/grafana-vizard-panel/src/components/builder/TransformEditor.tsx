@@ -87,7 +87,7 @@ function TransformField({ desc, values, fieldOptions, onSet }: FieldProps) {
       placeholder={desc.placeholder}
       spellCheck={false}
       onChange={(e) => onSet(desc.key, e.currentTarget.value, false)}
-      onBlur={() => onSet(desc.key, asString(values[desc.key]), true)}
+      onBlur={(e) => onSet(desc.key, e.currentTarget.value, true)}
     />
   );
 }
