@@ -6,6 +6,8 @@
         ".yarn",
         ".github",
         "registry.json",
+        "provisioning/",
+        "docker-compose.{yaml,yml}",
         "packages/plugin-tools/**"
     ],
     "words": [
@@ -87,6 +89,11 @@
         "matomo",
         "calcom",
         "calendly",
+        "gofmt",
+        "testdata",
+        "httptest",
+        "datetime",
+        "datetimes",
         "savvycal"
     ]
 }
