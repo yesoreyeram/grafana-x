@@ -169,7 +169,7 @@ New category.
 ## How to add a plugin
 
 There is no generator yet, so scaffold a new plugin by copying the structure of an
-existing one (e.g. [`grafana-asana-datasource`](./plugins/datasources/grafana-asana-datasource)):
+existing one (e.g. [`grafana-asana-datasource`](./plugins/datasources/yesoreyeram-asana-datasource)):
 
 1. Create `plugins/datasources/grafana-<service>-datasource/` mirroring an existing plugin
    (TypeScript/React frontend + Go backend; `src/`, `pkg/`, `provisioning/`,

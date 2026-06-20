@@ -1,0 +1,30 @@
+{
+    "$schema": "https://turborepo.com/schema.json",
+    "extends": [
+        "//"
+    ],
+    "tasks": {
+        "build": {
+            "description": "Frontend-only panel plugin: webpack bundles dist/module.js plus copied assets (plugin.json, README, LICENSE, img). No Go backend.",
+            "dependsOn": [
+                "^build"
+            ],
+            "inputs": [
+                "$TURBO_DEFAULT$"
+            ],
+            "outputs": [
+                "dist/**"
+            ]
+        },
+        "test": {
+            "description": "Frontend Jest tests; emits no cacheable file output.",
+            "dependsOn": [
+                "^build"
+            ],
+            "inputs": [
+                "$TURBO_DEFAULT$"
+            ],
+            "outputs": []
+        }
+    }
+}

@@ -5,15 +5,15 @@
 #
 #   # NocoDB plugin
 #   yarn workspace @yesoreyeram/grafana-nocodb-datasource build
-#   (cd plugins/datasources/grafana-nocodb-datasource && mage -v build:linux)   # or your arch
+#   (cd plugins/datasources/yesoreyeram-nocodb-datasource && mage -v build:linux)   # or your arch
 #
 #   # Notion plugin
 #   yarn workspace @yesoreyeram/grafana-notion-datasource build
-#   (cd plugins/datasources/grafana-notion-datasource && mage -v build:linux)   # or your arch
+#   (cd plugins/datasources/yesoreyeram-notion-datasource && mage -v build:linux)   # or your arch
 #
 #   # Baserow plugin
 #   yarn workspace @yesoreyeram/grafana-baserow-datasource build
-#   (cd plugins/datasources/grafana-baserow-datasource && mage -v build:linux)  # or your arch
+#   (cd plugins/datasources/yesoreyeram-baserow-datasource && mage -v build:linux)  # or your arch
 #
 # Then start everything:
 #
@@ -34,19 +34,19 @@ services:
       - "3000:3000/tcp"
     volumes:
       # Each plugin's built dist/ is mounted under Grafana's plugins directory.
-      - ./plugins/datasources/grafana-nocodb-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-nocodb-datasource
-      - ./plugins/datasources/grafana-notion-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-notion-datasource
-      - ./plugins/datasources/grafana-baserow-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-baserow-datasource
-      - ./plugins/datasources/grafana-linear-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-linear-datasource
-      - ./plugins/datasources/grafana-clickup-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-clickup-datasource
-      - ./plugins/datasources/grafana-airtable-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-airtable-datasource
-      - ./plugins/datasources/grafana-appwrite-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-appwrite-datasource
-      - ./plugins/datasources/grafana-plane-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-plane-datasource
-      - ./plugins/datasources/grafana-monday-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-monday-datasource
-      - ./plugins/datasources/grafana-hubspot-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-hubspot-datasource
-      - ./plugins/datasources/grafana-pocketbase-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-pocketbase-datasource
-      - ./plugins/datasources/grafana-asana-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-asana-datasource
-      - ./plugins/panel/grafana-vizard-panel/dist:/var/lib/grafana/plugins/yesoreyeram-vizard-panel
+      - ./plugins/datasources/yesoreyeram-nocodb-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-nocodb-datasource
+      - ./plugins/datasources/yesoreyeram-notion-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-notion-datasource
+      - ./plugins/datasources/yesoreyeram-baserow-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-baserow-datasource
+      - ./plugins/datasources/yesoreyeram-linear-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-linear-datasource
+      - ./plugins/datasources/yesoreyeram-clickup-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-clickup-datasource
+      - ./plugins/datasources/yesoreyeram-airtable-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-airtable-datasource
+      - ./plugins/datasources/yesoreyeram-appwrite-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-appwrite-datasource
+      - ./plugins/datasources/yesoreyeram-plane-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-plane-datasource
+      - ./plugins/datasources/yesoreyeram-monday-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-monday-datasource
+      - ./plugins/datasources/yesoreyeram-hubspot-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-hubspot-datasource
+      - ./plugins/datasources/yesoreyeram-pocketbase-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-pocketbase-datasource
+      - ./plugins/datasources/yesoreyeram-asana-datasource/dist:/var/lib/grafana/plugins/yesoreyeram-asana-datasource
+      - ./plugins/panel/yesoreyeram-vizard-panel/dist:/var/lib/grafana/plugins/yesoreyeram-vizard-panel
       # Static provisioning shared by the stack (this repo's provisioning/ dir).
       # The NocoDB seed job also drops a generated datasource (with a fresh
       # token) into provisioning/datasources, alongside the static Notion one.
@@ -155,7 +155,7 @@ services:
     image: node:20-alpine
     working_dir: /seed
     volumes:
-      - ./plugins/datasources/grafana-nocodb-datasource/scripts:/seed:ro
+      - ./plugins/datasources/yesoreyeram-nocodb-datasource/scripts:/seed:ro
       # Generated NocoDB datasource lands in the same provisioning dir Grafana reads.
       - ./provisioning/datasources:/provisioning/datasources
     environment:
@@ -223,7 +223,7 @@ services:
     image: node:20-alpine
     working_dir: /seed
     volumes:
-      - ./plugins/datasources/grafana-pocketbase-datasource/scripts:/seed:ro
+      - ./plugins/datasources/yesoreyeram-pocketbase-datasource/scripts:/seed:ro
     environment:
       - POCKETBASE_INTERNAL_URL=http://pocketbase:8090
       - POCKETBASE_IDENTITY=${POCKETBASE_IDENTITY:-admin@example.com}

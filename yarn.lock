@@ -4471,9 +4471,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yesoreyeram/grafana-airtable-datasource@workspace:plugins/datasources/grafana-airtable-datasource":
+"@yesoreyeram/grafana-airtable-datasource@workspace:plugins/datasources/yesoreyeram-airtable-datasource":
   version: 0.0.0-use.local
-  resolution: "@yesoreyeram/grafana-airtable-datasource@workspace:plugins/datasources/grafana-airtable-datasource"
+  resolution: "@yesoreyeram/grafana-airtable-datasource@workspace:plugins/datasources/yesoreyeram-airtable-datasource"
   dependencies:
     "@emotion/css": "catalog:"
     "@grafana/data": "catalog:"
@@ -4527,9 +4527,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@yesoreyeram/grafana-appwrite-datasource@workspace:plugins/datasources/grafana-appwrite-datasource":
+"@yesoreyeram/grafana-appwrite-datasource@workspace:plugins/datasources/yesoreyeram-appwrite-datasource":
   version: 0.0.0-use.local
-  resolution: "@yesoreyeram/grafana-appwrite-datasource@workspace:plugins/datasources/grafana-appwrite-datasource"
+  resolution: "@yesoreyeram/grafana-appwrite-datasource@workspace:plugins/datasources/yesoreyeram-appwrite-datasource"
   dependencies:
     "@emotion/css": "catalog:"
     "@grafana/data": "catalog:"
@@ -4583,9 +4583,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@yesoreyeram/grafana-asana-datasource@workspace:plugins/datasources/grafana-asana-datasource":
+"@yesoreyeram/grafana-asana-datasource@workspace:plugins/datasources/yesoreyeram-asana-datasource":
   version: 0.0.0-use.local
-  resolution: "@yesoreyeram/grafana-asana-datasource@workspace:plugins/datasources/grafana-asana-datasource"
+  resolution: "@yesoreyeram/grafana-asana-datasource@workspace:plugins/datasources/yesoreyeram-asana-datasource"
   dependencies:
     "@emotion/css": "catalog:"
     "@grafana/data": "catalog:"
@@ -4639,9 +4639,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@yesoreyeram/grafana-baserow-datasource@workspace:plugins/datasources/grafana-baserow-datasource":
+"@yesoreyeram/grafana-baserow-datasource@workspace:plugins/datasources/yesoreyeram-baserow-datasource":
   version: 0.0.0-use.local
-  resolution: "@yesoreyeram/grafana-baserow-datasource@workspace:plugins/datasources/grafana-baserow-datasource"
+  resolution: "@yesoreyeram/grafana-baserow-datasource@workspace:plugins/datasources/yesoreyeram-baserow-datasource"
   dependencies:
     "@emotion/css": "catalog:"
     "@grafana/data": "catalog:"
@@ -4695,9 +4695,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@yesoreyeram/grafana-clickup-datasource@workspace:plugins/datasources/grafana-clickup-datasource":
+"@yesoreyeram/grafana-clickup-datasource@workspace:plugins/datasources/yesoreyeram-clickup-datasource":
   version: 0.0.0-use.local
-  resolution: "@yesoreyeram/grafana-clickup-datasource@workspace:plugins/datasources/grafana-clickup-datasource"
+  resolution: "@yesoreyeram/grafana-clickup-datasource@workspace:plugins/datasources/yesoreyeram-clickup-datasource"
   dependencies:
     "@emotion/css": "catalog:"
     "@grafana/data": "catalog:"
@@ -4751,9 +4751,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@yesoreyeram/grafana-hubspot-datasource@workspace:plugins/datasources/grafana-hubspot-datasource":
+"@yesoreyeram/grafana-hubspot-datasource@workspace:plugins/datasources/yesoreyeram-hubspot-datasource":
   version: 0.0.0-use.local
-  resolution: "@yesoreyeram/grafana-hubspot-datasource@workspace:plugins/datasources/grafana-hubspot-datasource"
+  resolution: "@yesoreyeram/grafana-hubspot-datasource@workspace:plugins/datasources/yesoreyeram-hubspot-datasource"
   dependencies:
     "@emotion/css": "catalog:"
     "@grafana/data": "catalog:"
@@ -4807,9 +4807,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@yesoreyeram/grafana-linear-datasource@workspace:plugins/datasources/grafana-linear-datasource":
+"@yesoreyeram/grafana-linear-datasource@workspace:plugins/datasources/yesoreyeram-linear-datasource":
   version: 0.0.0-use.local
-  resolution: "@yesoreyeram/grafana-linear-datasource@workspace:plugins/datasources/grafana-linear-datasource"
+  resolution: "@yesoreyeram/grafana-linear-datasource@workspace:plugins/datasources/yesoreyeram-linear-datasource"
   dependencies:
     "@emotion/css": "catalog:"
     "@grafana/data": "catalog:"
@@ -4863,9 +4863,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@yesoreyeram/grafana-monday-datasource@workspace:plugins/datasources/grafana-monday-datasource":
+"@yesoreyeram/grafana-monday-datasource@workspace:plugins/datasources/yesoreyeram-monday-datasource":
   version: 0.0.0-use.local
-  resolution: "@yesoreyeram/grafana-monday-datasource@workspace:plugins/datasources/grafana-monday-datasource"
+  resolution: "@yesoreyeram/grafana-monday-datasource@workspace:plugins/datasources/yesoreyeram-monday-datasource"
   dependencies:
     "@emotion/css": "catalog:"
     "@grafana/data": "catalog:"
@@ -4919,9 +4919,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@yesoreyeram/grafana-nocodb-datasource@workspace:plugins/datasources/grafana-nocodb-datasource":
+"@yesoreyeram/grafana-nocodb-datasource@workspace:plugins/datasources/yesoreyeram-nocodb-datasource":
   version: 0.0.0-use.local
-  resolution: "@yesoreyeram/grafana-nocodb-datasource@workspace:plugins/datasources/grafana-nocodb-datasource"
+  resolution: "@yesoreyeram/grafana-nocodb-datasource@workspace:plugins/datasources/yesoreyeram-nocodb-datasource"
   dependencies:
     "@emotion/css": "catalog:"
     "@grafana/data": "catalog:"
@@ -4975,9 +4975,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@yesoreyeram/grafana-notion-datasource@workspace:plugins/datasources/grafana-notion-datasource":
+"@yesoreyeram/grafana-notion-datasource@workspace:plugins/datasources/yesoreyeram-notion-datasource":
   version: 0.0.0-use.local
-  resolution: "@yesoreyeram/grafana-notion-datasource@workspace:plugins/datasources/grafana-notion-datasource"
+  resolution: "@yesoreyeram/grafana-notion-datasource@workspace:plugins/datasources/yesoreyeram-notion-datasource"
   dependencies:
     "@emotion/css": "catalog:"
     "@grafana/data": "catalog:"
@@ -5031,9 +5031,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@yesoreyeram/grafana-plane-datasource@workspace:plugins/datasources/grafana-plane-datasource":
+"@yesoreyeram/grafana-plane-datasource@workspace:plugins/datasources/yesoreyeram-plane-datasource":
   version: 0.0.0-use.local
-  resolution: "@yesoreyeram/grafana-plane-datasource@workspace:plugins/datasources/grafana-plane-datasource"
+  resolution: "@yesoreyeram/grafana-plane-datasource@workspace:plugins/datasources/yesoreyeram-plane-datasource"
   dependencies:
     "@emotion/css": "catalog:"
     "@grafana/data": "catalog:"
@@ -5093,9 +5093,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@yesoreyeram/grafana-pocketbase-datasource@workspace:plugins/datasources/grafana-pocketbase-datasource":
+"@yesoreyeram/grafana-pocketbase-datasource@workspace:plugins/datasources/yesoreyeram-pocketbase-datasource":
   version: 0.0.0-use.local
-  resolution: "@yesoreyeram/grafana-pocketbase-datasource@workspace:plugins/datasources/grafana-pocketbase-datasource"
+  resolution: "@yesoreyeram/grafana-pocketbase-datasource@workspace:plugins/datasources/yesoreyeram-pocketbase-datasource"
   dependencies:
     "@emotion/css": "catalog:"
     "@grafana/data": "catalog:"
@@ -5162,9 +5162,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@yesoreyeram/grafana-vizard-panel@workspace:plugins/panel/grafana-vizard-panel":
+"@yesoreyeram/grafana-vizard-panel@workspace:plugins/panel/yesoreyeram-vizard-panel":
   version: 0.0.0-use.local
-  resolution: "@yesoreyeram/grafana-vizard-panel@workspace:plugins/panel/grafana-vizard-panel"
+  resolution: "@yesoreyeram/grafana-vizard-panel@workspace:plugins/panel/yesoreyeram-vizard-panel"
   dependencies:
     "@emotion/css": "catalog:"
     "@grafana/data": "catalog:"
