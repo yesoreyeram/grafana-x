@@ -37,9 +37,7 @@
         "editorMode": "builder",
         "renderer": "canvas",
         "tooltip": true,
-        "showActions": false,
-        "padding": 8,
-        "theme": { "colorScheme": "tableau10", "background": "transparent" },
+        "theme": { "colorScheme": "tableau10" },
         "data": { "source": "auto" },
         "builder": {
           "mark": { "type": "bar", "tooltip": true },
