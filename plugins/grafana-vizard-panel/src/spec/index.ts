@@ -89,7 +89,7 @@ function disableTooltip(node: unknown): unknown {
 export interface BuildResult {
   spec: VegaLiteSpec;
   warnings: string[];
-  /** True when an x time-range zoom selection was added (temporal single/layer view). */
+  /** True when an x time-range zoom selection was added (temporal single-view spec). */
   zoomEnabled: boolean;
   /** True for facet/concat/repeat compositions, which size by content (the panel
    *  scrolls them instead of clipping); single/layered views fit the panel. */
