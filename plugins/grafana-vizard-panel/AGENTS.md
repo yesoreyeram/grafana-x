@@ -96,8 +96,7 @@ Before declaring work done, run: `yarn typecheck && yarn lint && yarn test && ya
   non-data positions (image marks, links, embed-option overrides). Inline data
   content (`data.values`, `datasets`) is kept verbatim. `VegaView` adds runtime
   guards: a blocking Vega loader, `ast: true` (CSP-safe interpreter), and
-  `actions` limited to PNG/SVG export. Never weaken these.
-- **A full override replaces the base.** In `buildSpec`, when encodings are set
+  `actions: false` (the Vega-Embed action menu is disabled). Never weaken these.
   the override merges onto the builder; otherwise (a complete spec such as a
   multi-view / layered example) it is used verbatim. This is why the example
   galleries embed each spec as `specOverrideJson`. Don't merge a full spec onto
