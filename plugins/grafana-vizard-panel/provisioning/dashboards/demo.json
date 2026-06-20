@@ -65,9 +65,7 @@
         "editorMode": "builder",
         "renderer": "canvas",
         "tooltip": true,
-        "showActions": false,
-        "padding": 8,
-        "theme": { "colorScheme": "continuous-blues", "background": "transparent" },
+        "theme": { "colorScheme": "continuous-blues" },
         "data": { "source": "auto" },
         "builder": { "mark": { "type": "area", "tooltip": true, "point": false }, "encodings": [], "transforms": [] }
       }
