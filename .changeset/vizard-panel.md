@@ -10,5 +10,5 @@ data-plane formats (time series wide/multi/long, numeric wide/multi/long, logs,
 tables) to inline Vega-Lite data, with smart defaults from the detected shape,
 Grafana theming, responsive sizing, and a hardened render core (remote loading
 blocked, `url`/`href`/`usermeta` stripped, CSP-safe `ast` interpreter,
-export-only actions). The spec pipeline is mode-pluggable so raw-grammar JSON and
+Vega-Embed actions menu disabled). The spec pipeline is mode-pluggable so raw-grammar JSON and
 the vega-lite-api can be added later without changing data/theme/security/sizing.
