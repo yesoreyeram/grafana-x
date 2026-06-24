@@ -1,0 +1,43 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "SeaTable",
+  "id": "yesoreyeram-seatable-datasource",
+  "metrics": true,
+  "backend": true,
+  "executable": "gpx_seatable",
+  "info": {
+    "description": "Query data from SeaTable bases in Grafana",
+    "author": {
+      "name": "yesoreyeram"
+    },
+    "keywords": [
+      "seatable",
+      "database",
+      "spreadsheet",
+      "no-code",
+      "table"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/yesoreyeram/grafana-x"
+      },
+      {
+        "name": "SeaTable",
+        "url": "https://seatable.io"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.4.0",
+    "plugins": []
+  }
+}

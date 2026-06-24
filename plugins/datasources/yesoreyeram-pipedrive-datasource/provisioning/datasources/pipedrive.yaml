@@ -1,0 +1,22 @@
+# Grafana datasource provisioning for Pipedrive.
+#
+# Pipedrive is cloud-only. The API base URL is derived from your company
+# subdomain: https://{companyDomain}.pipedrive.com/api/v1
+#
+# Authentication (authMethod):
+#   - apiToken (default): Pipedrive API token from
+#       Settings > Personal preferences > API (sent as the api_token query param).
+#   - oauth: Pipedrive OAuth2 access token (sent as Authorization: Bearer).
+
+apiVersion: 1
+
+datasources:
+  - name: Pipedrive
+    type: yesoreyeram-pipedrive-datasource
+    access: proxy
+    jsonData:
+      companyDomain: ${PIPEDRIVE_COMPANY_DOMAIN}
+      authMethod: apiToken
+    secureJsonData:
+      apiToken: ${PIPEDRIVE_API_TOKEN}
+    editable: true

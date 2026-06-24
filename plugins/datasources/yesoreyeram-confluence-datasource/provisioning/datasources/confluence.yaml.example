@@ -1,0 +1,36 @@
+# Example: Grafana datasource provisioning for Confluence.
+#
+# Two authentication modes are supported. Set jsonData.authMode to "basic" or
+# "bearer" and provide the matching secret.
+#
+#   basic  -> Atlassian Cloud email + API token  (secureJsonData.apiToken)
+#   bearer -> OAuth2 access token or DC PAT       (secureJsonData.bearerToken)
+#
+# Create a Cloud API token at:
+#   https://id.atlassian.com/manage-profile/security/api-tokens
+
+apiVersion: 1
+
+datasources:
+  # --- Basic auth (Atlassian Cloud) ---
+  - name: Confluence (Basic)
+    type: yesoreyeram-confluence-datasource
+    access: proxy
+    jsonData:
+      baseURL: https://your-site.atlassian.net/wiki
+      authMode: basic
+      email: you@example.com
+    secureJsonData:
+      apiToken: your-atlassian-api-token
+    editable: true
+
+  # --- Bearer auth (OAuth2 / Data Center PAT) ---
+  - name: Confluence (Bearer)
+    type: yesoreyeram-confluence-datasource
+    access: proxy
+    jsonData:
+      baseURL: https://confluence.example.com
+      authMode: bearer
+    secureJsonData:
+      bearerToken: your-oauth-or-personal-access-token
+    editable: true

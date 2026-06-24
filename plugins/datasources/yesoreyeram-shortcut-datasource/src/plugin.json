@@ -1,0 +1,42 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "Shortcut",
+  "id": "yesoreyeram-shortcut-datasource",
+  "metrics": true,
+  "backend": true,
+  "executable": "gpx_shortcut",
+  "info": {
+    "description": "Query stories from Shortcut (Clubhouse) in Grafana",
+    "author": {
+      "name": "yesoreyeram"
+    },
+    "keywords": [
+      "shortcut",
+      "clubhouse",
+      "project-management",
+      "stories"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/yesoreyeram/grafana-x"
+      },
+      {
+        "name": "Shortcut",
+        "url": "https://shortcut.com"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.4.0",
+    "plugins": []
+  }
+}

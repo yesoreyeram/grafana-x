@@ -1,0 +1,108 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 5 Fields by 2 Rows
+//  +-------------------------------+------------------+---------------+-----------------+------------------+
+//  | Name: close_date              | Name: _record_id | Name: active  | Name: name      | Name: score      |
+//  | Labels:                       | Labels:          | Labels:       | Labels:         | Labels:          |
+//  | Type: []*time.Time            | Type: []*string  | Type: []*bool | Type: []*string | Type: []*float64 |
+//  +-------------------------------+------------------+---------------+-----------------+------------------+
+//  | 2024-01-15 00:00:00 +0000 UTC | r1               | true          | Ada             | 100              |
+//  | 2024-02-20 00:00:00 +0000 UTC | r2               | false         | Bob             | 0                |
+//  +-------------------------------+------------------+---------------+-----------------+------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "close_date",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "_record_id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "active",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "score",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705276800000,
+            1708387200000
+          ],
+          [
+            "r1",
+            "r2"
+          ],
+          [
+            true,
+            false
+          ],
+          [
+            "Ada",
+            "Bob"
+          ],
+          [
+            100,
+            0
+          ]
+        ]
+      }
+    }
+  ]
+}

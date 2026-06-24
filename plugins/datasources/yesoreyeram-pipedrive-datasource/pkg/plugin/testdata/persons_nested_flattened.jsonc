@@ -1,0 +1,113 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 6 Fields by 1 Rows
+//  +-------------------------------+------------------+------------------+-----------------+-----------------+-----------------+
+//  | Name: add_time                | Name: email      | Name: id         | Name: name      | Name: org_id    | Name: phone     |
+//  | Labels:                       | Labels:          | Labels:          | Labels:         | Labels:         | Labels:         |
+//  | Type: []*time.Time            | Type: []*string  | Type: []*float64 | Type: []*string | Type: []*string | Type: []*string |
+//  +-------------------------------+------------------+------------------+-----------------+-----------------+-----------------+
+//  | 2024-01-10 08:00:00 +0000 UTC | jane@example.com | 1                | Jane Doe        | Acme            | +15551234       |
+//  +-------------------------------+------------------+------------------+-----------------+-----------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "add_time",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "email",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "org_id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "phone",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1704873600000
+          ],
+          [
+            "jane@example.com"
+          ],
+          [
+            1
+          ],
+          [
+            "Jane Doe"
+          ],
+          [
+            "Acme"
+          ],
+          [
+            "+15551234"
+          ]
+        ]
+      }
+    }
+  ]
+}

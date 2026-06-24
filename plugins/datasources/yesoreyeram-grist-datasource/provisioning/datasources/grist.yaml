@@ -1,0 +1,15 @@
+apiVersion: 1
+
+datasources:
+  - name: Grist
+    type: yesoreyeram-grist-datasource
+    access: proxy
+    isDefault: false
+    jsonData:
+      # Grist server URL (the /api prefix is added by the backend). Defaults to
+      # the Grist Cloud personal docs host; override for a team site
+      # (https://{team}.getgrist.com) or a self-hosted instance.
+      baseURL: https://docs.getgrist.com
+      docId: ""
+    secureJsonData:
+      apiKey: ${GRIST_API_KEY}

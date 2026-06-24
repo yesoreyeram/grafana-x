@@ -1,0 +1,44 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "Attio",
+  "id": "yesoreyeram-attio-datasource",
+  "metrics": true,
+  "backend": true,
+  "executable": "gpx_attio",
+  "info": {
+    "description": "Query data from Attio CRM in Grafana",
+    "author": {
+      "name": "yesoreyeram"
+    },
+    "keywords": [
+      "attio",
+      "crm",
+      "sales",
+      "contacts",
+      "no-code",
+      "backend"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/yesoreyeram/grafana-x"
+      },
+      {
+        "name": "Attio",
+        "url": "https://attio.com"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.4.0",
+    "plugins": []
+  }
+}

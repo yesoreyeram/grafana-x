@@ -1,0 +1,72 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 2 Fields by 2 Rows
+//  +-----------------+------------------+
+//  | Name: title     | Name: value      |
+//  | Labels:         | Labels:          |
+//  | Type: []*string | Type: []*float64 |
+//  +-----------------+------------------+
+//  | Deal A          | 100              |
+//  | Deal B          | 200              |
+//  +-----------------+------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "title",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            "Deal A",
+            "Deal B"
+          ],
+          [
+            100,
+            200
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "Intercom",
+  "id": "yesoreyeram-intercom-datasource",
+  "metrics": true,
+  "backend": true,
+  "executable": "gpx_intercom",
+  "info": {
+    "description": "Query conversations, contacts, tickets, articles and more from Intercom in Grafana",
+    "author": {
+      "name": "yesoreyeram"
+    },
+    "keywords": ["intercom", "support", "messaging", "conversations", "contacts", "tickets", "rest"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      { "name": "Website", "url": "https://github.com/yesoreyeram/grafana-x" },
+      { "name": "Intercom", "url": "https://developers.intercom.com/docs/references/rest-api/api.intercom.io/" }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.4.0",
+    "plugins": []
+  }
+}

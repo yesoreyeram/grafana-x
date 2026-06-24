@@ -1,0 +1,17 @@
+apiVersion: 1
+
+datasources:
+  - name: Attio
+    type: yesoreyeram-attio-datasource
+    access: proxy
+    jsonData:
+      # Optional. Root URL of the Attio API. Defaults to https://api.attio.com.
+      # Override only to point at a proxy or gateway.
+      # baseURL: https://api.attio.com
+      # Optional default object api_slug used to prefill the query editor.
+      # defaultObjectId: people
+    secureJsonData:
+      # Attio workspace access token. Generate one in Attio under
+      # Settings > Developers > API keys. Sent as `Authorization: Bearer <token>`.
+      apiToken: ${ATTIO_API_TOKEN}
+    editable: true

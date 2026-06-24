@@ -1,0 +1,88 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: D
+//  Dimensions: 3 Fields by 3 Rows
+//  +-------------------------------+-----------------+------------------+
+//  | Name: timestamp               | Name: name      | Name: value      |
+//  | Labels:                       | Labels:         | Labels:          |
+//  | Type: []*time.Time            | Type: []*string | Type: []*float64 |
+//  +-------------------------------+-----------------+------------------+
+//  | 2024-01-15 12:00:00 +0000 UTC | Request A       | 100              |
+//  | 2024-01-15 11:00:00 +0000 UTC | Request B       | 200              |
+//  | 2024-01-15 04:30:00 +0000 UTC | Request C       | 150              |
+//  +-------------------------------+-----------------+------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "D",
+        "refId": "D",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "timestamp",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705320000000,
+            1705316400000,
+            1705293000000
+          ],
+          [
+            "Request A",
+            "Request B",
+            "Request C"
+          ],
+          [
+            100,
+            200,
+            150
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 3 Fields by 2 Rows
+//  +-----------------+-----------------+---------------------+
+//  | Name: excerpt   | Name: title     | Name: versionNumber |
+//  | Labels:         | Labels:         | Labels:             |
+//  | Type: []*string | Type: []*string | Type: []*float64    |
+//  +-----------------+-----------------+---------------------+
+//  | null            | a               | 1                   |
+//  | null            | b               | null                |
+//  +-----------------+-----------------+---------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "excerpt",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "versionNumber",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            null,
+            null
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            1,
+            null
+          ]
+        ]
+      }
+    }
+  ]
+}

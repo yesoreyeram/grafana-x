@@ -1,0 +1,135 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 8 Fields by 1 Rows
+//  +-------------------------------+------------------+------------------+-----------------+---------------+-----------------+------------------+-----------------+
+//  | Name: _created_at             | Name: _record_id | Name: amount     | Name: company   | Name: is_vip  | Name: name      | Name: score      | Name: stage     |
+//  | Labels:                       | Labels:          | Labels:          | Labels:         | Labels:       | Labels:         | Labels:          | Labels:         |
+//  | Type: []*time.Time            | Type: []*string  | Type: []*float64 | Type: []*string | Type: []*bool | Type: []*string | Type: []*float64 | Type: []*string |
+//  +-------------------------------+------------------+------------------+-----------------+---------------+-----------------+------------------+-----------------+
+//  | 2024-01-02 03:04:05 +0000 UTC | r1               | 99.5             | c1              | true          | Ada Lovelace    | 42               | Won             |
+//  +-------------------------------+------------------+------------------+-----------------+---------------+-----------------+------------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "_created_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "_record_id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "amount",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "company",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "is_vip",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "score",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "stage",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1704164645000
+          ],
+          [
+            "r1"
+          ],
+          [
+            99.5
+          ],
+          [
+            "c1"
+          ],
+          [
+            true
+          ],
+          [
+            "Ada Lovelace"
+          ],
+          [
+            42
+          ],
+          [
+            "Won"
+          ]
+        ]
+      }
+    }
+  ]
+}

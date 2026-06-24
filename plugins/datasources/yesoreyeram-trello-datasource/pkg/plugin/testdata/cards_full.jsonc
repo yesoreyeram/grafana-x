@@ -1,0 +1,324 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 23 Fields by 2 Rows
+//  +-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------------------+-------------------------+--------------------------------+-----------------------+--------------------+---------------+---------------------------------------------------+-----------------+-------------------+--------------------------+-----------------+--------------------+-----------------+-----------------+-----------------+-----------------+------------------+--------------------------+---------------------------------------+
+//  | Name: dateCreated             | Name: dateLastActivity        | Name: due                     | Name: start                   | Name: badges_attachments | Name: badges_checkItems | Name: badges_checkItemsChecked | Name: badges_comments | Name: badges_votes | Name: closed  | Name: customFieldItems                            | Name: desc      | Name: dueComplete | Name: id                 | Name: idBoard   | Name: idChecklists | Name: idList    | Name: idMembers | Name: labels    | Name: name      | Name: pos        | Name: shortUrl           | Name: url                             |
+//  | Labels:                       | Labels:                       | Labels:                       | Labels:                       | Labels:                  | Labels:                 | Labels:                        | Labels:               | Labels:            | Labels:       | Labels:                                           | Labels:         | Labels:           | Labels:                  | Labels:         | Labels:            | Labels:         | Labels:         | Labels:         | Labels:         | Labels:          | Labels:                  | Labels:                               |
+//  | Type: []*time.Time            | Type: []*time.Time            | Type: []*time.Time            | Type: []*time.Time            | Type: []*float64         | Type: []*float64        | Type: []*float64               | Type: []*float64      | Type: []*float64   | Type: []*bool | Type: []*string                                   | Type: []*string | Type: []*bool     | Type: []*string          | Type: []*string | Type: []*string    | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*float64 | Type: []*string          | Type: []*string                       |
+//  +-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------------------+-------------------------+--------------------------------+-----------------------+--------------------+---------------+---------------------------------------------------+-----------------+-------------------+--------------------------+-----------------+--------------------+-----------------+-----------------+-----------------+-----------------+------------------+--------------------------+---------------------------------------+
+//  | 2020-04-09 12:50:51 +0000 UTC | 2024-02-25 08:15:00 +0000 UTC | 2024-03-01 17:00:00 +0000 UTC | 2024-02-20 00:00:00 +0000 UTC | 2                        | 4                       | 1                              | 5                     | 3                  | false         | [{"idCustomField":"cf1","value":{"text":"High"}}] | Cut v2          | false             | 5e8f1a2b3c4d5e6f7a8b9c0d | b1              | chk1               | l1              | u1, u2          | release         | Ship release    | 16384            | https://trello.com/c/aaa | https://trello.com/c/aaa/ship-release |
+//  | 2020-03-26 01:49:15 +0000 UTC | 2024-02-24 10:00:00 +0000 UTC | null                          | null                          | 0                        | 0                       | 0                              | 0                     | 0                  | true          | []                                                |                 | false             | 5e7c0a1b3c4d5e6f7a8b9c0e | b1              | null               | l2              | null            | null            | Triage bugs     | 32768            | https://trello.com/c/bbb | https://trello.com/c/bbb/triage-bugs  |
+//  +-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------------------+-------------------------+--------------------------------+-----------------------+--------------------+---------------+---------------------------------------------------+-----------------+-------------------+--------------------------+-----------------+--------------------+-----------------+-----------------+-----------------+-----------------+------------------+--------------------------+---------------------------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "dateCreated",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "dateLastActivity",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "due",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "start",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "badges_attachments",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "badges_checkItems",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "badges_checkItemsChecked",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "badges_comments",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "badges_votes",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "closed",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "customFieldItems",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "desc",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "dueComplete",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "idBoard",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "idChecklists",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "idList",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "idMembers",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "labels",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pos",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "shortUrl",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1586436651000,
+            1585187355000
+          ],
+          [
+            1708848900000,
+            1708768800000
+          ],
+          [
+            1709312400000,
+            null
+          ],
+          [
+            1708387200000,
+            null
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            false,
+            true
+          ],
+          [
+            "[{\"idCustomField\":\"cf1\",\"value\":{\"text\":\"High\"}}]",
+            "[]"
+          ],
+          [
+            "Cut v2",
+            ""
+          ],
+          [
+            false,
+            false
+          ],
+          [
+            "5e8f1a2b3c4d5e6f7a8b9c0d",
+            "5e7c0a1b3c4d5e6f7a8b9c0e"
+          ],
+          [
+            "b1",
+            "b1"
+          ],
+          [
+            "chk1",
+            null
+          ],
+          [
+            "l1",
+            "l2"
+          ],
+          [
+            "u1, u2",
+            null
+          ],
+          [
+            "release",
+            null
+          ],
+          [
+            "Ship release",
+            "Triage bugs"
+          ],
+          [
+            16384,
+            32768
+          ],
+          [
+            "https://trello.com/c/aaa",
+            "https://trello.com/c/bbb"
+          ],
+          [
+            "https://trello.com/c/aaa/ship-release",
+            "https://trello.com/c/bbb/triage-bugs"
+          ]
+        ]
+      }
+    }
+  ]
+}

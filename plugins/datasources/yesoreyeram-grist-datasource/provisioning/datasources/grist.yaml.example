@@ -1,0 +1,21 @@
+apiVersion: 1
+
+datasources:
+  - name: Grist
+    type: yesoreyeram-grist-datasource
+    access: proxy
+    jsonData:
+      # Grist server URL. The REST API is served under /api; a trailing /api is
+      # accepted and normalised away by the backend.
+      #   - Grist Cloud team site: https://{team}.getgrist.com
+      #   - Grist Cloud personal:  https://docs.getgrist.com
+      #   - Self-hosted:           https://grist.example.com (or http://localhost:8484)
+      baseURL: https://docs.getgrist.com
+      # Optional default Grist document id. When set, the query editor lists this
+      # doc's tables directly instead of enumerating orgs/workspaces.
+      docId: ""
+    secureJsonData:
+      # Grist API key, sent as "Authorization: Bearer <key>". Create one in your
+      # Grist account: Profile Settings -> API.
+      apiKey: ${GRIST_API_KEY}
+    editable: true

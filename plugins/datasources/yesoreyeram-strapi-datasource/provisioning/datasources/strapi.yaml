@@ -1,0 +1,15 @@
+apiVersion: 1
+
+datasources:
+  - name: Strapi
+    type: yesoreyeram-strapi-datasource
+    access: proxy
+    isDefault: true
+    jsonData:
+      baseURL: $STRAPI_URL
+      # Strapi major version: "v5" (default) or "v4". Detection is automatic, so
+      # this is a hint.
+      apiVersion: v5
+    secureJsonData:
+      apiToken: $STRAPI_API_TOKEN
+    editable: true

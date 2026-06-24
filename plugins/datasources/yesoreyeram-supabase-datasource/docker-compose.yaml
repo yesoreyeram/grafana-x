@@ -1,0 +1,37 @@
+# Local stack for the Supabase data source plugin: a single Grafana with the
+# built plugin mounted and the datasource auto-provisioned against a Supabase
+# project's PostgREST API.
+#
+# Prerequisites — build the plugin's dist/ first (frontend + backend):
+#
+#   yarn build                  # frontend + backend (all platforms)
+#   # or: yarn build:frontend && mage -v build:linux
+#
+# Then start Grafana with your Supabase project URL and service key:
+#
+#   SUPABASE_API_URL=https://xxx.supabase.co/rest/v1 SUPABASE_SERVICE_KEY=eyJ... docker compose up
+#
+# Omit the variables to skip auto-provisioning and add the datasource in the UI.
+#
+# Grafana runs with anonymous admin at http://localhost:3000 (no login).
+
+services:
+  grafana:
+    image: grafana/grafana:${GRAFANA_VERSION:-11.3.0}
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - ./dist:/var/lib/grafana/plugins/yesoreyeram-supabase-datasource
+      - ./provisioning:/etc/grafana/provisioning
+    environment:
+      - GF_DEFAULT_APP_MODE=development
+      - GF_LOG_LEVEL=debug
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=yesoreyeram-supabase-datasource
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_ANONYMOUS_ORG_NAME=Main Org.
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+      - GF_AUTH_BASIC_ENABLED=false
+      - GF_USERS_DEFAULT_THEME=dark
+      - SUPABASE_API_URL=${SUPABASE_API_URL:-}
+      - SUPABASE_SERVICE_KEY=${SUPABASE_SERVICE_KEY:-}

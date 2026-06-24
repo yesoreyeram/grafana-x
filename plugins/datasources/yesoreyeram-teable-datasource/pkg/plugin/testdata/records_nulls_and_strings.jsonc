@@ -1,0 +1,101 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: C
+//  Dimensions: 4 Fields by 3 Rows
+//  +------------------+-------------------+-----------------+-----------------+
+//  | Name: age        | Name: email       | Name: mixed     | Name: name      |
+//  | Labels:          | Labels:           | Labels:         | Labels:         |
+//  | Type: []*float64 | Type: []*string   | Type: []*string | Type: []*string |
+//  +------------------+-------------------+-----------------+-----------------+
+//  | null             | alice@example.com | 1               | Alice           |
+//  | 30               | null              | text            | null            |
+//  | 25               | bob@example.com   | null            | Bob             |
+//  +------------------+-------------------+-----------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "C",
+        "refId": "C",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "age",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "email",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "mixed",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            null,
+            30,
+            25
+          ],
+          [
+            "alice@example.com",
+            null,
+            "bob@example.com"
+          ],
+          [
+            "1",
+            "text",
+            null
+          ],
+          [
+            "Alice",
+            null,
+            "Bob"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+apiVersion: 1
+
+# Example manual provisioning for the SeaTable datasource. Copy to seatable.yaml
+# and fill in your values, or configure the datasource in the Grafana UI.
+datasources:
+  - name: SeaTable
+    type: yesoreyeram-seatable-datasource
+    access: proxy
+    jsonData:
+      # SeaTable server URL. Use https://cloud.seatable.io for SeaTable Cloud,
+      # or your self-hosted server URL.
+      serverURL: https://cloud.seatable.io
+    secureJsonData:
+      # SeaTable Base API Token. Generate one from a base's "API Tokens" panel.
+      # It is scoped to a single base; the backend exchanges it for a short-lived
+      # Base-Token automatically.
+      apiToken: ${SEATABLE_API_TOKEN}
+    editable: true

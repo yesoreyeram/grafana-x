@@ -1,0 +1,43 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "Teable",
+  "id": "yesoreyeram-teable-datasource",
+  "metrics": true,
+  "backend": true,
+  "executable": "gpx_teable",
+  "info": {
+    "description": "Query data from Teable bases in Grafana",
+    "author": {
+      "name": "yesoreyeram"
+    },
+    "keywords": [
+      "teable",
+      "database",
+      "spreadsheet",
+      "no-code",
+      "table"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/yesoreyeram/grafana-x"
+      },
+      {
+        "name": "Teable",
+        "url": "https://teable.io"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.4.0",
+    "plugins": []
+  }
+}

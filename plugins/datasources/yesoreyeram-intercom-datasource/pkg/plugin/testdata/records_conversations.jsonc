@@ -1,0 +1,132 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 7 Fields by 2 Rows
+//  +-------------------------------+-------------------------------+-----------------+-----------------+--------------------------------------------------------------------+-----------------+-----------------+
+//  | Name: created_at              | Name: updated_at              | Name: id        | Name: priority  | Name: source                                                       | Name: state     | Name: type      |
+//  | Labels:                       | Labels:                       | Labels:         | Labels:         | Labels:                                                            | Labels:         | Labels:         |
+//  | Type: []*time.Time            | Type: []*time.Time            | Type: []*string | Type: []*string | Type: []*string                                                    | Type: []*string | Type: []*string |
+//  +-------------------------------+-------------------------------+-----------------+-----------------+--------------------------------------------------------------------+-----------------+-----------------+
+//  | 2018-10-18 21:13:18 +0000 UTC | 2018-10-18 22:00:00 +0000 UTC | 101             | priority        | {"author":{"email":"a@b.com","type":"user"},"type":"conversation"} | open            | conversation    |
+//  | 2018-10-17 18:13:20 +0000 UTC | 2018-10-18 08:06:40 +0000 UTC | 102             | not_priority    | {"author":{"email":"c@d.com","type":"lead"},"type":"conversation"} | closed          | conversation    |
+//  +-------------------------------+-------------------------------+-----------------+-----------------+--------------------------------------------------------------------+-----------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "created_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "updated_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "priority",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "state",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1539897198000,
+            1539800000000
+          ],
+          [
+            1539900000000,
+            1539850000000
+          ],
+          [
+            "101",
+            "102"
+          ],
+          [
+            "priority",
+            "not_priority"
+          ],
+          [
+            "{\"author\":{\"email\":\"a@b.com\",\"type\":\"user\"},\"type\":\"conversation\"}",
+            "{\"author\":{\"email\":\"c@d.com\",\"type\":\"lead\"},\"type\":\"conversation\"}"
+          ],
+          [
+            "open",
+            "closed"
+          ],
+          [
+            "conversation",
+            "conversation"
+          ]
+        ]
+      }
+    }
+  ]
+}

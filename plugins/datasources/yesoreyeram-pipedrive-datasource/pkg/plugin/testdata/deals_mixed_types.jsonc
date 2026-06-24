@@ -1,0 +1,132 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 7 Fields by 2 Rows
+//  +-------------------------------+-------------------------------+-----------------+------------------+-----------------+-----------------+------------------+
+//  | Name: add_time                | Name: won_time                | Name: currency  | Name: id         | Name: status    | Name: title     | Name: value      |
+//  | Labels:                       | Labels:                       | Labels:         | Labels:          | Labels:         | Labels:         | Labels:          |
+//  | Type: []*time.Time            | Type: []*time.Time            | Type: []*string | Type: []*float64 | Type: []*string | Type: []*string | Type: []*float64 |
+//  +-------------------------------+-------------------------------+-----------------+------------------+-----------------+-----------------+------------------+
+//  | 2024-01-15 10:00:00 +0000 UTC | null                          | USD             | 1                | open            | Big Deal        | 10000            |
+//  | 2024-02-20 12:30:00 +0000 UTC | 2024-03-01 09:00:00 +0000 UTC | EUR             | 2                | won             | Won Deal        | 5000             |
+//  +-------------------------------+-------------------------------+-----------------+------------------+-----------------+-----------------+------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "add_time",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "won_time",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "currency",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705312800000,
+            1708432200000
+          ],
+          [
+            null,
+            1709283600000
+          ],
+          [
+            "USD",
+            "EUR"
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            "open",
+            "won"
+          ],
+          [
+            "Big Deal",
+            "Won Deal"
+          ],
+          [
+            10000,
+            5000
+          ]
+        ]
+      }
+    }
+  ]
+}

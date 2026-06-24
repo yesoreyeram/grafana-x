@@ -1,0 +1,108 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 5 Fields by 2 Rows
+//  +-------------------------------+------------------+-----------------+-----------------+------------------+
+//  | Name: created_at              | Name: id         | Name: published | Name: title     | Name: views      |
+//  | Labels:                       | Labels:          | Labels:         | Labels:         | Labels:          |
+//  | Type: []*time.Time            | Type: []*float64 | Type: []*bool   | Type: []*string | Type: []*float64 |
+//  +-------------------------------+------------------+-----------------+-----------------+------------------+
+//  | 2024-01-15 00:00:00 +0000 UTC | 1                | true            | Hello           | 100              |
+//  | 2024-02-20 00:00:00 +0000 UTC | 2                | false           | World           | 0                |
+//  +-------------------------------+------------------+-----------------+-----------------+------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "created_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "published",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "views",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705276800000,
+            1708387200000
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            true,
+            false
+          ],
+          [
+            "Hello",
+            "World"
+          ],
+          [
+            100,
+            0
+          ]
+        ]
+      }
+    }
+  ]
+}
