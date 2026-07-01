@@ -28,7 +28,7 @@ func superuserSettings() Settings {
 func withAuth(token string, next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if strings.HasSuffix(r.URL.Path, "/auth-with-password") {
-			_, _ = w.Write([]byte(fmt.Sprintf(`{"token":%q}`, token)))
+			_, _ = fmt.Fprintf(w, `{"token":%q}`, token)
 			return
 		}
 		next(w, r)
@@ -256,7 +256,7 @@ func TestReauthenticatesOn401(t *testing.T) {
 	c, srv := newTestClient(t, superuserSettings(), func(w http.ResponseWriter, r *http.Request) {
 		if strings.HasSuffix(r.URL.Path, "/auth-with-password") {
 			authCalls++
-			_, _ = w.Write([]byte(fmt.Sprintf(`{"token":"tok-%d"}`, authCalls)))
+			_, _ = fmt.Fprintf(w, `{"token":"tok-%d"}`, authCalls)
 			return
 		}
 		getCalls++

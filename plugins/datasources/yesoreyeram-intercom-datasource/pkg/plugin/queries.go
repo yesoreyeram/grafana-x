@@ -48,16 +48,6 @@ func cursorListEntity(e string) bool {
 	return false
 }
 
-// simpleListEntity reports whether the entity exposes a single, non-paginated
-// list endpoint (the response carries the full set in one call).
-func simpleListEntity(e string) bool {
-	switch e {
-	case queryTypeAdmins, queryTypeTeams, queryTypeTags:
-		return true
-	}
-	return false
-}
-
 // dataKeyFor returns the response array key for an entity, defaulting to `data`.
 func dataKeyFor(e string) string {
 	if k, ok := entityDataKey[e]; ok {

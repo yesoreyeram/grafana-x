@@ -18,11 +18,10 @@ const (
 
 // Client is a thin wrapper around the NocoDB REST API.
 type Client struct {
-	baseURL     string
-	apiToken    string
-	apiVersion  string
-	defaultBase string
-	httpClient  *http.Client
+	baseURL    string
+	apiToken   string
+	apiVersion string
+	httpClient *http.Client
 }
 
 // NewClient creates a NocoDB API client. The provided httpClient is normally the

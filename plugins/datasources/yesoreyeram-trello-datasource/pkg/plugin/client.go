@@ -47,10 +47,10 @@ func NewClient(settings Settings, httpClient *http.Client) (*Client, error) {
 		return nil, fmt.Errorf("invalid base URL %q: %w", base, err)
 	}
 	if settings.apiKey == "" {
-		return nil, fmt.Errorf("Trello API key is not configured")
+		return nil, fmt.Errorf("trello API key is not configured")
 	}
 	if settings.apiToken == "" {
-		return nil, fmt.Errorf("Trello API token is not configured")
+		return nil, fmt.Errorf("trello API token is not configured")
 	}
 	return &Client{
 		apiKey:     settings.apiKey,

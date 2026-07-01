@@ -18,8 +18,6 @@ const (
 	// client never requests more than this in a single page; larger requests are
 	// satisfied by following pages.
 	maxPageSize = 100
-	// maxRecords is a safety cap on the total number of auto-paginated records.
-	maxRecords = 100000
 )
 
 type Client struct {
@@ -31,7 +29,7 @@ type Client struct {
 func NewClient(settings Settings, httpClient *http.Client) (*Client, error) {
 	base := strings.TrimRight(strings.TrimSpace(settings.BaseURL), "/")
 	if base == "" {
-		return nil, fmt.Errorf("Strapi base URL is required")
+		return nil, fmt.Errorf("strapi base URL is required")
 	}
 	if _, err := url.ParseRequestURI(base); err != nil {
 		return nil, fmt.Errorf("invalid base URL %q: %w", base, err)
@@ -78,7 +76,7 @@ func (c *Client) do(ctx context.Context, method, rawURL string, body io.Reader, 
 	}
 
 	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
-		return fmt.Errorf("Strapi returned status %d: %s. %s",
+		return fmt.Errorf("strapi returned status %d: %s. %s",
 			resp.StatusCode, extractAPIError(rawBody), statusHint(resp.StatusCode))
 	}
 
@@ -165,7 +163,7 @@ func (c *Client) checkReachable(ctx context.Context) error {
 
 	if resp.StatusCode == http.StatusUnauthorized || resp.StatusCode == http.StatusForbidden {
 		raw, _ := io.ReadAll(io.LimitReader(resp.Body, 1<<16))
-		return fmt.Errorf("Strapi returned status %d: %s. %s",
+		return fmt.Errorf("strapi returned status %d: %s. %s",
 			resp.StatusCode, extractAPIError(raw), statusHint(resp.StatusCode))
 	}
 	return nil

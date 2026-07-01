@@ -30,7 +30,7 @@ type Client struct {
 func NewClient(settings Settings, httpClient *http.Client) (*Client, error) {
 	base := strings.TrimRight(strings.TrimSpace(settings.BaseURL), "/")
 	if base == "" {
-		return nil, fmt.Errorf("Directus base URL is required")
+		return nil, fmt.Errorf("directus base URL is required")
 	}
 	if _, err := url.ParseRequestURI(base); err != nil {
 		return nil, fmt.Errorf("invalid base URL %q: %w", base, err)

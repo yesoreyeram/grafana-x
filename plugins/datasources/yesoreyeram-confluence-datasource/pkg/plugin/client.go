@@ -334,13 +334,7 @@ func (c *Client) ListSpaces(ctx context.Context) ([]SpaceInfo, error) {
 		if err := json.Unmarshal(raw, &s); err != nil {
 			continue
 		}
-		spaces = append(spaces, SpaceInfo{
-			ID:     s.ID,
-			Key:    s.Key,
-			Name:   s.Name,
-			Type:   s.Type,
-			Status: s.Status,
-		})
+		spaces = append(spaces, SpaceInfo(s))
 	}
 	return spaces, nil
 }

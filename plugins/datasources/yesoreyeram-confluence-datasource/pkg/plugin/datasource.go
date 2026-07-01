@@ -112,11 +112,9 @@ func (d *Datasource) CheckHealth(ctx context.Context, _ *backend.CheckHealthRequ
 		}, nil
 	}
 	if !d.settings.hasCredential() {
-		msg := "Confluence credentials are not configured"
+		msg := "Confluence bearer token is required for Bearer auth"
 		if d.settings.AuthMode == authBasic {
 			msg = "Confluence email and API token are required for Basic auth"
-		} else {
-			msg = "Confluence bearer token is required for Bearer auth"
 		}
 		return &backend.CheckHealthResult{
 			Status:  backend.HealthStatusError,

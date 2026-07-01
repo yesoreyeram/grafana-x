@@ -47,12 +47,6 @@ func mondayAggregateFunction(agg string) (fn string, needsColumn bool) {
 	}
 }
 
-// aggregationNeedsColumn reports whether an aggregation requires a value column.
-func aggregationNeedsColumn(agg string) bool {
-	_, needs := mondayAggregateFunction(agg)
-	return needs
-}
-
 // aliasResult is the stable alias for the aggregation result entry. The group
 // column entry, by contrast, MUST be aliased to its own column_id so monday ties
 // the selected column to the `group_by` clause (see buildAggregateQuery).

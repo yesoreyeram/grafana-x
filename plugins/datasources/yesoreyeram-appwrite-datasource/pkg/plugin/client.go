@@ -381,7 +381,7 @@ func (c *Client) listCollectionsAt(ctx context.Context, endpoint string) ([]Coll
 			items = res.Tables
 		}
 		for _, col := range items {
-			out = append(out, CollectionInfo{ID: col.ID, Name: col.Name})
+			out = append(out, CollectionInfo(col))
 		}
 		if len(items) < defaultPageSize {
 			break
@@ -464,7 +464,7 @@ func (c *Client) listAttributesAt(ctx context.Context, endpoint string) ([]Attri
 			if strings.TrimSpace(a.Key) == "" {
 				continue
 			}
-			out = append(out, AttributeInfo{Key: a.Key, Type: a.Type})
+			out = append(out, AttributeInfo(a))
 		}
 		if len(items) < defaultPageSize {
 			break
