@@ -1,0 +1,168 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 10 Fields by 2 Rows
+//  +-------------------------------+-------------------------------+-----------------+-----------------+------------------+----------------------------+----------------------------+-----------------+------------------+-----------------+
+//  | Name: createdAt               | Name: updatedAt               | Name: id        | Name: name      | Name: index      | Name: href                 | Name: browserLink          | Name: Name      | Name: Score      | Name: Tags      |
+//  | Labels:                       | Labels:                       | Labels:         | Labels:         | Labels:          | Labels:                    | Labels:                    | Labels:         | Labels:          | Labels:         |
+//  | Type: []*time.Time            | Type: []*time.Time            | Type: []*string | Type: []*string | Type: []*float64 | Type: []*string            | Type: []*string            | Type: []*string | Type: []*float64 | Type: []*string |
+//  +-------------------------------+-------------------------------+-----------------+-----------------+------------------+----------------------------+----------------------------+-----------------+------------------+-----------------+
+//  | 2024-01-02 03:04:05 +0000 UTC | 2024-02-03 04:05:06 +0000 UTC | r1              | Alice           | 7                | https://coda.io/apis/v1/r1 | https://coda.io/d/_dX#_rr1 | Alice           | 95               | ["a","b"]       |
+//  | 2024-01-03 03:04:05 +0000 UTC | 2024-02-04 04:05:06 +0000 UTC | r2              | Bob             | null             | https://coda.io/apis/v1/r2 | https://coda.io/d/_dX#_rr2 | Bob             | 87               | null            |
+//  +-------------------------------+-------------------------------+-----------------+-----------------+------------------+----------------------------+----------------------------+-----------------+------------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "createdAt",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "updatedAt",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "index",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "href",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "browserLink",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Score",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Tags",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1704164645000,
+            1704251045000
+          ],
+          [
+            1706933106000,
+            1707019506000
+          ],
+          [
+            "r1",
+            "r2"
+          ],
+          [
+            "Alice",
+            "Bob"
+          ],
+          [
+            7,
+            null
+          ],
+          [
+            "https://coda.io/apis/v1/r1",
+            "https://coda.io/apis/v1/r2"
+          ],
+          [
+            "https://coda.io/d/_dX#_rr1",
+            "https://coda.io/d/_dX#_rr2"
+          ],
+          [
+            "Alice",
+            "Bob"
+          ],
+          [
+            95,
+            87
+          ],
+          [
+            "[\"a\",\"b\"]",
+            null
+          ]
+        ]
+      }
+    }
+  ]
+}

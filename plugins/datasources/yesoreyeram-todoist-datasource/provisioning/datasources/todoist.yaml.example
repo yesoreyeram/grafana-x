@@ -1,0 +1,14 @@
+apiVersion: 1
+
+datasources:
+  - name: Todoist
+    type: yesoreyeram-todoist-datasource
+    access: proxy
+    jsonData:
+      # Todoist unified API v1 root. Override only to point at a proxy/gateway.
+      baseURL: https://api.todoist.com/api/v1
+    secureJsonData:
+      # Todoist API token, sent as the Authorization: Bearer header. Copy it from:
+      #   Todoist Settings > Integrations > Developer
+      apiToken: ${TODOIST_API_TOKEN}
+    editable: true

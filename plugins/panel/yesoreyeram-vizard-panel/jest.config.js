@@ -1,8 +1,17 @@
 module.exports = {
   testEnvironment: 'jsdom',
+  testEnvironmentOptions: {
+    // Pick browser builds for packages like `vega-canvas` whose Node build
+    // uses top-level await (which Jest cannot parse). See exports map in
+    // node_modules/vega-canvas/package.json.
+    customExportConditions: ['browser', 'default'],
+  },
   setupFilesAfterEnv: ['<rootDir>/jest-setup.js'],
   moduleNameMapper: {
     '\\.(css|scss|sass)$': 'identity-obj-proxy',
+    // Force the browser build of vega-canvas; its Node build uses top-level
+    // await (`await import('canvas')`) which Jest cannot parse.
+    '^vega-canvas$': '<rootDir>/node_modules/vega-canvas/build/vega-canvas.browser.js',
   },
   transform: {
     '^.+\\.(t|j)sx?$': [

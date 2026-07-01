@@ -11,8 +11,7 @@ import (
 )
 
 var (
-	tableTypeVersion       = data.FrameTypeVersion{0, 1}
-	numericWideTypeVersion = data.FrameTypeVersion{0, 1}
+	tableTypeVersion = data.FrameTypeVersion{0, 1}
 )
 
 // hubSpotDateKeys lists the HubSpot property names that are date/time values.
@@ -31,18 +30,6 @@ var hubSpotDateKeys = map[string]bool{
 	"last_contacted":    true,
 	"notes_next_activity": true,
 	"engagement_timestamp": true,
-}
-
-func countToFrame(refID string, count int64) *data.Frame {
-	field := data.NewField("count", nil, []int64{count})
-	frame := data.NewFrame(refID, field)
-	frame.RefID = refID
-	frame.Meta = &data.FrameMeta{
-		Type:                   data.FrameTypeNumericWide,
-		TypeVersion:            numericWideTypeVersion,
-		PreferredVisualization: data.VisTypeTable,
-	}
-	return frame
 }
 
 // recordsToFrame converts a slice of flattened HubSpot records into a single

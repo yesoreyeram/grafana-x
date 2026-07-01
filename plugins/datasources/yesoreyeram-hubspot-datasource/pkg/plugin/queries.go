@@ -43,16 +43,6 @@ func searchableQueryType(qt string) bool {
 	return ok
 }
 
-// engagementQueryTypes returns true if the query type is an engagement sub-type
-// (meetings/calls/tasks/notes/emails).
-func engagementQueryType(qt string) bool {
-	switch qt {
-	case queryTypeMeetings, queryTypeCalls, queryTypeTasks, queryTypeNotes, queryTypeEmails:
-		return true
-	}
-	return false
-}
-
 // HubSpot search operators supported by the CRM Search API.
 var searchOperators = []string{
 	"EQ",

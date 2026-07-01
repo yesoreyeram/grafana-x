@@ -80,23 +80,6 @@ func (c *Client) doPOST(ctx context.Context, path string, body any) (json.RawMes
 	return c.do(req)
 }
 
-// doRaw issues a GET or POST request with the given optional body.
-func (c *Client) doRaw(ctx context.Context, method, path, bodyStr string) (json.RawMessage, error) {
-	full := c.baseURL + path
-	var bodyReader io.Reader
-	if method == http.MethodPost && bodyStr != "" {
-		bodyReader = strings.NewReader(bodyStr)
-	}
-	req, err := http.NewRequestWithContext(ctx, method, full, bodyReader)
-	if err != nil {
-		return nil, err
-	}
-	if bodyStr != "" {
-		req.Header.Set("Content-Type", "application/json")
-	}
-	return c.do(req)
-}
-
 func (c *Client) do(req *http.Request) (json.RawMessage, error) {
 	req.Header.Set("Accept", "application/json")
 	if c.token != "" {
@@ -168,13 +151,6 @@ type pagingInfo struct {
 
 type nextPage struct {
 	After string `json:"after"`
-}
-
-// ----- List API types ----------------------------------------------------------
-
-type listResponse struct {
-	Results []json.RawMessage `json:"results"`
-	Paging  *pagingInfo       `json:"paging,omitempty"`
 }
 
 // ----- Properties API types ----------------------------------------------------
@@ -303,11 +279,7 @@ func (c *Client) buildSearchRequest(q QueryModel, limit, after int) searchReques
 				if strings.TrimSpace(f.PropertyName) == "" {
 					continue
 				}
-				g.Filters = append(g.Filters, filter{
-					PropertyName: f.PropertyName,
-					Operator:     f.Operator,
-					Value:        f.Value,
-				})
+				g.Filters = append(g.Filters, filter(f))
 			}
 			if len(g.Filters) > 0 {
 				req.FilterGroups = append(req.FilterGroups, g)
@@ -633,7 +605,7 @@ func (c *Client) ListPipelinesForObject(ctx context.Context, objectType string) 
 	for _, p := range resp.Results {
 		stages := make([]PipelineStage, 0, len(p.Stages))
 		for _, s := range p.Stages {
-			stages = append(stages, PipelineStage{ID: s.ID, Label: s.Label})
+			stages = append(stages, PipelineStage(s))
 		}
 		out = append(out, PipelineDef{ID: p.ID, Label: p.Label, Stages: stages})
 	}
@@ -660,10 +632,7 @@ func (c *Client) ListOwners(ctx context.Context) ([]OwnerInfo, error) {
 	}
 	out := make([]OwnerInfo, 0, len(resp.Results))
 	for _, o := range resp.Results {
-		out = append(out, OwnerInfo{
-			ID: o.ID, Email: o.Email,
-			FirstName: o.FirstName, LastName: o.LastName,
-		})
+		out = append(out, OwnerInfo(o))
 	}
 	return out, nil
 }

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "Confluence",
+  "id": "yesoreyeram-confluence-datasource",
+  "metrics": true,
+  "backend": true,
+  "executable": "gpx_confluence",
+  "info": {
+    "description": "Query pages, blog posts and CQL search results from Confluence (Atlassian) in Grafana",
+    "author": {
+      "name": "yesoreyeram"
+    },
+    "keywords": [
+      "confluence",
+      "atlassian",
+      "wiki",
+      "docs",
+      "pages",
+      "cql",
+      "rest"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/yesoreyeram/grafana-x"
+      },
+      {
+        "name": "Confluence REST API",
+        "url": "https://developer.atlassian.com/cloud/confluence/rest/v2/intro/"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.4.0",
+    "plugins": []
+  }
+}

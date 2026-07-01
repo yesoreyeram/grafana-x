@@ -1,0 +1,27 @@
+# Grafana datasource provisioning for Intercom.
+#
+# Usage:
+#   export INTERCOM_API_TOKEN=dG9rZW46...
+#   docker compose up
+#
+# Optional overrides:
+#   INTERCOM_BASE_URL  Override the API host (e.g. https://api.eu.intercom.io).
+#                      When set it takes precedence over the region.
+#   INTERCOM_VERSION   Intercom-Version header (default 2.11).
+#
+# Create an access token in the Intercom Developer Hub (https://app.intercom.com/a/apps/_/developer-hub)
+# or your app's settings. The health check calls GET /me.
+
+apiVersion: 1
+
+datasources:
+  - name: Intercom
+    type: yesoreyeram-intercom-datasource
+    access: proxy
+    jsonData:
+      baseURL: ${INTERCOM_BASE_URL:-https://api.intercom.io}
+      region: us
+      intercomVersion: ${INTERCOM_VERSION:-2.11}
+    secureJsonData:
+      apiToken: ${INTERCOM_API_TOKEN}
+    editable: true

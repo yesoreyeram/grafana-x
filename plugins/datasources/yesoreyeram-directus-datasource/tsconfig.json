@@ -1,0 +1,14 @@
+{
+  "extends": "@grafana/tsconfig",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "include": ["src", "types"],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx", "node_modules", "dist"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}

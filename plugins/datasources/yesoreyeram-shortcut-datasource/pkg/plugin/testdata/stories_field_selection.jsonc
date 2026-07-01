@@ -1,0 +1,84 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 3 Fields by 2 Rows
+//  +-------------------------------+------------------+-----------------+
+//  | Name: created_at              | Name: id         | Name: name      |
+//  | Labels:                       | Labels:          | Labels:         |
+//  | Type: []*time.Time            | Type: []*float64 | Type: []*string |
+//  +-------------------------------+------------------+-----------------+
+//  | 2024-01-15 10:00:00 +0000 UTC | 1                | Fix login       |
+//  | 2024-01-14 09:00:00 +0000 UTC | 2                | Add SSO         |
+//  +-------------------------------+------------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "created_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705312800000,
+            1705222800000
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            "Fix login",
+            "Add SSO"
+          ]
+        ]
+      }
+    }
+  ]
+}

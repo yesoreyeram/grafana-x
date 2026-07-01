@@ -1,0 +1,144 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 8 Fields by 2 Rows
+//  +-------------------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-------------------------------------------------+
+//  | Name: lastModified            | Name: excerpt   | Name: id        | Name: spaceId   | Name: status    | Name: title     | Name: type      | Name: url                                       |
+//  | Labels:                       | Labels:         | Labels:         | Labels:         | Labels:         | Labels:         | Labels:         | Labels:                                         |
+//  | Type: []*time.Time            | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*string                                 |
+//  +-------------------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-------------------------------------------------+
+//  | 2024-03-01 10:00:00 +0000 UTC | some text       | 123             | 456             | current         | Release notes   | page            | https://acme.atlassian.net/spaces/ENG/pages/123 |
+//  | 2024-02-15 09:00:00 +0000 UTC | hello           | 900             | 456             | current         | Announcement    | blogpost        | https://acme.atlassian.net/spaces/ENG/blog/900  |
+//  +-------------------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-------------------------------------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "lastModified",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "excerpt",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "spaceId",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "status",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1709287200000,
+            1707987600000
+          ],
+          [
+            "some text",
+            "hello"
+          ],
+          [
+            "123",
+            "900"
+          ],
+          [
+            "456",
+            "456"
+          ],
+          [
+            "current",
+            "current"
+          ],
+          [
+            "Release notes",
+            "Announcement"
+          ],
+          [
+            "page",
+            "blogpost"
+          ],
+          [
+            "https://acme.atlassian.net/spaces/ENG/pages/123",
+            "https://acme.atlassian.net/spaces/ENG/blog/900"
+          ]
+        ]
+      }
+    }
+  ]
+}

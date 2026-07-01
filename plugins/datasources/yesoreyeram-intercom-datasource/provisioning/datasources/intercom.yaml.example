@@ -1,0 +1,25 @@
+# Example: Grafana datasource provisioning for Intercom.
+#
+# Pick the region that matches your Intercom workspace data residency:
+#   US: https://api.intercom.io      (region: us)
+#   EU: https://api.eu.intercom.io   (region: eu)
+#   AU: https://api.au.intercom.io   (region: au)
+#
+# An explicit baseURL always wins over the region. The Intercom-Version header
+# pins the API response shape (default 2.11).
+#
+# Create an access token in the Intercom Developer Hub or your app's settings.
+
+apiVersion: 1
+
+datasources:
+  - name: Intercom
+    type: yesoreyeram-intercom-datasource
+    access: proxy
+    jsonData:
+      baseURL: https://api.intercom.io
+      region: us
+      intercomVersion: "2.11"
+    secureJsonData:
+      apiToken: ${INTERCOM_API_TOKEN}
+    editable: true

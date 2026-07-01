@@ -1,0 +1,156 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 9 Fields by 2 Rows
+//  +-------------------------------+-------------------------------+-------------------------------+-------------------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+//  | Name: created_at              | Name: last_seen_at            | Name: signed_up_at            | Name: custom_attributes | Name: email     | Name: id        | Name: name      | Name: role      | Name: type      |
+//  | Labels:                       | Labels:                       | Labels:                       | Labels:                 | Labels:         | Labels:         | Labels:         | Labels:         | Labels:         |
+//  | Type: []*time.Time            | Type: []*time.Time            | Type: []*time.Time            | Type: []*string         | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*string |
+//  +-------------------------------+-------------------------------+-------------------------------+-------------------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+//  | 2014-03-11 11:57:30 +0000 UTC | null                          | 2014-03-11 11:57:30 +0000 UTC | {"plan":"pro"}          | a@b.com         | c1              | Alice           | user            | contact         |
+//  | 2014-03-12 04:53:20 +0000 UTC | 2014-03-12 04:53:20 +0000 UTC | null                          | {"plan":"free"}         | c@d.com         | c2              | Bob             | lead            | contact         |
+//  +-------------------------------+-------------------------------+-------------------------------+-------------------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "created_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "last_seen_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "signed_up_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "custom_attributes",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "email",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "role",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1394539050000,
+            1394600000000
+          ],
+          [
+            null,
+            1394600000000
+          ],
+          [
+            1394539050000,
+            null
+          ],
+          [
+            "{\"plan\":\"pro\"}",
+            "{\"plan\":\"free\"}"
+          ],
+          [
+            "a@b.com",
+            "c@d.com"
+          ],
+          [
+            "c1",
+            "c2"
+          ],
+          [
+            "Alice",
+            "Bob"
+          ],
+          [
+            "user",
+            "lead"
+          ],
+          [
+            "contact",
+            "contact"
+          ]
+        ]
+      }
+    }
+  ]
+}

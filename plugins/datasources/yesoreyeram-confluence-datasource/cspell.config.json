@@ -1,0 +1,41 @@
+{
+    "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/refs/heads/main/cspell.schema.json",
+    "language": "en",
+    "ignorePaths": [
+        ".config/**",
+        ".github/**",
+        "*_test.go",
+        "*.{spec,test}.{ts,tsx}",
+        "coverage/**",
+        "dist/**",
+        "docker-compose*.{yml,yaml}",
+        "docker/blocks/**",
+        "jest*.js",
+        "node_modules/**",
+        "package.json",
+        "pkg/**/*.json",
+        "provisioning/**",
+        "renovate.json",
+        "renovate.json",
+        "src/dashboards/**",
+    ],
+    "ignoreRegExpList": [
+        "import\\s*\\((.|[\r\n])*?\\)",
+        "import\\s*.*\".*?\""
+    ],
+    "dictionaries": [
+        "grafana",
+        "plugin"
+    ],
+    "dictionaryDefinitions": [
+        {
+            "name": "grafana",
+            "path": "./.cspell/grafana.txt"
+        },
+        {
+            "name": "plugin",
+            "path": "./.cspell/plugin.txt"
+        }
+    ],
+    "words": []
+}

@@ -1,0 +1,18 @@
+apiVersion: 1
+
+datasources:
+  - name: Directus
+    type: yesoreyeram-directus-datasource
+    access: proxy
+    jsonData:
+      # Directus API base URL. Required, since Directus is self-hosted. Include
+      # the scheme and host (e.g. https://directus.example.com).
+      baseURL: https://your-directus.example.com
+      # Optional default collection name. When set, the query editor selects this
+      # collection by default.
+      # defaultCollectionId: articles
+    secureJsonData:
+      # Directus static API token. Generate one in the Directus admin panel under
+      # Settings > API Tokens.
+      apiToken: ${DIRECTUS_API_TOKEN}
+    editable: true

@@ -1,0 +1,35 @@
+# Example: Grafana datasource provisioning for Pipedrive.
+#
+# Pipedrive is cloud-only. The API base URL is derived from your company
+# subdomain: https://{companyDomain}.pipedrive.com/api/v1
+#
+# Two authentication methods are supported:
+#   - apiToken (default): a Pipedrive API token, created at
+#       Settings > Personal preferences > API. Sent as the api_token query param.
+#   - oauth: a Pipedrive OAuth2 access token, sent as Authorization: Bearer.
+
+apiVersion: 1
+
+datasources:
+  # --- API token authentication (default) ---
+  - name: Pipedrive
+    type: yesoreyeram-pipedrive-datasource
+    access: proxy
+    jsonData:
+      # Company subdomain portion of {company}.pipedrive.com
+      companyDomain: ${PIPEDRIVE_COMPANY_DOMAIN}
+      authMethod: apiToken
+    secureJsonData:
+      apiToken: ${PIPEDRIVE_API_TOKEN}
+    editable: true
+
+  # --- OAuth2 access token authentication ---
+  # - name: Pipedrive (OAuth)
+  #   type: yesoreyeram-pipedrive-datasource
+  #   access: proxy
+  #   jsonData:
+  #     companyDomain: ${PIPEDRIVE_COMPANY_DOMAIN}
+  #     authMethod: oauth
+  #   secureJsonData:
+  #     oauthToken: ${PIPEDRIVE_OAUTH_TOKEN}
+  #   editable: true

@@ -25,13 +25,6 @@ const (
 	authOAuth  = "oauth"
 )
 
-// Date filter modes for created/updated bounds.
-const (
-	dateModeAny       = "any"
-	dateModeDashboard = "dashboard"
-	dateModeCustom    = "custom"
-)
-
 // Settings represents the data source instance settings configured in the
 // ConfigEditor. Secret fields (the API token / OAuth token) are kept out of this
 // struct and read from DecryptedSecureJSONData.

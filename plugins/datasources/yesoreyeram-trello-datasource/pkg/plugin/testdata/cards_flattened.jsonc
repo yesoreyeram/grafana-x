@@ -1,0 +1,204 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 13 Fields by 2 Rows
+//  +-------------------------------+-------------------------------+-------------------------------+---------------+-----------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+------------------+--------------------------+
+//  | Name: dateLastActivity        | Name: due                     | Name: start                   | Name: closed  | Name: desc            | Name: id        | Name: idBoard   | Name: idList    | Name: idMembers | Name: labels    | Name: name      | Name: pos        | Name: shortUrl           |
+//  | Labels:                       | Labels:                       | Labels:                       | Labels:       | Labels:               | Labels:         | Labels:         | Labels:         | Labels:         | Labels:         | Labels:         | Labels:          | Labels:                  |
+//  | Type: []*time.Time            | Type: []*time.Time            | Type: []*time.Time            | Type: []*bool | Type: []*string       | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*string | Type: []*float64 | Type: []*string          |
+//  +-------------------------------+-------------------------------+-------------------------------+---------------+-----------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+------------------+--------------------------+
+//  | 2024-01-15 10:30:00 +0000 UTC | 2024-02-01 00:00:00 +0000 UTC | 2024-01-10 00:00:00 +0000 UTC | false         | Investigate 500 error | c1              | b1              | l1              | u1, u2          | bug, urgent     | Fix login bug   | 1                | https://trello.com/c/abc |
+//  | 2024-01-14 09:00:00 +0000 UTC | null                          | null                          | false         | Write README          | c2              | b1              | l2              | null            | null            | Update docs     | 2                | https://trello.com/c/def |
+//  +-------------------------------+-------------------------------+-------------------------------+---------------+-----------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+------------------+--------------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "dateLastActivity",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "due",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "start",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "closed",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "desc",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "idBoard",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "idList",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "idMembers",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "labels",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pos",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "shortUrl",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705314600000,
+            1705222800000
+          ],
+          [
+            1706745600000,
+            null
+          ],
+          [
+            1704844800000,
+            null
+          ],
+          [
+            false,
+            false
+          ],
+          [
+            "Investigate 500 error",
+            "Write README"
+          ],
+          [
+            "c1",
+            "c2"
+          ],
+          [
+            "b1",
+            "b1"
+          ],
+          [
+            "l1",
+            "l2"
+          ],
+          [
+            "u1, u2",
+            null
+          ],
+          [
+            "bug, urgent",
+            null
+          ],
+          [
+            "Fix login bug",
+            "Update docs"
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            "https://trello.com/c/abc",
+            "https://trello.com/c/def"
+          ]
+        ]
+      }
+    }
+  ]
+}

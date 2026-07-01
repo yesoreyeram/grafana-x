@@ -1,0 +1,84 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 3 Fields by 2 Rows
+//  +-------------------------------+-------------------------------+------------------+
+//  | Name: Day                     | Name: Moment                  | Name: id         |
+//  | Labels:                       | Labels:                       | Labels:          |
+//  | Type: []*time.Time            | Type: []*time.Time            | Type: []*float64 |
+//  +-------------------------------+-------------------------------+------------------+
+//  | 2024-01-15 00:00:00 +0000 UTC | 2024-01-15 09:24:05 +0000 UTC | 1                |
+//  | 2024-01-16 00:00:00 +0000 UTC | null                          | 2                |
+//  +-------------------------------+-------------------------------+------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "Day",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "Moment",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705276800000,
+            1705363200000
+          ],
+          [
+            1705310645000,
+            null
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    }
+  ]
+}

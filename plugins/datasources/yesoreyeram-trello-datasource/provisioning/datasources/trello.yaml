@@ -1,0 +1,11 @@
+apiVersion: 1
+
+datasources:
+  - name: Trello
+    type: yesoreyeram-trello-datasource
+    access: proxy
+    isDefault: false
+    jsonData: {}
+    secureJsonData:
+      apiKey: "${TRELLO_API_KEY}"
+      apiToken: "${TRELLO_API_TOKEN}"

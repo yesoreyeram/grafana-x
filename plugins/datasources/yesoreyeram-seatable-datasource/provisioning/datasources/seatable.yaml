@@ -1,0 +1,16 @@
+apiVersion: 1
+
+# Auto-provisioned SeaTable datasource for the local docker-compose stack.
+# Credentials come from environment variables (see docker-compose.yaml header).
+# If SEATABLE_API_TOKEN is empty, configure the datasource in the UI instead.
+datasources:
+  - name: SeaTable
+    type: yesoreyeram-seatable-datasource
+    access: proxy
+    isDefault: true
+    jsonData:
+      serverURL: $SEATABLE_SERVER_URL
+    secureJsonData:
+      # SeaTable Base API Token (exchanged server-side for a Base-Token).
+      apiToken: $SEATABLE_API_TOKEN
+    editable: true

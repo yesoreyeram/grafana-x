@@ -1,0 +1,96 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 4 Fields by 2 Rows
+//  +-------------------------------+-----------------+-----------------+---------------------+
+//  | Name: createdAt               | Name: id        | Name: title     | Name: versionNumber |
+//  | Labels:                       | Labels:         | Labels:         | Labels:             |
+//  | Type: []*time.Time            | Type: []*string | Type: []*string | Type: []*float64    |
+//  +-------------------------------+-----------------+-----------------+---------------------+
+//  | 2024-01-15 00:00:00 +0000 UTC | 1               | Alice           | 2                   |
+//  | 2024-02-20 00:00:00 +0000 UTC | 2               | Bob             | 5                   |
+//  +-------------------------------+-----------------+-----------------+---------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "createdAt",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "versionNumber",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705276800000,
+            1708387200000
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "Alice",
+            "Bob"
+          ],
+          [
+            2,
+            5
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 5 Fields by 2 Rows
+//  +-------------------------------+---------------+------------------+------------------+-----------------+
+//  | Name: signed_up               | Name: active  | Name: id         | Name: mrr        | Name: name      |
+//  | Labels:                       | Labels:       | Labels:          | Labels:          | Labels:         |
+//  | Type: []*time.Time            | Type: []*bool | Type: []*float64 | Type: []*float64 | Type: []*string |
+//  +-------------------------------+---------------+------------------+------------------+-----------------+
+//  | 2024-01-15 00:00:00 +0000 UTC | true          | 1                | 49.5             | Alice           |
+//  | 2024-02-20 00:00:00 +0000 UTC | false         | 2                | 0                | Bob             |
+//  +-------------------------------+---------------+------------------+------------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "signed_up",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "active",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "mrr",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705276800000,
+            1708387200000
+          ],
+          [
+            true,
+            false
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            49.5,
+            0
+          ],
+          [
+            "Alice",
+            "Bob"
+          ]
+        ]
+      }
+    }
+  ]
+}

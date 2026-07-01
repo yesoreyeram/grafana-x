@@ -1,0 +1,17 @@
+apiVersion: 1
+
+datasources:
+  - name: Teable
+    type: yesoreyeram-teable-datasource
+    access: proxy
+    jsonData:
+      # Teable Server URL. The docker-compose env defaults TEABLE_API_URL to
+      # https://app.teable.io (cloud); set it to your self-hosted instance URL.
+      baseURL: ${TEABLE_API_URL}
+      # Optional default base ID. When set, the query editor can pre-fill
+      # this base ID.
+      # defaultBaseId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    secureJsonData:
+      # Teable API token. Generate one from your Teable account settings.
+      apiToken: ${TEABLE_API_TOKEN}
+    editable: true

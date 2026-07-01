@@ -1,0 +1,96 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 4 Fields by 2 Rows
+//  +------------------+-----------------+-----------------+-----------------+
+//  | Name: id         | Name: mixed     | Name: notes     | Name: title     |
+//  | Labels:          | Labels:         | Labels:         | Labels:         |
+//  | Type: []*float64 | Type: []*string | Type: []*string | Type: []*string |
+//  +------------------+-----------------+-----------------+-----------------+
+//  | 1                | 1               | null            | a               |
+//  | 2                | text            | null            | b               |
+//  +------------------+-----------------+-----------------+-----------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "id",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "mixed",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "notes",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1,
+            2
+          ],
+          [
+            "1",
+            "text"
+          ],
+          [
+            null,
+            null
+          ],
+          [
+            "a",
+            "b"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+# Grafana datasource provisioning for Confluence.
+#
+# Usage (Basic auth — Atlassian Cloud):
+#   export CONFLUENCE_URL=https://your-site.atlassian.net/wiki
+#   export CONFLUENCE_AUTH_MODE=basic
+#   export CONFLUENCE_EMAIL=you@example.com
+#   export CONFLUENCE_API_TOKEN=xxxxxxxx
+#   docker compose up
+#
+# Usage (Bearer auth — OAuth2 token or Data Center Personal Access Token):
+#   export CONFLUENCE_URL=https://your-site.atlassian.net/wiki
+#   export CONFLUENCE_AUTH_MODE=bearer
+#   export CONFLUENCE_API_TOKEN=<oauth-or-pat-token>   # stored as bearerToken
+#   docker compose up
+#
+# Create a Cloud API token at:
+#   https://id.atlassian.com/manage-profile/security/api-tokens
+
+apiVersion: 1
+
+datasources:
+  - name: Confluence
+    type: yesoreyeram-confluence-datasource
+    access: proxy
+    jsonData:
+      baseURL: ${CONFLUENCE_URL}
+      authMode: ${CONFLUENCE_AUTH_MODE:-basic}
+      email: ${CONFLUENCE_EMAIL}
+    secureJsonData:
+      # Used when authMode = basic
+      apiToken: ${CONFLUENCE_API_TOKEN}
+      # Used when authMode = bearer
+      bearerToken: ${CONFLUENCE_API_TOKEN}
+    editable: true

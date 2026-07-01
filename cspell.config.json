@@ -94,6 +94,26 @@
         "httptest",
         "datetime",
         "datetimes",
-        "savvycal"
+        "savvycal",
+        "apiurl",
+        "behaviour",
+        "dtable",
+        "dtables",
+        "ferr",
+        "ilike",
+        "imatch",
+        "interp",
+        "materialisation",
+        "millis",
+        "mycompany",
+        "normalised",
+        "nsec",
+        "objs",
+        "seahub",
+        "serialisation",
+        "strs",
+        "toggleable",
+        "unmarshalled",
+        "unparseable"
     ]
 }

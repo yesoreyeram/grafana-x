@@ -1,0 +1,140 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 7 Fields by 3 Rows
+//  +-------------------------------+-------------------------------+-----------------+---------------+------------------+-----------------+------------------+
+//  | Name: _createdTime            | Name: _lastModifiedTime       | Name: _id       | Name: active  | Name: age        | Name: name      | Name: score      |
+//  | Labels:                       | Labels:                       | Labels:         | Labels:       | Labels:          | Labels:         | Labels:          |
+//  | Type: []*time.Time            | Type: []*time.Time            | Type: []*string | Type: []*bool | Type: []*float64 | Type: []*string | Type: []*float64 |
+//  +-------------------------------+-------------------------------+-----------------+---------------+------------------+-----------------+------------------+
+//  | 2024-01-15 10:00:00 +0000 UTC | 2024-01-16 10:00:00 +0000 UTC | rec1            | true          | 30               | Alice           | 95.5             |
+//  | 2024-01-15 11:00:00 +0000 UTC | 2024-01-17 10:00:00 +0000 UTC | rec2            | false         | 25               | Bob             | 87               |
+//  | 2024-01-15 12:00:00 +0000 UTC | 2024-01-18 10:00:00 +0000 UTC | rec3            | true          | 35               | Charlie         | 92.3             |
+//  +-------------------------------+-------------------------------+-----------------+---------------+------------------+-----------------+------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "_createdTime",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "_lastModifiedTime",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "_id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "active",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "age",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "score",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1705312800000,
+            1705316400000,
+            1705320000000
+          ],
+          [
+            1705399200000,
+            1705485600000,
+            1705572000000
+          ],
+          [
+            "rec1",
+            "rec2",
+            "rec3"
+          ],
+          [
+            true,
+            false,
+            true
+          ],
+          [
+            30,
+            25,
+            35
+          ],
+          [
+            "Alice",
+            "Bob",
+            "Charlie"
+          ],
+          [
+            95.5,
+            87,
+            92.3
+          ]
+        ]
+      }
+    }
+  ]
+}

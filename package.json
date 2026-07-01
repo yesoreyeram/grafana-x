@@ -48,6 +48,19 @@
     "typescript": "catalog:",
     "typescript-eslint": "catalog:"
   },
+  "resolutions": {
+    "@opentelemetry/core": "^2.8.0",
+    "dompurify": "^3.4.11",
+    "js-cookie": "^3.0.8",
+    "esbuild": "^0.28.1",
+    "serialize-javascript": "^7.0.5",
+    "undici": "^6.27.0",
+    "uuid": "^11.1.1",
+    "js-yaml": "^4.1.0",
+    "glob": "^11.0.0",
+    "raw-body": "^2.5.2",
+    "node-gyp": "^13.0.0"
+  },
   "engines": {
     "node": ">=24.16.0",
     "yarn": ">=4.16.0"

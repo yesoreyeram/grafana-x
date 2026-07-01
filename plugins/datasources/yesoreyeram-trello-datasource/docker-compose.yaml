@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana-trello
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_PLUGINS_PREINSTALL=
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./dist:/var/lib/grafana/plugins/yesoreyeram-trello-datasource
+      - ./provisioning/datasources:/etc/grafana/provisioning/datasources
+    env_file:
+      - .env

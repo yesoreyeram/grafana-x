@@ -1,0 +1,348 @@
+//  🌟 This was machine generated.  Do not edit. 🌟
+//  
+//  Frame[0] {
+//      "type": "table",
+//      "typeVersion": [
+//          0,
+//          1
+//      ],
+//      "preferredVisualisationType": "table"
+//  }
+//  Name: A
+//  Dimensions: 25 Fields by 2 Rows
+//  +-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------------+-----------------------+---------------+-------------------+-----------------+-------------------+----------------------+-----------------+-------------------+----------------------+--------------------+------------------+--------------------+------------------+------------------+------------------+-----------------+------------------+------------------+-----------------------+------------------+
+//  | Name: added_at                | Name: deadlineDate            | Name: dueDate                 | Name: updated_at              | Name: added_by_uid | Name: assigned_by_uid | Name: checked | Name: child_order | Name: content   | Name: description | Name: dueIsRecurring | Name: dueString | Name: dueTimezone | Name: durationAmount | Name: durationUnit | Name: id         | Name: is_collapsed | Name: is_deleted | Name: labels     | Name: note_count | Name: parent_id | Name: priority   | Name: project_id | Name: responsible_uid | Name: section_id |
+//  | Labels:                       | Labels:                       | Labels:                       | Labels:                       | Labels:            | Labels:               | Labels:       | Labels:           | Labels:         | Labels:           | Labels:              | Labels:         | Labels:           | Labels:              | Labels:            | Labels:          | Labels:            | Labels:          | Labels:          | Labels:          | Labels:         | Labels:          | Labels:          | Labels:               | Labels:          |
+//  | Type: []*time.Time            | Type: []*time.Time            | Type: []*time.Time            | Type: []*time.Time            | Type: []*string    | Type: []*string       | Type: []*bool | Type: []*float64  | Type: []*string | Type: []*string   | Type: []*bool        | Type: []*string | Type: []*string   | Type: []*float64     | Type: []*string    | Type: []*string  | Type: []*bool      | Type: []*bool    | Type: []*string  | Type: []*float64 | Type: []*string | Type: []*float64 | Type: []*string  | Type: []*string       | Type: []*string  |
+//  +-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------------+-----------------------+---------------+-------------------+-----------------+-------------------+----------------------+-----------------+-------------------+----------------------+--------------------+------------------+--------------------+------------------+------------------+------------------+-----------------+------------------+------------------+-----------------------+------------------+
+//  | 2024-01-02 03:04:05 +0000 UTC | 2024-01-20 00:00:00 +0000 UTC | 2024-01-15 12:00:00 +0000 UTC | 2024-01-03 03:04:05 +0000 UTC | u1                 | u3                    | false         | 1                 | Fix login bug   | Need to fix auth  | false                | Jan 15 12pm     | Europe/Madrid     | 30                   | minute             | 6XGgmFVcrG5RRjVr | false              | false            | ["bug","urgent"] | 2                | null            | 4                | p1               | u2                    | s1               |
+//  | 2024-01-04 03:04:05 +0000 UTC | null                          | null                          | 2024-01-05 03:04:05 +0000 UTC | u1                 | null                  | true          | 2                 | Write docs      |                   | null                 | null            | null              | null                 | null               | 6fFPHV272WWh3gpW | false              | false            | null             | 0                | null            | 1                | p1               | null                  | null             |
+//  +-------------------------------+-------------------------------+-------------------------------+-------------------------------+--------------------+-----------------------+---------------+-------------------+-----------------+-------------------+----------------------+-----------------+-------------------+----------------------+--------------------+------------------+--------------------+------------------+------------------+------------------+-----------------+------------------+------------------+-----------------------+------------------+
+//  
+//  
+//  🌟 This was machine generated.  Do not edit. 🌟
+{
+  "status": 200,
+  "frames": [
+    {
+      "schema": {
+        "name": "A",
+        "refId": "A",
+        "meta": {
+          "type": "table",
+          "typeVersion": [
+            0,
+            1
+          ],
+          "preferredVisualisationType": "table"
+        },
+        "fields": [
+          {
+            "name": "added_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "deadlineDate",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "dueDate",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "updated_at",
+            "type": "time",
+            "typeInfo": {
+              "frame": "time.Time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "added_by_uid",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "assigned_by_uid",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "checked",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "child_order",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "content",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "dueIsRecurring",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "dueString",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "dueTimezone",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "durationAmount",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "durationUnit",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "is_collapsed",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "is_deleted",
+            "type": "boolean",
+            "typeInfo": {
+              "frame": "bool",
+              "nullable": true
+            }
+          },
+          {
+            "name": "labels",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "note_count",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "parent_id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "priority",
+            "type": "number",
+            "typeInfo": {
+              "frame": "float64",
+              "nullable": true
+            }
+          },
+          {
+            "name": "project_id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "responsible_uid",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "section_id",
+            "type": "string",
+            "typeInfo": {
+              "frame": "string",
+              "nullable": true
+            }
+          }
+        ]
+      },
+      "data": {
+        "values": [
+          [
+            1704164645000,
+            1704337445000
+          ],
+          [
+            1705708800000,
+            null
+          ],
+          [
+            1705320000000,
+            null
+          ],
+          [
+            1704251045000,
+            1704423845000
+          ],
+          [
+            "u1",
+            "u1"
+          ],
+          [
+            "u3",
+            null
+          ],
+          [
+            false,
+            true
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            "Fix login bug",
+            "Write docs"
+          ],
+          [
+            "Need to fix auth",
+            ""
+          ],
+          [
+            false,
+            null
+          ],
+          [
+            "Jan 15 12pm",
+            null
+          ],
+          [
+            "Europe/Madrid",
+            null
+          ],
+          [
+            30,
+            null
+          ],
+          [
+            "minute",
+            null
+          ],
+          [
+            "6XGgmFVcrG5RRjVr",
+            "6fFPHV272WWh3gpW"
+          ],
+          [
+            false,
+            false
+          ],
+          [
+            false,
+            false
+          ],
+          [
+            "[\"bug\",\"urgent\"]",
+            null
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            null,
+            null
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            "p1",
+            "p1"
+          ],
+          [
+            "u2",
+            null
+          ],
+          [
+            "s1",
+            null
+          ]
+        ]
+      }
+    }
+  ]
+}
