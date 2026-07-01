@@ -87,6 +87,9 @@ func (d *Datasource) query(ctx context.Context, query backend.DataQuery) backend
 			log.DefaultLogger.Error("shortcut stories query failed", "refID", query.RefID, "error", err)
 			return backend.ErrDataResponse(backend.StatusInternal, "query failed: "+err.Error())
 		}
+		if qm.HideSystemFields {
+			records = dropSystemFields(records)
+		}
 		frame := recordsToFrame(query.RefID, records, effectiveFields(qm.Fields))
 		return backend.DataResponse{Frames: []*data.Frame{frame}}
 	}

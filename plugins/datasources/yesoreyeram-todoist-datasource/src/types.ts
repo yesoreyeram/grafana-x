@@ -24,6 +24,9 @@ export interface TodoistQuery extends DataQuery {
   lang?: string;
   /** Maximum number of records to return (and, for count, tasks to scan). 0 returns all (auto-paginated). */
   limit?: number;
+  /** When true, hide metadata-style system columns (id/created_at/_*, etc.) from the returned frame. */
+  hideSystemFields?: boolean;
+
 }
 
 export const DEFAULT_QUERY: Partial<TodoistQuery> = {

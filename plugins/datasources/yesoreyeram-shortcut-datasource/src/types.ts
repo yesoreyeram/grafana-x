@@ -66,6 +66,9 @@ export interface ShortcutQuery extends DataQuery {
   fields?: string[];
   /** Maximum number of records. 0 returns all (auto-paginated, capped at 1000 by the API). */
   limit?: number;
+  /** When true, hide metadata-style system columns (id/created_at/_*, etc.) from the returned frame. */
+  hideSystemFields?: boolean;
+
 }
 
 export const DEFAULT_QUERY: Partial<ShortcutQuery> = {

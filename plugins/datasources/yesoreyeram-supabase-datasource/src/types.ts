@@ -17,6 +17,9 @@ export interface SupabaseQuery extends DataQuery {
   limit?: number;
   /** Number of rows to skip. */
   offset?: number;
+  /** When true, hide metadata-style system columns (id/created_at/_*, etc.) from the returned frame. */
+  hideSystemFields?: boolean;
+
 }
 
 export const DEFAULT_QUERY: Partial<SupabaseQuery> = {

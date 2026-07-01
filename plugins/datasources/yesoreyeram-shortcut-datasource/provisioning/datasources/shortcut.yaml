@@ -1,0 +1,10 @@
+apiVersion: 1
+
+datasources:
+  - name: Shortcut
+    type: yesoreyeram-shortcut-datasource
+    access: proxy
+    isDefault: false
+    jsonData: {}
+    secureJsonData:
+      apiToken: "${SHORTCUT_API_TOKEN}"

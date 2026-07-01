@@ -97,6 +97,9 @@ func (s Settings) hasCredential() bool {
 type QueryModel struct {
 	// QueryType: "pages" (default) | "blogposts" | "search" | "count".
 	QueryType string `json:"queryType"`
+	// HideSystemFields drops metadata-style columns (see system_fields.go) from
+	// the returned frame when true. Defaults to false.
+	HideSystemFields bool `json:"hideSystemFields"`
 	// SpaceID scopes pages/blogposts (and the default count) to a space. It is
 	// the numeric space id returned by the spaces endpoint.
 	SpaceID string `json:"spaceId"`

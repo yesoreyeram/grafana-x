@@ -91,6 +91,9 @@ func LoadSettings(s backend.DataSourceInstanceSettings) (Settings, error) {
 type QueryModel struct {
 	// QueryType selects what to return: "stories" (default) or "count".
 	QueryType string `json:"queryType"`
+	// HideSystemFields drops metadata-style columns (see system_fields.go) from
+	// the returned frame when true. Defaults to false.
+	HideSystemFields bool `json:"hideSystemFields"`
 
 	// Query is a raw Shortcut search query (operators + free text). It is
 	// combined (AND) with the structured filters below.

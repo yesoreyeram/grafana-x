@@ -354,7 +354,7 @@ func (c *Client) ListRows(ctx context.Context, q QueryModel) ([]map[string]any, 
 		if err != nil {
 			return nil, err
 		}
-		out = append(out, flattenRows(items, keep)...)
+		out = append(out, flattenRows(items, keep, q.HideSystemFields)...)
 
 		if next == "" || len(items) == 0 || len(out) >= hardLimit {
 			break
@@ -414,34 +414,37 @@ func (c *Client) fetchRowPage(ctx context.Context, docID string, q QueryModel, s
 
 // flattenRows converts Coda rows into flat records keyed by column name. The
 // row's metadata (id, name, index, createdAt, updatedAt, href, browserLink) is
-// preserved as synthetic columns. When keep is non-empty, only those data
-// columns are retained (metadata columns are always kept) — Coda's rows endpoint
-// has no column-projection parameter, so projection is done here.
-func flattenRows(items []rowItem, keep map[string]bool) []map[string]any {
+// preserved as synthetic columns unless hideSystem is true. When keep is
+// non-empty, only those data columns are retained (system columns are still
+// gated solely by hideSystem) — Coda's rows endpoint has no column-projection
+// parameter, so projection is done here.
+func flattenRows(items []rowItem, keep map[string]bool, hideSystem bool) []map[string]any {
 	hasProjection := len(keep) > 0
 	out := make([]map[string]any, 0, len(items))
 	for _, r := range items {
 		row := make(map[string]any, len(r.Values)+7)
-		if r.ID != "" {
-			row["id"] = r.ID
-		}
-		if r.Name != "" {
-			row["name"] = r.Name
-		}
-		if r.Index != nil {
-			row["index"] = *r.Index
-		}
-		if r.CreatedAt != "" {
-			row["createdAt"] = r.CreatedAt
-		}
-		if r.UpdatedAt != "" {
-			row["updatedAt"] = r.UpdatedAt
-		}
-		if r.Href != "" {
-			row["href"] = r.Href
-		}
-		if r.BrowserLink != "" {
-			row["browserLink"] = r.BrowserLink
+		if !hideSystem {
+			if r.ID != "" {
+				row["id"] = r.ID
+			}
+			if r.Name != "" {
+				row["name"] = r.Name
+			}
+			if r.Index != nil {
+				row["index"] = *r.Index
+			}
+			if r.CreatedAt != "" {
+				row["createdAt"] = r.CreatedAt
+			}
+			if r.UpdatedAt != "" {
+				row["updatedAt"] = r.UpdatedAt
+			}
+			if r.Href != "" {
+				row["href"] = r.Href
+			}
+			if r.BrowserLink != "" {
+				row["browserLink"] = r.BrowserLink
+			}
 		}
 		for col, val := range r.Values {
 			if hasProjection && !keep[col] {

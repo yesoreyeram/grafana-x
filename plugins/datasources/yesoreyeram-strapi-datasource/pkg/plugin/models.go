@@ -53,16 +53,19 @@ func LoadSettings(s backend.DataSourceInstanceSettings) (Settings, error) {
 }
 
 type QueryModel struct {
-	QueryType     string `json:"queryType"`
-	ContentTypeID string `json:"contentTypeId"`
-	FilterTree    string `json:"filterTree"`
-	filter        *FilterNode
-	Fields        string `json:"fields"`
-	Sort          string `json:"sort"`
-	sortItems     []SortItem
-	Page          int    `json:"page"`
-	PageSize      int    `json:"pageSize"`
-	Populate      string `json:"populate"`
+	QueryType string `json:"queryType"`
+	// HideSystemFields drops metadata-style columns (see system_fields.go) from
+	// the returned frame when true. Defaults to false.
+	HideSystemFields bool   `json:"hideSystemFields"`
+	ContentTypeID    string `json:"contentTypeId"`
+	FilterTree       string `json:"filterTree"`
+	filter           *FilterNode
+	Fields           string `json:"fields"`
+	Sort             string `json:"sort"`
+	sortItems        []SortItem
+	Page             int    `json:"page"`
+	PageSize         int    `json:"pageSize"`
+	Populate         string `json:"populate"`
 }
 
 func LoadQuery(raw json.RawMessage) (QueryModel, error) {

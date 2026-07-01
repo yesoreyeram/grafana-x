@@ -435,6 +435,22 @@ export function QueryEditor({ query, onChange, onRunQuery, datasource }: Props) 
           </InlineField>
         </InlineFieldRow>
       )}
+      <InlineFieldRow>
+        <InlineField
+          label="Hide system fields"
+          labelWidth={LABEL_WIDTH}
+          tooltip="Hide metadata-style columns (id, created_at/updated_at, underscore-prefixed names, etc.) from the returned frame."
+        >
+          <InlineSwitch
+            value={!!query.hideSystemFields}
+            onChange={(e) => {
+              update({ hideSystemFields: e.currentTarget.checked });
+              onRunQuery();
+            }}
+          />
+        </InlineField>
+      </InlineFieldRow>
+
     </div>
   );
 }

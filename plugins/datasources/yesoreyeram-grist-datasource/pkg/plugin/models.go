@@ -58,6 +58,9 @@ type QueryModel struct {
 	// QueryType: "records" (default) lists rows; "count" returns the number of
 	// matching rows via SQL COUNT(*); "sql" runs a raw read-only SELECT.
 	QueryType string `json:"queryType"`
+	// HideSystemFields drops metadata-style columns (see system_fields.go) from
+	// the returned frame when true. Defaults to false.
+	HideSystemFields bool `json:"hideSystemFields"`
 	// DocID is the Grist document id. Overrides the configured default doc id.
 	DocID string `json:"docId"`
 	// TableID is the Grist table id/name, required for record/count queries.

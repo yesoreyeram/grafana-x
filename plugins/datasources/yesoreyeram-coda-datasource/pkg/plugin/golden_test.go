@@ -67,7 +67,7 @@ func TestGolden_Frames(t *testing.T) {
 				Values:      map[string]any{"Name": "Bob", "Tags": nil, "Score": float64(87)},
 			},
 		}
-		frame := rowsToFrame("A", flattenRows(items, nil))
+		frame := rowsToFrame("A", flattenRows(items, nil, false))
 		experimental.CheckGoldenJSONFrame(t, goldenDir, "rows_flattened", frame, updateGolden)
 	})
 

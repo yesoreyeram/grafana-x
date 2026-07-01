@@ -23,6 +23,9 @@ export interface SeaTableQuery extends DataQuery {
   limit?: number;
   /** Raw SeaTable SQL statement, used when queryType is "sql". */
   sql?: string;
+  /** When true, hide metadata-style system columns (id/created_at/_*, etc.) from the returned frame. */
+  hideSystemFields?: boolean;
+
 }
 
 export const DEFAULT_QUERY: Partial<SeaTableQuery> = {

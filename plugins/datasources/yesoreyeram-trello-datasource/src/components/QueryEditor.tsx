@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
-import { InlineField, InlineFieldRow, Input, Select, MultiSelect, RadioButtonGroup } from '@grafana/ui';
+import { InlineField, InlineFieldRow, InlineSwitch, Input, MultiSelect, RadioButtonGroup, Select } from '@grafana/ui';
 import { QueryEditorProps, SelectableValue } from '@grafana/data';
 
 import { DataSource } from '../datasource';
@@ -20,7 +20,7 @@ import {
 
 type Props = QueryEditorProps<DataSource, TrelloQuery, TrelloDataSourceOptions>;
 
-const LABEL_WIDTH = 14;
+const LABEL_WIDTH = 20;
 const INPUT_WIDTH = 40;
 const DATE_LABEL_WIDTH = 8;
 const DATE_INPUT_WIDTH = 18;
@@ -312,6 +312,22 @@ export function QueryEditor({ query, onChange, onRunQuery, datasource }: Props) 
           )}
         </>
       )}
+      <InlineFieldRow>
+        <InlineField
+          label="Hide system fields"
+          labelWidth={LABEL_WIDTH}
+          tooltip="Hide metadata-style columns (id, created_at/updated_at, underscore-prefixed names, etc.) from the returned frame."
+        >
+          <InlineSwitch
+            value={!!query.hideSystemFields}
+            onChange={(e) => {
+              update({ hideSystemFields: e.currentTarget.checked });
+              onRunQuery();
+            }}
+          />
+        </InlineField>
+      </InlineFieldRow>
+
     </div>
   );
 }

@@ -61,6 +61,9 @@ type QueryModel struct {
 	// QueryType: "records" (default) lists rows; "count" returns the number of
 	// matching rows; "sql" runs a raw SeaTable SQL statement.
 	QueryType string `json:"queryType"`
+	// HideSystemFields drops metadata-style columns (see system_fields.go) from
+	// the returned frame when true. Defaults to false.
+	HideSystemFields bool `json:"hideSystemFields"`
 	// TableName is the SeaTable table name, required for record/count queries.
 	TableName string `json:"tableName"`
 	// ViewName is an optional view name. It is only honoured for plain record

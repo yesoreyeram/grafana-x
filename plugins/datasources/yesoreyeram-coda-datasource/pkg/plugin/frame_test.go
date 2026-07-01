@@ -112,7 +112,7 @@ func TestFlattenRows_MetadataAndProjection(t *testing.T) {
 	}
 
 	// No projection: all data columns + all metadata.
-	all := flattenRows(items, nil)
+	all := flattenRows(items, nil, false)
 	require.Len(t, all, 1)
 	require.Equal(t, "r1", all[0]["id"])
 	require.Equal(t, "Row 1", all[0]["name"])
@@ -123,12 +123,36 @@ func TestFlattenRows_MetadataAndProjection(t *testing.T) {
 	require.EqualValues(t, 30, all[0]["Age"])
 	require.Equal(t, "x", all[0]["Secret"])
 
-	// Projection keeps only requested data columns; metadata always kept.
-	projected := flattenRows(items, map[string]bool{"Name": true, "Age": true})
+	// Projection keeps only requested data columns; metadata kept when
+	// hideSystem is false.
+	projected := flattenRows(items, map[string]bool{"Name": true, "Age": true}, false)
 	_, hasSecret := projected[0]["Secret"]
 	require.False(t, hasSecret)
 	require.Equal(t, "Alice", projected[0]["Name"])
 	require.Equal(t, "r1", projected[0]["id"])
+}
+
+func TestFlattenRows_HideSystemFields(t *testing.T) {
+	idx := float64(7)
+	items := []rowItem{
+		{
+			ID: "r1", Name: "Row 1", Index: &idx, Href: "https://h/r1",
+			BrowserLink: "https://b/r1", CreatedAt: "2024-01-01T00:00:00.000Z",
+			UpdatedAt: "2024-02-01T00:00:00.000Z",
+			Values:    map[string]any{"Name": "Alice", "Age": float64(30)},
+		},
+	}
+
+	rows := flattenRows(items, nil, true)
+	require.Len(t, rows, 1)
+	// All seven synthetic columns dropped.
+	for _, k := range []string{"id", "name", "index", "createdAt", "updatedAt", "href", "browserLink"} {
+		_, ok := rows[0][k]
+		require.Falsef(t, ok, "system column %q should be hidden", k)
+	}
+	// User data columns are still present.
+	require.Equal(t, "Alice", rows[0]["Name"])
+	require.EqualValues(t, 30, rows[0]["Age"])
 }
 
 func TestInferColumnType(t *testing.T) {

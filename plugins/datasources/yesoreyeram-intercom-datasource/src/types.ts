@@ -39,6 +39,9 @@ export interface IntercomQuery extends DataQuery {
   sort?: string;
   /** Maximum records to return. 0 returns all (auto-paginated up to a safety cap). */
   limit?: number;
+  /** When true, hide metadata-style system columns (id/created_at/_*, etc.) from the returned frame. */
+  hideSystemFields?: boolean;
+
 }
 
 export const DEFAULT_QUERY: Partial<IntercomQuery> = {

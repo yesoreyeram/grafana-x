@@ -34,6 +34,9 @@ export interface PipedriveQuery extends DataQuery {
   sortDir?: 'ASC' | 'DESC';
   limit?: number;
   start?: number;
+  /** When true, hide metadata-style system columns (id/created_at/_*, etc.) from the returned frame. */
+  hideSystemFields?: boolean;
+
 }
 
 export const DEFAULT_QUERY: Partial<PipedriveQuery> = {

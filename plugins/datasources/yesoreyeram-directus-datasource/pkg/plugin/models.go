@@ -33,16 +33,19 @@ func LoadSettings(s backend.DataSourceInstanceSettings) (Settings, error) {
 }
 
 type QueryModel struct {
-	QueryType    string `json:"queryType"`
-	CollectionID string `json:"collectionId"`
-	FilterTree   string `json:"filterTree"`
-	filter       *FilterNode
-	Fields       string `json:"fields"`
-	Sort         string `json:"sort"`
-	sortItems    []SortItem
-	Limit        int64  `json:"limit"`
-	Offset       int64  `json:"offset"`
-	Search       string `json:"search"`
+	QueryType string `json:"queryType"`
+	// HideSystemFields drops metadata-style columns (see system_fields.go) from
+	// the returned frame when true. Defaults to false.
+	HideSystemFields bool   `json:"hideSystemFields"`
+	CollectionID     string `json:"collectionId"`
+	FilterTree       string `json:"filterTree"`
+	filter           *FilterNode
+	Fields           string `json:"fields"`
+	Sort             string `json:"sort"`
+	sortItems        []SortItem
+	Limit            int64  `json:"limit"`
+	Offset           int64  `json:"offset"`
+	Search           string `json:"search"`
 }
 
 func LoadQuery(raw json.RawMessage) (QueryModel, error) {

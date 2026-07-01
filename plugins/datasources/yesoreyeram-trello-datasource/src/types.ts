@@ -39,6 +39,9 @@ export interface TrelloQuery extends DataQuery {
   fields?: string[];
   /** Maximum number of cards to return. 0 returns all (auto-paginated). */
   limit?: number;
+  /** When true, hide metadata-style system columns (id/created_at/_*, etc.) from the returned frame. */
+  hideSystemFields?: boolean;
+
 }
 
 export const DEFAULT_QUERY: Partial<TrelloQuery> = {

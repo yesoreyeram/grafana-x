@@ -92,6 +92,9 @@ func (d *Datasource) queryEntity(ctx context.Context, refID string, qm QueryMode
 		return backend.ErrDataResponse(backend.StatusInternal, "query failed: "+err.Error())
 	}
 	records = applyFilters(records, qm.FilterGroups)
+	if qm.HideSystemFields {
+		records = dropSystemFields(records)
+	}
 	frame := recordsToFrame(refID, records, qm.Fields)
 	return backend.DataResponse{Frames: []*data.Frame{frame}}
 }

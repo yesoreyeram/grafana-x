@@ -67,6 +67,10 @@ type QueryModel struct {
 	// Coda's rows endpoint has no column-projection parameter, so this is
 	// applied client-side after fetching. Empty returns every column.
 	Columns string `json:"columns"`
+	// HideSystemFields drops the synthetic row-metadata columns (id, name,
+	// index, createdAt, updatedAt, href, browserLink) from the returned frame
+	// when true. Defaults to false for backwards compatibility.
+	HideSystemFields bool `json:"hideSystemFields"`
 	// Query is an optional raw Coda `query` parameter, of the form
 	// `<columnIdOrName>:<value>`. When set it takes precedence over the
 	// structured FilterColumn/FilterValue.

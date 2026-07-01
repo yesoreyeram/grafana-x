@@ -59,6 +59,9 @@ func LoadSettings(s backend.DataSourceInstanceSettings) (Settings, error) {
 type QueryModel struct {
 	// QueryType selects what to fetch: "cards" (default) or "count".
 	QueryType string `json:"queryType"`
+	// HideSystemFields drops metadata-style columns (see system_fields.go) from
+	// the returned frame when true. Defaults to false.
+	HideSystemFields bool `json:"hideSystemFields"`
 
 	// --- Scope -------------------------------------------------------------
 

@@ -73,7 +73,7 @@ func TestGolden_Frames(t *testing.T) {
 		if err := json.Unmarshal([]byte(raw), &recs); err != nil {
 			t.Fatal(err)
 		}
-		frame := recordsToFrame("A", flattenRecords(recs, []string{"name", "score", "is_vip", "amount", "stage", "company"}))
+		frame := recordsToFrame("A", flattenRecords(recs, []string{"name", "score", "is_vip", "amount", "stage", "company"}, false))
 		experimental.CheckGoldenJSONFrame(t, goldenDir, "records_flattened_values", frame, updateGolden)
 	})
 

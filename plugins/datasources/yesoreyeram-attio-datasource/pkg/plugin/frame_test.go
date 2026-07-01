@@ -171,7 +171,7 @@ func TestFlattenRecords_ValueTypes(t *testing.T) {
 			"primary_domain":[{"attribute_type":"domain","domain":"attio.com","root_domain":"attio.com"}]
 		}
 	}]`
-	records := flattenRecords(decodeRecords(t, raw), nil)
+	records := flattenRecords(decodeRecords(t, raw), nil, false)
 	require.Len(t, records, 1)
 	row := records[0]
 
@@ -199,20 +199,20 @@ func TestFlattenRecords_SelectStatusAsBareUUID(t *testing.T) {
 			"category":[{"attribute_type":"select","option":"08c2c59a-c18e-40c6-8dc4-95415313b2ea"}]
 		}
 	}]`
-	records := flattenRecords(decodeRecords(t, raw), nil)
+	records := flattenRecords(decodeRecords(t, raw), nil, false)
 	require.Equal(t, "11f07f01-c10f-4e05-a522-33e050bc52ee", records[0]["stage"])
 	require.Equal(t, "08c2c59a-c18e-40c6-8dc4-95415313b2ea", records[0]["category"])
 }
 
 func TestFlattenRecords_EmptyValueArrayIsNil(t *testing.T) {
 	raw := `[{"id":{"record_id":"r1"},"values":{"notes":[]}}]`
-	records := flattenRecords(decodeRecords(t, raw), nil)
+	records := flattenRecords(decodeRecords(t, raw), nil, false)
 	require.Nil(t, records[0]["notes"])
 }
 
 func TestFlattenRecords_TakesFirstActiveValue(t *testing.T) {
 	raw := `[{"id":{"record_id":"r1"},"values":{"score":[{"attribute_type":"number","value":10},{"attribute_type":"number","value":99}]}}]`
-	records := flattenRecords(decodeRecords(t, raw), nil)
+	records := flattenRecords(decodeRecords(t, raw), nil, false)
 	require.EqualValues(t, 10, records[0]["score"])
 }
 
@@ -224,7 +224,7 @@ func TestFlattenRecords_FieldProjection(t *testing.T) {
 			"score":[{"attribute_type":"number","value":1}]
 		}
 	}]`
-	records := flattenRecords(decodeRecords(t, raw), []string{"name"})
+	records := flattenRecords(decodeRecords(t, raw), []string{"name"}, false)
 	require.Equal(t, "Ada", records[0]["name"])
 	_, hasScore := records[0]["score"]
 	require.False(t, hasScore)
@@ -234,8 +234,30 @@ func TestFlattenRecords_FieldProjection(t *testing.T) {
 
 func TestFlattenRecords_UnknownTypeSerialisedToJSON(t *testing.T) {
 	raw := `[{"id":{"record_id":"r1"},"values":{"hq":[{"attribute_type":"location","locality":"Cupertino","region":"CA"}]}}]`
-	records := flattenRecords(decodeRecords(t, raw), nil)
+	records := flattenRecords(decodeRecords(t, raw), nil, false)
 	s, ok := records[0]["hq"].(string)
 	require.True(t, ok)
 	require.Contains(t, s, "Cupertino")
+}
+
+func TestFlattenRecords_HideSystemFields(t *testing.T) {
+	raw := `[{
+		"id":{"record_id":"r1"},
+		"created_at":"2024-01-02T03:04:05Z",
+		"values":{"name":[{"attribute_type":"text","value":"Ada"}]}
+	}]`
+
+	// Default: system columns are emitted.
+	withSystem := flattenRecords(decodeRecords(t, raw), nil, false)
+	require.Equal(t, "r1", withSystem[0]["_record_id"])
+	require.Equal(t, "2024-01-02T03:04:05Z", withSystem[0]["_created_at"])
+	require.Equal(t, "Ada", withSystem[0]["name"])
+
+	// hideSystem=true drops both synthetic columns; user attributes remain.
+	withoutSystem := flattenRecords(decodeRecords(t, raw), nil, true)
+	_, hasID := withoutSystem[0]["_record_id"]
+	_, hasCreated := withoutSystem[0]["_created_at"]
+	require.False(t, hasID, "_record_id should be hidden")
+	require.False(t, hasCreated, "_created_at should be hidden")
+	require.Equal(t, "Ada", withoutSystem[0]["name"])
 }

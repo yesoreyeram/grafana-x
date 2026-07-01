@@ -11,6 +11,8 @@ export interface AttioQuery extends DataQuery {
   filterTree?: string;
   /** Comma-separated list of attribute slugs to include. Empty returns all. */
   fields?: string;
+  /** When true, hide synthetic system columns (_record_id, _created_at) from the returned frame. */
+  hideSystemFields?: boolean;
   /** JSON-serialized structured sort items. */
   sort?: string;
   /** Maximum number of records to return. 0 returns all (auto-paginated). */

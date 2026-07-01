@@ -44,15 +44,18 @@ func LoadSettings(s backend.DataSourceInstanceSettings) (Settings, error) {
 
 // QueryModel represents the per-query payload sent from the QueryEditor.
 type QueryModel struct {
-	QueryType  string `json:"queryType"`
-	TableID    string `json:"tableId"`
-	Select     string `json:"select"`
-	FilterTree string `json:"filterTree"`
-	filter     *FilterNode
-	Sort       string `json:"sort"`
-	sortItems  []SortItem
-	Limit      int `json:"limit"`
-	Offset     int `json:"offset"`
+	QueryType string `json:"queryType"`
+	// HideSystemFields drops metadata-style columns (see system_fields.go) from
+	// the returned frame when true. Defaults to false.
+	HideSystemFields bool   `json:"hideSystemFields"`
+	TableID          string `json:"tableId"`
+	Select           string `json:"select"`
+	FilterTree       string `json:"filterTree"`
+	filter           *FilterNode
+	Sort             string `json:"sort"`
+	sortItems        []SortItem
+	Limit            int `json:"limit"`
+	Offset           int `json:"offset"`
 }
 
 // LoadQuery parses the raw query JSON into a QueryModel.

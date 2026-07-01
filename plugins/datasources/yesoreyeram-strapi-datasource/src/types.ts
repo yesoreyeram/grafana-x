@@ -19,6 +19,9 @@ export interface StrapiQuery extends DataQuery {
   pageSize?: number;
   /** Relations to populate (comma-separated). */
   populate?: string;
+  /** When true, hide metadata-style system columns (id/created_at/_*, etc.) from the returned frame. */
+  hideSystemFields?: boolean;
+
 }
 
 export const DEFAULT_QUERY: Partial<StrapiQuery> = {

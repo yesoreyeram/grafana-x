@@ -17,6 +17,9 @@ export interface ConfluenceQuery extends DataQuery {
   cursor?: string;
   /** Max records to return. 0 = all (auto-paginated). */
   limit?: number;
+  /** When true, hide metadata-style system columns (id/created_at/_*, etc.) from the returned frame. */
+  hideSystemFields?: boolean;
+
 }
 
 export const DEFAULT_QUERY: Partial<ConfluenceQuery> = {

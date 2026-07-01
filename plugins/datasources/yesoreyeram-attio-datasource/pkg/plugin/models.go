@@ -66,6 +66,10 @@ type QueryModel struct {
 	// Fields is an optional comma separated list of attribute slugs to include.
 	// Empty returns every attribute.
 	Fields string `json:"fields"`
+	// HideSystemFields drops the synthetic identity columns (_record_id,
+	// _created_at) from the returned frame when true. Defaults to false so the
+	// columns are emitted for backwards compatibility.
+	HideSystemFields bool `json:"hideSystemFields"`
 	// Sort is a JSON-serialized array of structured sort items.
 	Sort string `json:"sort"`
 	// sortItems is the parsed Sort (empty when absent/invalid).

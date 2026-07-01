@@ -17,6 +17,8 @@ export interface CodaQuery extends DataQuery {
   tableId?: string;
   /** Comma-separated list of column names to include. Projection is applied server-side after fetch. */
   columns?: string;
+  /** When true, hide synthetic system columns (id, name, index, createdAt, updatedAt, href, browserLink). */
+  hideSystemFields?: boolean;
   /** Single-column equality filter: the column name (or id). */
   filterColumn?: string;
   /** Single-column equality filter: the value. */

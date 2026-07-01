@@ -23,6 +23,9 @@ export interface GristQuery extends DataQuery {
   limit?: number;
   /** Raw read-only Grist SQL SELECT statement (queryType = 'sql'). */
   sql?: string;
+  /** When true, hide metadata-style system columns (id/created_at/_*, etc.) from the returned frame. */
+  hideSystemFields?: boolean;
+
 }
 
 export const DEFAULT_QUERY: Partial<GristQuery> = {

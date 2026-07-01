@@ -14,7 +14,7 @@ import {
 
 type Props = QueryEditorProps<DataSource, CodaQuery, CodaDataSourceOptions>;
 
-const LABEL_WIDTH = 16;
+const LABEL_WIDTH = 20;
 
 const QUERY_TYPE_OPTIONS: Array<SelectableValue<CodaQueryType>> = [
   { label: 'Rows', value: 'rows', description: 'Return matching rows' },
@@ -35,7 +35,18 @@ const VALUE_FORMAT_OPTIONS: Array<SelectableValue<CodaValueFormat>> = [
 ];
 
 export function QueryEditor({ query, onChange, onRunQuery, datasource }: Props) {
-  const { tableId, columns, filterColumn, filterValue, query: rawQuery, sortBy, valueFormat, visibleOnly, limit } = query;
+  const {
+    tableId,
+    columns,
+    filterColumn,
+    filterValue,
+    query: rawQuery,
+    sortBy,
+    valueFormat,
+    visibleOnly,
+    limit,
+    hideSystemFields,
+  } = query;
   const queryType = query.queryType ?? 'rows';
   const isCount = queryType === 'count';
   const configuredDocId = datasource.docId;
@@ -276,6 +287,24 @@ export function QueryEditor({ query, onChange, onRunQuery, datasource }: Props) 
           />
         </InlineField>
       </InlineFieldRow>
+
+      {!isCount && (
+        <div className="gf-form">
+          <InlineField
+            label="Hide system fields"
+            labelWidth={LABEL_WIDTH}
+            tooltip="Hide synthetic row-metadata columns (id, name, index, createdAt, updatedAt, href, browserLink) from the returned frame."
+          >
+            <InlineSwitch
+              value={!!hideSystemFields}
+              onChange={(e) => {
+                update({ hideSystemFields: e.currentTarget.checked });
+                onRunQuery();
+              }}
+            />
+          </InlineField>
+        </div>
+      )}
 
       {!isCount && (
         <div className="gf-form">

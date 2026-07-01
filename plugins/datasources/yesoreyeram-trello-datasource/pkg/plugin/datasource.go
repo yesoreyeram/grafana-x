@@ -92,6 +92,9 @@ func (d *Datasource) query(ctx context.Context, query backend.DataQuery) backend
 			log.DefaultLogger.Error("trello cards query failed", "refID", query.RefID, "error", err)
 			return backend.ErrDataResponse(backend.StatusInternal, "query failed: "+err.Error())
 		}
+		if qm.HideSystemFields {
+			cards = dropSystemFields(cards)
+		}
 		frame := cardsToFrame(query.RefID, cards)
 		return backend.DataResponse{Frames: []*data.Frame{frame}}
 	case queryTypeCount:

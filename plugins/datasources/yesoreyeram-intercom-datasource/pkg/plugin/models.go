@@ -97,6 +97,9 @@ type QueryModel struct {
 	// QueryType selects the entity to fetch: conversations, contacts, tickets,
 	// articles, companies, admins, teams, tags, or count.
 	QueryType string `json:"queryType"`
+	// HideSystemFields drops metadata-style columns (see system_fields.go) from
+	// the returned frame when true. Defaults to false.
+	HideSystemFields bool `json:"hideSystemFields"`
 
 	// CountOf is the entity to count when QueryType == "count". Defaults to
 	// conversations.

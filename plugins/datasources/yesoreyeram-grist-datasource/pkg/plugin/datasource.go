@@ -78,6 +78,9 @@ func (d *Datasource) query(ctx context.Context, query backend.DataQuery) backend
 			log.DefaultLogger.Error("grist query failed", "refID", query.RefID, "error", err)
 			return backend.ErrDataResponse(backend.StatusInternal, "query failed: "+err.Error())
 		}
+		if qm.HideSystemFields {
+			records = dropSystemFields(records)
+		}
 		frame := recordsToFrame(query.RefID, records, dateCols)
 		return backend.DataResponse{Frames: []*data.Frame{frame}}
 	case QueryTypeCount:
@@ -96,6 +99,9 @@ func (d *Datasource) query(ctx context.Context, query backend.DataQuery) backend
 		}
 		// Raw SQL has no column metadata, so Date/DateTime columns surface as
 		// epoch-seconds numbers (documented limitation).
+		if qm.HideSystemFields {
+			records = dropSystemFields(records)
+		}
 		frame := recordsToFrame(query.RefID, records, nil)
 		return backend.DataResponse{Frames: []*data.Frame{frame}}
 	default:

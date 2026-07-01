@@ -74,6 +74,9 @@ func (s Settings) credential() string {
 type QueryModel struct {
 	// QueryType selects what to fetch: "tasks" (default) or "count".
 	QueryType string `json:"queryType"`
+	// HideSystemFields drops metadata-style columns (see system_fields.go) from
+	// the returned frame when true. Defaults to false.
+	HideSystemFields bool `json:"hideSystemFields"`
 
 	// --- Task scope / filters -------------------------------------------------
 	//

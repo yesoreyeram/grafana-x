@@ -302,9 +302,10 @@ type attioRecord struct {
 }
 
 // flattenRecords converts raw Attio records into flat maps keyed by attribute
-// slug. When fields is non-empty, only those attribute slugs are retained (the
-// synthetic identity columns are always kept).
-func flattenRecords(records []attioRecord, fields []string) []map[string]any {
+// slug. When fields is non-empty, only those attribute slugs are retained.
+// The synthetic identity columns (_record_id, _created_at) are emitted unless
+// hideSystem is true.
+func flattenRecords(records []attioRecord, fields []string, hideSystem bool) []map[string]any {
 	keep := map[string]bool{}
 	for _, f := range fields {
 		f = strings.TrimSpace(f)
@@ -317,11 +318,13 @@ func flattenRecords(records []attioRecord, fields []string) []map[string]any {
 	out := make([]map[string]any, 0, len(records))
 	for _, rec := range records {
 		row := map[string]any{}
-		if rec.ID.RecordID != "" {
-			row["_record_id"] = rec.ID.RecordID
-		}
-		if rec.CreatedAt != "" {
-			row["_created_at"] = rec.CreatedAt
+		if !hideSystem {
+			if rec.ID.RecordID != "" {
+				row["_record_id"] = rec.ID.RecordID
+			}
+			if rec.CreatedAt != "" {
+				row["_created_at"] = rec.CreatedAt
+			}
 		}
 
 		for slug, raw := range rec.Values {

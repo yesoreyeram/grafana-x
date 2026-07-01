@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState, type ChangeEvent } from 'react';
-import { InlineField, InlineFieldRow, Input, RadioButtonGroup, Select } from '@grafana/ui';
+import { InlineField, InlineFieldRow, InlineSwitch, Input, RadioButtonGroup, Select } from '@grafana/ui';
 import { QueryEditorProps, SelectableValue } from '@grafana/data';
 
 import { DataSource } from '../datasource';
@@ -364,6 +364,22 @@ export function QueryEditor({ query, onChange, onRunQuery, datasource }: Props) 
           </InlineFieldRow>
         </>
       )}
+      <InlineFieldRow>
+        <InlineField
+          label="Hide system fields"
+          labelWidth={LABEL_WIDTH}
+          tooltip="Hide metadata-style columns (id, created_at/updated_at, underscore-prefixed names, etc.) from the returned frame."
+        >
+          <InlineSwitch
+            value={!!query.hideSystemFields}
+            onChange={(e) => {
+              update({ hideSystemFields: e.currentTarget.checked });
+              onRunQuery();
+            }}
+          />
+        </InlineField>
+      </InlineFieldRow>
+
     </div>
   );
 }

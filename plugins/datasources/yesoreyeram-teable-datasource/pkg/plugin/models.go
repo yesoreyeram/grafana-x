@@ -55,6 +55,9 @@ type QueryModel struct {
 	// QueryType: "records" (default) lists records from a table; "count" returns
 	// the number of matching records.
 	QueryType string `json:"queryType"`
+	// HideSystemFields drops metadata-style columns (see system_fields.go) from
+	// the returned frame when true. Defaults to false.
+	HideSystemFields bool `json:"hideSystemFields"`
 	// BaseID is the Teable base id. It is only needed by the query editor to list
 	// tables; the record/count endpoints are addressed by table id alone.
 	BaseID string `json:"baseId"`

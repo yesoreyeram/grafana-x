@@ -2,6 +2,7 @@ import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import {
   InlineField,
   InlineFieldRow,
+  InlineSwitch,
   Input,
   Select,
   MultiSelect,
@@ -39,7 +40,7 @@ function objectChangePatch(objectId: string, changingObject: boolean): Partial<A
 }
 
 export function QueryEditor({ query, onChange, onRunQuery, datasource }: Props) {
-  const { objectId, sort, fields, filterTree, limit, offset } = query;
+  const { objectId, sort, fields, filterTree, limit, offset, hideSystemFields } = query;
   const queryType = query.queryType ?? 'records';
   const isCount = queryType === 'count';
 
@@ -262,6 +263,24 @@ export function QueryEditor({ query, onChange, onRunQuery, datasource }: Props) 
           />
         </InlineField>
       </div>
+
+      {!isCount && (
+        <div className="gf-form">
+          <InlineField
+            label="Hide system fields"
+            labelWidth={LABEL_WIDTH}
+            tooltip="Hide synthetic identity columns (_record_id, _created_at) from the returned frame."
+          >
+            <InlineSwitch
+              value={!!hideSystemFields}
+              onChange={(e) => {
+                update({ hideSystemFields: e.currentTarget.checked });
+                onRunQuery();
+              }}
+            />
+          </InlineField>
+        </div>
+      )}
 
       {!isCount && (
         <div className="gf-form">

@@ -1,13 +1,5 @@
 import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
-import {
-  InlineField,
-  InlineFieldRow,
-  Input,
-  Select,
-  IconButton,
-  RadioButtonGroup,
-  Button,
-} from '@grafana/ui';
+import { Button, IconButton, InlineField, InlineFieldRow, InlineSwitch, Input, RadioButtonGroup, Select } from '@grafana/ui';
 import { QueryEditorProps, SelectableValue } from '@grafana/data';
 
 import { DataSource } from '../datasource';
@@ -18,7 +10,7 @@ import { FilterEditor } from './FilterEditor';
 
 type Props = QueryEditorProps<DataSource, SupabaseQuery, SupabaseDataSourceOptions>;
 
-const LABEL_WIDTH = 16;
+const LABEL_WIDTH = 20;
 
 const QUERY_TYPE_OPTIONS: Array<SelectableValue<SupabaseQueryType>> = [
   { label: 'Records', value: 'records', description: 'Return matching records' },
@@ -298,6 +290,22 @@ export function QueryEditor({ query, onChange, onRunQuery, datasource }: Props) 
           </InlineFieldRow>
         </>
       )}
+      <InlineFieldRow>
+        <InlineField
+          label="Hide system fields"
+          labelWidth={LABEL_WIDTH}
+          tooltip="Hide metadata-style columns (id, created_at/updated_at, underscore-prefixed names, etc.) from the returned frame."
+        >
+          <InlineSwitch
+            value={!!query.hideSystemFields}
+            onChange={(e) => {
+              update({ hideSystemFields: e.currentTarget.checked });
+              onRunQuery();
+            }}
+          />
+        </InlineField>
+      </InlineFieldRow>
+
     </div>
   );
 }

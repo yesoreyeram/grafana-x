@@ -290,7 +290,7 @@ func (c *Client) QueryRecords(ctx context.Context, q QueryModel) ([]map[string]a
 		offset += int64(size)
 	}
 
-	return flattenRecords(out, fields), nil
+	return flattenRecords(out, fields, q.HideSystemFields), nil
 }
 
 func (c *Client) fetchRecordPage(ctx context.Context, q QueryModel, size int, offset int64) ([]attioRecord, error) {
