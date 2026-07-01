@@ -36,5 +36,13 @@
             "path": "./.cspell/plugin.txt"
         }
     ],
-    "words": []
+    "words": [
+        "datetimes",
+        "gofmt",
+        "httptest",
+        "Magefile",
+        "magefile",
+        "testdata",
+        "yesoreyeram"
+    ]
 }
