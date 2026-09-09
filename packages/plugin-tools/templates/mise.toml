@@ -1,0 +1,105 @@
+[tools]
+# node is resolved from .nvmrc, see idiomatic_version_file_enable_tools below.
+# Keep in sync with the `go` directive in go.mod.
+go = "1.26.1"
+mage = "1.17.2"
+
+[settings]
+# .nvmrc stays the single source of truth for the node version.
+idiomatic_version_file_enable_tools = ["node"]
+
+[tasks.install]
+run = "npm ci"
+description = "Install frontend dependencies"
+sources = ["package-lock.json", "package.json"]
+outputs = { auto = true }
+
+[tasks.build]
+depends = ["build:frontend", "build:backend"]
+description = "Build the frontend and the backend for all platforms"
+
+[tasks."build:frontend"]
+description = "Build the frontend plugin bundle into ./dist"
+run = "npm run build"
+depends = ["install"]
+
+[tasks."build:backend"]
+description = "Build the Go backend for all supported platforms"
+run = "mage -v buildAll"
+
+[tasks."build:backend-linux"]
+description = "Build the Go backend for linux (what the docker-compose Grafana runs)"
+run = "mage -v build:linux"
+
+[tasks.reload]
+description = "Rebuild the backend for linux and reload it in the running Grafana"
+run = ["mage -v build:linux", "mage reloadPlugin"]
+
+[tasks.dev]
+description = "Watch and rebuild the frontend on change"
+run = "npm run dev"
+depends = ["install"]
+
+[tasks.server]
+description = "Run Grafana with the plugin mounted via docker compose"
+run = "docker compose up --build"
+
+[tasks.test]
+description = "Run frontend and backend tests"
+depends = ["test:frontend", "test:backend"]
+
+[tasks."test:frontend"]
+description = "Run the Jest test suite"
+run = "npm run test:ci"
+depends = ["install"]
+
+[tasks."test:backend"]
+description = "Run the Go test suite"
+run = "go test ./pkg/..."
+
+[tasks."e2e:install"]
+description = "Install the Playwright browsers the e2e tests need"
+run = "playwright install chromium"
+depends = ["install"]
+
+[tasks.e2e]
+description = "Run the Playwright end-to-end tests"
+run = "npm run e2e"
+depends = ["e2e:install"]
+
+[tasks.lint]
+description = "Lint the frontend and the backend"
+depends = ["lint:frontend", "lint:backend"]
+
+[tasks."lint:frontend"]
+description = "Run ESLint"
+run = "npm run lint"
+depends = ["install"]
+
+[tasks."lint:backend"]
+description = "Run go vet"
+run = "go vet ./pkg/..."
+
+[tasks."lint:fix"]
+description = "Auto-fix lint and formatting issues in the frontend"
+run = "npm run lint:fix"
+depends = ["install"]
+
+[tasks.typecheck]
+description = "Type-check the frontend without emitting output"
+run = "npm run typecheck"
+depends = ["install"]
+
+[tasks.spellcheck]
+description = "Run cspell across the repository"
+run = "npm run spellcheck"
+depends = ["install"]
+
+[tasks.changeset]
+description = "Create a changeset describing your change (required on every PR)"
+run = "npx changeset"
+depends = ["install"]
+
+[tasks.ci]
+description = "Run everything CI runs: lint, typecheck, spellcheck and tests"
+depends = ["lint", "typecheck", "spellcheck", "test"]
